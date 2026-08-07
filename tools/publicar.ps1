@@ -35,7 +35,9 @@ Write-Host "  Actualizando herramientas nativas..." -ForegroundColor Cyan
 
 # --- 2. Instalador ---------------------------------------------------------
 Write-Host "  Compilando (esto tarda)..." -ForegroundColor Cyan
-$env:TAURI_SIGNING_PRIVATE_KEY_PATH = $key
+# Hay que pasar el CONTENIDO de la clave: si se le da la ruta, Tauri compila
+# igual pero se salta la firma y luego no hay .sig que publicar.
+$env:TAURI_SIGNING_PRIVATE_KEY = (Get-Content $key -Raw).Trim()
 $env:TAURI_SIGNING_PRIVATE_KEY_PASSWORD = ""
 npm run dist
 if ($LASTEXITCODE -ne 0) { throw "Fallo la compilacion" }

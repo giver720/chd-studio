@@ -1,0 +1,11 @@
+﻿{
+    "version":  "1.0.0",
+    "notes":  "Primera version de CHD Studio.",
+    "pub_date":  "2026-08-07T22:52:33Z",
+    "platforms":  {
+                      "windows-x86_64":  {
+                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSVNDTWNrMmRiSTBKNlBQUWZFV1lUaHJxSUc3ekJEZWtZWldGcXJLS3doN3VBbGNzM1pOU1ltZnBRbmRkNUFiYnNvRGpOOUZmZ0hnVzhUZDFVR3BUb2JsWE1QeW1iWXc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTQzMTAwCWZpbGU6Q0hEIFN0dWRpb18xLjAuMF94NjQtc2V0dXAuZXhlCnp4TitHU2lLRHljSXZvNDNHUmRVTktQQ3RCUHBBUGdXZ1pMMmJlNTZqUkpwa2Y0K0ZGazlpcmtRUFBwc1dYUDlLM1JUL1JwMkhLRWVYalVxUm5XMkJRPT0K",
+                                             "url":  "https://github.com/giver720/chd-studio/releases/download/v1.0.0/CHD.Studio_1.0.0_x64-setup.exe"
+                                         }
+                  }
+}

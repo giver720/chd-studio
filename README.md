@@ -151,11 +151,56 @@ comprobar que el ISO es válido antes de una conversión larga.
 
 ```bash
 npm install
-npm run app      # tauri dev
-npm run dist     # instalador NSIS en src-tauri/target/release/bundle
+npm run tools:fetch   # descarga las herramientas nativas a src-tauri/binaries
+npm run chdman        # descarga chdman del paquete oficial de MAME
+npm run app           # tauri dev
 ```
 
-O ejecuta `CREAR_EXE.bat` para generar el instalador de una tacada.
+Los binarios de terceros **no se guardan en el repositorio**: se descargan al preparar una versión.
+Así el repo queda limpio y cada compilación coge la última versión de cada proyecto.
+
+```bash
+npm run check:tools   # comprueba que los assets de GitHub sigan existiendo
+```
+
+Ese último conviene ejecutarlo antes de publicar: los proyectos renombran sus archivos de una
+release a otra, y cuando pasa, el botón «Instalar» falla sin decir gran cosa.
+
+## Publicar una versión
+
+```bash
+npm run release
+```
+
+Descarga las herramientas, compila el instalador firmado, arma el `.zip` portable y genera el
+`latest.json` que lee el actualizador. Todo queda en `release/`. Después:
+
+```bash
+gh release create v1.0.0 release/* --repo giver720/chd-studio
+```
+
+Hace falta la clave privada de firma en `%USERPROFILE%\.tauri\chd-studio.key`. **Si la pierdes, no
+podrás volver a firmar actualizaciones** y habría que publicar una versión nueva a mano con otra
+clave. No está en el repositorio y no debe estarlo.
+
+### Instalador y portable
+
+- **setup.exe** — instalador NSIS. Lleva dentro chdman, iso2god, 3dsconv, ctrtool, makerom,
+  z3ds_compressor y 4NXCI (~23 MB), así que funciona sin descargar nada. La excepción es `nsz`
+  (Switch), que es un paquete de Python y se instala al vuelo desde Ajustes.
+- **portable.zip** — el ejecutable con sus herramientas y un `portable.txt` al lado. Mientras ese
+  archivo exista, los ajustes, las herramientas descargadas y el entorno de Python se guardan en la
+  subcarpeta `datos`, no en `%APPDATA%`. Sirve para llevarlo en un USB.
+
+### Actualizaciones automáticas
+
+La app consulta las releases de GitHub y puede descargar e instalar la nueva versión sola, desde
+**Ajustes → Actualizaciones**.
+
+> ⚠️ **Mientras el repositorio sea privado esto no funcionará.** GitHub exige autenticación para
+> descargar los archivos de una release privada, y meter un token dentro del ejecutable sería un
+> agujero de seguridad. El actualizador empezará a funcionar solo en cuanto hagas el repo público;
+> no hay que cambiar nada en el código.
 
 ## Estructura
 
