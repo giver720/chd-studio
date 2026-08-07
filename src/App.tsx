@@ -7,6 +7,7 @@ import { ConvertView } from "./components/ConvertView";
 import { ExtractView } from "./components/ExtractView";
 import { InspectView } from "./components/InspectView";
 import { Ps3View } from "./components/Ps3View";
+import { PspView } from "./components/PspView";
 import { QueuePanel } from "./components/QueuePanel";
 import { SettingsView } from "./components/SettingsView";
 import { Sidebar } from "./components/Sidebar";
@@ -82,6 +83,7 @@ export default function App() {
       switch: [],
       threeds: [],
       xbox360: [],
+      psp: [],
     };
     const chd: InputInfo[] = [];
     for (const i of infos) {
@@ -94,6 +96,7 @@ export default function App() {
       ["convert", chd.filter((i) => i.state === "ok").length],
       ["switch", buckets.switch.length],
       ["threeds", buckets.threeds.length],
+      ["psp", buckets.psp.length],
     ];
     const [winner, best] = counts.sort((a, b) => b[1] - a[1])[0];
 
@@ -176,6 +179,7 @@ export default function App() {
               {view === "threeds" && <ThreeDsView dragging={dragging} />}
               {view === "xbox360" && <XboxView dragging={dragging} />}
               {view === "ps3" && <Ps3View />}
+              {view === "psp" && <PspView dragging={dragging} />}
               {view === "inspect" && <InspectView />}
               {view === "settings" && <SettingsView />}
             </motion.div>

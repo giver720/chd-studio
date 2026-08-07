@@ -4,6 +4,7 @@ import {
   CheckCircle2,
   Disc3,
   Gamepad2,
+  Gauge,
   Layers,
   Package,
   Scissors,
@@ -36,6 +37,7 @@ const SECTIONS: { title: string; items: NavItem[] }[] = [
       { id: "threeds", label: "3DS", icon: Layers, desc: "CIA, CCI y Z3DS" },
       { id: "xbox360", label: "Xbox 360", icon: Disc3, desc: "ISO → GOD" },
       { id: "ps3", label: "PlayStation 3", icon: Scissors, desc: "Adelgazar juegos" },
+      { id: "psp", label: "PSP", icon: Gauge, desc: "ISO ↔ CSO y ZSO" },
     ],
   },
 ];

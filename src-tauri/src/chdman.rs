@@ -205,6 +205,66 @@ pub async fn run_capture(exe: &Path, args: &[String]) -> anyhow::Result<(bool, S
     run_capture_env(exe, args, &[]).await
 }
 
+/// Ejecuta una herramienta con limite de tiempo y la mata si se pasa.
+///
+/// Los sondeos de version tienen que ser inofensivos: algunas herramientas
+/// empaquetadas con PyInstaller dejan un proceso hijo que mantiene abiertas las
+/// tuberias, y sin esto la espera no termina nunca y se van acumulando procesos.
+pub async fn run_capture_timeout(
+    exe: &Path,
+    args: &[String],
+    secs: u64,
+) -> anyhow::Result<(bool, String)> {
+    let mut cmd = tokio::process::Command::new(exe);
+    cmd.args(args)
+        .stdin(Stdio::null())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped());
+    hide_console(&mut cmd);
+
+    let child = cmd.spawn()?;
+    let pid = child.id();
+
+    match tokio::time::timeout(std::time::Duration::from_secs(secs), child.wait_with_output()).await
+    {
+        Ok(Ok(out)) => Ok((
+            out.status.success(),
+            format!(
+                "{}{}",
+                String::from_utf8_lossy(&out.stdout),
+                String::from_utf8_lossy(&out.stderr)
+            ),
+        )),
+        Ok(Err(e)) => Err(e.into()),
+        Err(_) => {
+            if let Some(pid) = pid {
+                kill_stray(pid).await;
+            }
+            anyhow::bail!("la herramienta no respondio en {secs}s")
+        }
+    }
+}
+
+/// Mata un proceso y su descendencia, que es lo que deja PyInstaller.
+async fn kill_stray(pid: u32) {
+    #[cfg(windows)]
+    {
+        let mut c = tokio::process::Command::new("taskkill");
+        c.args(["/PID", &pid.to_string(), "/T", "/F"])
+            .stdout(Stdio::null())
+            .stderr(Stdio::null());
+        hide_console(&mut c);
+        let _ = c.status().await;
+    }
+    #[cfg(not(windows))]
+    {
+        let _ = tokio::process::Command::new("kill")
+            .args(["-9", &pid.to_string()])
+            .status()
+            .await;
+    }
+}
+
 /// Igual que `run_capture` pero permite fijar variables de entorno, que es como
 /// se le indica a ctrtool donde estan sus claves.
 pub async fn run_capture_env(
@@ -213,7 +273,12 @@ pub async fn run_capture_env(
     env: &[(&str, String)],
 ) -> anyhow::Result<(bool, String)> {
     let mut cmd = tokio::process::Command::new(exe);
-    cmd.args(args).stdout(Stdio::piped()).stderr(Stdio::piped());
+    // stdin cerrado a proposito: varias de estas herramientas piden datos por
+    // teclado si no entienden los argumentos, y sin esto se quedan colgadas
+    cmd.args(args)
+        .stdin(Stdio::null())
+        .stdout(Stdio::piped())
+        .stderr(Stdio::piped());
     for (k, v) in env {
         cmd.env(k, v);
     }

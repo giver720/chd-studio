@@ -291,7 +291,17 @@ const PS3_PROFILE: SystemProfile = {
   color: "#4a6cf7",
 };
 
+const PSP_PROFILE: SystemProfile = {
+  id: "psp",
+  name: "PSP",
+  maker: "Sony · 2004",
+  mode: "createdvd",
+  accepts: ["iso", "cso", "zso", "dax"],
+  color: "#7a8ff7",
+};
+
 export function systemById(id: string): SystemProfile {
+  if (id === "psp") return PSP_PROFILE;
   if (id === "ps3") return PS3_PROFILE;
   if (id === "switch") return SWITCH_PROFILE;
   if (id === "3ds") return THREEDS_PROFILE;
@@ -356,4 +366,8 @@ export const MODE_LABELS: Record<string, string> = {
   ps3extract: "ISO → carpeta",
   ps3build: "Carpeta → ISO",
   ps3split: "Partir para FAT32",
+  iso2cso: "ISO → CSO",
+  iso2zso: "ISO → ZSO",
+  iso2dax: "ISO → DAX",
+  cso2iso: "→ ISO",
 };

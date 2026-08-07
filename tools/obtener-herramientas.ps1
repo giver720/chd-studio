@@ -29,7 +29,8 @@ $tools = @(
     @{ id = "makerom";  repo = "3DSGuy/Project_CTR";           asset = "win_x86_64"; tag = "makerom"; exe = "makerom.exe" },
     @{ id = "z3ds";     repo = "energeticokay/z3ds_compress";  asset = "windows";    tag = "";        exe = "z3ds_compressor.exe" },
     @{ id = "4nxci";    repo = "tetj/4NXCI-2026";              asset = ".exe";       tag = "";        exe = "4nxci.exe" },
-    @{ id = "ps3iso";   repo = "bucanero/ps3iso-utils";        asset = "Win64";      tag = "";        exe = "extractps3iso.exe" }
+    @{ id = "ps3iso";   repo = "bucanero/ps3iso-utils";        asset = "Win64";      tag = "";        exe = "extractps3iso.exe" },
+    @{ id = "maxcso";   repo = "unknownbrackets/maxcso";       asset = "windows.7z"; tag = "";        exe = "maxcso.exe" }
 )
 
 $notas = @()
@@ -60,13 +61,23 @@ foreach ($t in $tools) {
     $dl = Join-Path $work $asset.name
     Invoke-WebRequest $asset.browser_download_url -OutFile $dl -UseBasicParsing
 
-    if ($asset.name.ToLower().EndsWith(".zip")) {
+    $tarExe = Join-Path $env:SystemRoot "System32\tar.exe"
+
+    if ($asset.name.ToLower().EndsWith(".7z")) {
+        # El tar de Windows es libarchive y sabe leer 7-Zip, asi que no hace
+        # falta tener 7-Zip instalado
+        & $tarExe -xf $dl -C $work
+        if ($LASTEXITCODE -ne 0) { throw "$($t.id): fallo al abrir el .7z" }
+        Get-ChildItem $work -Recurse -File |
+            Where-Object { $_.Extension -in ".exe", ".dll" } |
+            ForEach-Object { Copy-Item $_.FullName (Join-Path $dest $_.Name) -Force }
+    }
+    elseif ($asset.name.ToLower().EndsWith(".zip")) {
         Expand-Archive $dl -DestinationPath $work -Force
 
         # ps3iso-utils mete un tar.gz dentro del zip, con un programa por carpeta.
         # Se usa el tar de Windows a proposito: el de Git Bash toma "C:" por un
         # host remoto y falla.
-        $tarExe = Join-Path $env:SystemRoot "System32\tar.exe"
         Get-ChildItem $work -Filter "*.tar.gz" | ForEach-Object {
             & $tarExe -xzf $_.FullName -C $work
             if ($LASTEXITCODE -ne 0) { throw "$($t.id): fallo al extraer $($_.Name)" }

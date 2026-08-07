@@ -1,6 +1,7 @@
 mod chdman;
 mod jobs;
 mod ps3;
+mod psp;
 mod settings;
 mod switch;
 mod threeds;
@@ -77,6 +78,12 @@ fn classify(path: &Path) -> InputInfo {
     }
     if threeds::is_3ds_ext(&ext) {
         info.suggested_mode = threeds::suggest_mode(&ext).into();
+        return info;
+    }
+    // El .iso lo reclaman varios modulos, asi que aqui solo entran los
+    // comprimidos, que si son inconfundibles de PSP
+    if psp::is_psp_ext(&ext) && ext != "iso" {
+        info.suggested_mode = psp::suggest_mode(&ext).into();
         return info;
     }
     if CD_EXT.contains(&ext.as_str()) {
@@ -201,6 +208,13 @@ fn output_for(spec: &JobSpec, s: &Settings) -> (String, Option<String>) {
         return (dir.join(&stem).to_string_lossy().to_string(), None);
     }
 
+    if let Some(e) = psp::output_ext(&spec.mode) {
+        return (
+            dir.join(format!("{stem}.{e}")).to_string_lossy().to_string(),
+            None,
+        );
+    }
+
     // PS3: extraer da una carpeta, reconstruir da un ISO, partir no toca nada
     if ps3::is_mode(&spec.mode) {
         return match spec.mode.as_str() {
@@ -265,6 +279,7 @@ fn add_jobs(app: AppHandle, state: State<AppState>, specs: Vec<JobSpec>) -> Vec<
             .or_else(|| threeds::tool_for(&spec.mode))
             .or_else(|| xbox360::is_mode(&spec.mode).then_some(xbox360::MODE))
             .or_else(|| ps3::tool_for(&spec.mode))
+            .or_else(|| psp::is_mode(&spec.mode).then_some("maxcso"))
             .unwrap_or("chdman")
             .to_string();
 
@@ -498,6 +513,28 @@ fn threeds_keys_status(state: State<AppState>) -> threeds::KeysStatus {
     threeds::keys_status(&s)
 }
 
+/// Calcula cuanto ocuparia el archivo comprimido, sin llegar a escribirlo.
+#[tauri::command]
+async fn psp_measure(
+    state: State<'_, AppState>,
+    path: String,
+    mode: String,
+) -> Result<String, String> {
+    let s = state.settings.lock().unwrap().clone();
+    let exe = tools::locate("maxcso", &s)
+        .map(|(p, _)| p)
+        .ok_or("Falta maxcso. Instalalo desde Ajustes → Herramientas.")?;
+
+    let (ok, text) = chdman::run_capture(&exe, &psp::measure_args(&path, &mode))
+        .await
+        .map_err(|e| e.to_string())?;
+
+    if !ok && text.trim().is_empty() {
+        return Err("maxcso no pudo leer ese archivo".into());
+    }
+    Ok(text)
+}
+
 /// Lee una carpeta de juego de PS3 extraida y clasifica lo que hay dentro.
 #[tauri::command]
 fn ps3_scan(dir: String) -> ps3::Ps3Scan {
@@ -595,6 +632,7 @@ pub fn run() {
             xbox_probe,
             ps3_scan,
             ps3_trim,
+            psp_measure,
             app_paths,
             reveal
         ])

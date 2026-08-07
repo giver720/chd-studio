@@ -155,6 +155,20 @@ pub const TOOLS: &[ToolSpec] = &[
         family: "ps3",
         license: "GPL-3.0",
     },
+    ToolSpec {
+        id: "maxcso",
+        name: "maxcso",
+        exe: "maxcso",
+        kind: ToolKind::Github {
+            repo: "unknownbrackets/maxcso",
+            // "windows.7z" distingue el de 64 bits del "windows-32bit.7z"
+            asset: "windows.7z",
+            tag: "",
+        },
+        purpose: "Comprime ISOs de PSP a CSO, ZSO o DAX",
+        family: "psp",
+        license: "ISC",
+    },
 ];
 
 pub fn spec(id: &str) -> Option<&'static ToolSpec> {
@@ -272,11 +286,16 @@ fn find_in(dir: &std::path::Path, name: &str, depth: usize) -> Option<PathBuf> {
 
 /// Pregunta la version ejecutando la herramienta; si falla, deja el campo vacio.
 async fn probe_version(id: &str, path: &std::path::Path) -> Option<String> {
+    // Las de PS3 entran en modo interactivo si no reconocen el argumento, asi
+    // que hay que darles justo el que documentan
     let arg = match id {
-        "z3ds" | "4nxci" => "--help",
+        "z3ds" | "4nxci" | "ps3iso" => "--help",
         _ => "--version",
     };
-    let (_, text) = chdman::run_capture(path, &[arg.to_string()]).await.ok()?;
+    // Cinco segundos de sobra para que una herramienta diga su version
+    let (_, text) = chdman::run_capture_timeout(path, &[arg.to_string()], 5)
+        .await
+        .ok()?;
     let line = text.lines().map(|l| l.trim()).find(|l| !l.is_empty())?;
     // Varias herramientas no tienen bandera de version y escupen el uso;
     // preferimos no mostrar nada antes que un "usage: ..." sin sentido.
@@ -498,6 +517,8 @@ pub async fn install_github_tool(
     } else if lower.ends_with(".tar.gz") || lower.ends_with(".tgz") {
         let dec = flate2::read::GzDecoder::new(std::io::Cursor::new(bytes));
         tar::Archive::new(dec).unpack(&dest)?;
+    } else if lower.ends_with(".7z") {
+        extract_7z(&bytes, &asset.name, &dest).await?;
     } else {
         // Los binarios sueltos suelen venir con el nombre de la plataforma
         // pegado (iso2god-x86_64-windows.exe); los dejamos con el nombre que
@@ -509,6 +530,40 @@ pub async fn install_github_tool(
     }
 
     Ok(rel.tag_name)
+}
+
+/// Extrae un .7z apoyandose en el `tar` del sistema.
+///
+/// El tar que trae Windows 10 en adelante es libarchive, que sabe leer 7-Zip,
+/// asi que no hace falta que el usuario instale nada ni meter un descompresor
+/// entero en la aplicacion.
+async fn extract_7z(bytes: &[u8], name: &str, dest: &std::path::Path) -> anyhow::Result<()> {
+    let tmp = std::env::temp_dir().join(format!("chd-studio-{name}"));
+    std::fs::write(&tmp, bytes)?;
+
+    // El tar de Git Bash confunde "C:" con un host remoto; usamos el del sistema
+    let tar_exe = if cfg!(windows) {
+        std::path::PathBuf::from(std::env::var("SystemRoot").unwrap_or_else(|_| "C:\\Windows".into()))
+            .join("System32")
+            .join("tar.exe")
+    } else {
+        std::path::PathBuf::from("tar")
+    };
+
+    let args = vec![
+        "-xf".to_string(),
+        tmp.to_string_lossy().to_string(),
+        "-C".to_string(),
+        dest.to_string_lossy().to_string(),
+    ];
+    let res = chdman::run_capture(&tar_exe, &args).await;
+    let _ = std::fs::remove_file(&tmp);
+
+    match res {
+        Ok((true, _)) => Ok(()),
+        Ok((false, out)) => anyhow::bail!("No se pudo descomprimir el .7z: {}", out.trim()),
+        Err(e) => anyhow::bail!("No se encontro tar para abrir el .7z: {e}"),
+    }
 }
 
 /// Desempaqueta los .tar.gz que hayan quedado sueltos tras extraer un zip.

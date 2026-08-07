@@ -3,6 +3,7 @@ import { api } from "./lib/api";
 import { AUTO, ALL_SYSTEMS, codecsFor, type Preset } from "./lib/profiles";
 import { SWITCH_EXT, defaultOp as switchDefaultOp } from "./lib/switch";
 import { THREEDS_EXT, defaultOp as threeDsDefaultOp } from "./lib/threeds";
+import { PSP_EXT, defaultOp as pspDefaultOp } from "./lib/psp";
 import type {
   ChdmanStatus,
   InputInfo,
@@ -21,9 +22,10 @@ export type View =
   | "threeds"
   | "xbox360"
   | "ps3"
+  | "psp"
   | "settings";
 
-export type ConsoleFamily = "switch" | "threeds" | "xbox360";
+export type ConsoleFamily = "switch" | "threeds" | "xbox360" | "psp";
 
 export interface ConsoleFile extends InputInfo {
   op: string;
@@ -33,6 +35,7 @@ export interface ConsoleFile extends InputInfo {
 function defaultOpFor(family: ConsoleFamily, ext: string): string {
   if (family === "switch") return switchDefaultOp(ext);
   if (family === "threeds") return threeDsDefaultOp(ext);
+  if (family === "psp") return pspDefaultOp(ext);
   return "iso2god";
 }
 
@@ -41,6 +44,7 @@ export const FAMILY_EXT: Record<ConsoleFamily, string[]> = {
   switch: SWITCH_EXT,
   threeds: THREEDS_EXT,
   xbox360: ["iso"],
+  psp: PSP_EXT,
 };
 
 /**
@@ -52,6 +56,8 @@ export const FAMILY_EXT: Record<ConsoleFamily, string[]> = {
 export function familyOf(ext: string): ConsoleFamily | "chd" {
   if (SWITCH_EXT.includes(ext)) return "switch";
   if (THREEDS_EXT.includes(ext)) return "threeds";
+  // Los comprimidos de PSP son inconfundibles; el .iso se queda en CHD
+  if (ext === "cso" || ext === "zso" || ext === "dax") return "psp";
   return "chd";
 }
 
@@ -159,7 +165,7 @@ export const useStore = create<AppStore>((set, get) => ({
     }
   },
 
-  consoleFiles: { switch: [], threeds: [], xbox360: [] },
+  consoleFiles: { switch: [], threeds: [], xbox360: [], psp: [] },
   addConsoleFiles: (family, infos) => {
     const current = get().consoleFiles[family];
     const seen = new Set(current.map((c) => c.path));
