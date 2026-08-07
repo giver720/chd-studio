@@ -141,11 +141,33 @@ comprobar que el ISO es válido antes de una conversión larga.
 > Xbox 360 no hay una herramienta de línea de comandos mantenida: `extract-xiso` solo documenta
 > soporte para Xbox original, así que no se incluye.
 
-## En construcción
+## PlayStation 3
 
-- **PlayStation 3** — adelgazar ISOs quitando packs de idioma y `PS3_UPDATE`, con
-  `extractps3iso` / `makeps3iso`.
-- **Xbox 360** — ISO → GOD (Games on Demand) con `iso2god`, e ISO → carpeta con `extract-xiso`.
+Adelgaza juegos quitando lo que no usas. Con `ps3iso-utils` (las utilidades de Estwald).
+
+| Paso | Herramienta |
+|---|---|
+| ISO → carpeta | `extractps3iso` |
+| Analizar y borrar | interno |
+| Carpeta → ISO | `makeps3iso` |
+| Partir para FAT32 | `splitps3iso` |
+
+**Qué detecta.** `PS3_UPDATE` (el actualizador de firmware del disco, entre 200 y 300 MB, que solo
+sirve para instalar el sistema desde el juego) se marca solo. Los packs de idioma se reconocen por
+el nombre de archivo (`_ES`, `SPA`, `spanish`, `_FR`, `GER`…) y se agrupan por idioma con su tamaño,
+para que puedas quitar de golpe los que no vayas a jugar. Los vídeos y bancos de audio (`.pam`,
+`.bik`, `.at3`, `.msf`…) se etiquetan aparte.
+
+**Salvaguardas.** `EBOOT.BIN`, `PARAM.SFO`, `PS3_DISC.SFB` y `LICDIR` están bloqueados: no se
+proponen y el backend se niega a borrarlos aunque se los pidan. Tampoco acepta rutas que salgan de
+la carpeta del juego. Nada se borra sin una confirmación que dice cuántos archivos y cuánto espacio.
+
+> ⚠️ **Haz copia antes.** Hay juegos que llevan un índice de sus propios archivos y se cuelgan si
+> falta uno, aunque sea un vídeo en un idioma que no usas. La detección por nombre acierta casi
+> siempre, pero no es infalible. Prueba el juego después de adelgazarlo.
+
+Si juegas en formato carpeta (webMAN, Iris Manager), no hace falta reconstruir el ISO: ya has
+terminado tras borrar.
 
 ## Desarrollo
 

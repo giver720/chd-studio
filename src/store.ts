@@ -20,6 +20,7 @@ export type View =
   | "switch"
   | "threeds"
   | "xbox360"
+  | "ps3"
   | "settings";
 
 export type ConsoleFamily = "switch" | "threeds" | "xbox360";
@@ -114,6 +115,7 @@ const DEFAULT_SETTINGS: Settings = {
   nsz_level: 18,
   nsz_threads: 0,
   xbox_trim: true,
+  ps3_split_fat32: false,
 };
 
 /** Elige el perfil de sistema más probable a partir de la extensión y el tamaño. */

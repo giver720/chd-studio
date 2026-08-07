@@ -142,6 +142,19 @@ pub const TOOLS: &[ToolSpec] = &[
         family: "xbox360",
         license: "MIT",
     },
+    ToolSpec {
+        id: "ps3iso",
+        name: "ps3iso-utils",
+        exe: "extractps3iso",
+        kind: ToolKind::Github {
+            repo: "bucanero/ps3iso-utils",
+            asset: "Win64",
+            tag: "",
+        },
+        purpose: "Extrae, reconstruye y parte ISOs de PS3",
+        family: "ps3",
+        license: "GPL-3.0",
+    },
 ];
 
 pub fn spec(id: &str) -> Option<&'static ToolSpec> {
@@ -475,10 +488,16 @@ pub async fn install_github_tool(
     let _ = std::fs::remove_dir_all(&dest);
     std::fs::create_dir_all(&dest)?;
 
-    if asset.name.to_lowercase().ends_with(".zip") {
+    let lower = asset.name.to_lowercase();
+    if lower.ends_with(".zip") {
         let cursor = std::io::Cursor::new(bytes);
         let mut zip = zip::ZipArchive::new(cursor)?;
         zip.extract(&dest)?;
+        // Algunos proyectos meten un tar.gz dentro del zip (ps3iso-utils)
+        unpack_nested_tarballs(&dest)?;
+    } else if lower.ends_with(".tar.gz") || lower.ends_with(".tgz") {
+        let dec = flate2::read::GzDecoder::new(std::io::Cursor::new(bytes));
+        tar::Archive::new(dec).unpack(&dest)?;
     } else {
         // Los binarios sueltos suelen venir con el nombre de la plataforma
         // pegado (iso2god-x86_64-windows.exe); los dejamos con el nombre que
@@ -490,6 +509,55 @@ pub async fn install_github_tool(
     }
 
     Ok(rel.tag_name)
+}
+
+/// Desempaqueta los .tar.gz que hayan quedado sueltos tras extraer un zip.
+fn unpack_nested_tarballs(dir: &std::path::Path) -> anyhow::Result<()> {
+    let entries: Vec<PathBuf> = std::fs::read_dir(dir)?
+        .flatten()
+        .map(|e| e.path())
+        .filter(|p| {
+            p.is_file()
+                && p.file_name()
+                    .map(|n| {
+                        let n = n.to_string_lossy().to_lowercase();
+                        n.ends_with(".tar.gz") || n.ends_with(".tgz")
+                    })
+                    .unwrap_or(false)
+        })
+        .collect();
+
+    for tarball in entries {
+        let f = std::fs::File::open(&tarball)?;
+        let dec = flate2::read::GzDecoder::new(f);
+        tar::Archive::new(dec).unpack(dir)?;
+        let _ = std::fs::remove_file(&tarball);
+    }
+    Ok(())
+}
+
+/// Busca otro ejecutable dentro de la carpeta ya descargada de una herramienta.
+///
+/// ps3iso-utils trae cuatro programas en la misma descarga, cada uno en su
+/// subcarpeta, asi que se registra uno solo y los demas se localizan al lado.
+pub fn locate_sibling(id: &str, exe: &str) -> Option<PathBuf> {
+    let name = exe_name(exe);
+    let base = tools_dir().join(id);
+    let direct = base.join(&name);
+    if direct.is_file() {
+        return Some(direct);
+    }
+    if let Some(found) = find_in(&base, &name, 0) {
+        return Some(found);
+    }
+    // Tambien puede venir dentro del instalador
+    for d in chdman::bundled_dirs() {
+        let c = d.join(&name);
+        if c.is_file() {
+            return Some(c);
+        }
+    }
+    which::which(exe).ok()
 }
 
 /// Punto de entrada unico que usa la interfaz para el boton «Instalar».

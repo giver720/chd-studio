@@ -136,6 +136,13 @@ fn build_args(job: &Job, s: &Settings) -> Vec<String> {
         "z3ds" => crate::threeds::z3ds_args(&job.input, &job.output),
         "3dsconv" => crate::threeds::conv_args(&job.input, &out_dir_of(job), s),
         "iso2god" => crate::xbox360::args(&job.input, &job.output, s),
+        "ps3iso" => match job.mode.as_str() {
+            "ps3build" => crate::ps3::build_args(&job.input, &job.output, s.ps3_split_fat32),
+            "ps3split" => crate::ps3::split_args(&job.input),
+            // Al extraer no se parte nada: si luego se reconstruye el ISO, los
+            // trozos sueltos confundirian a makeps3iso.
+            _ => crate::ps3::extract_args(&job.input, &job.output, false),
+        },
         _ => chdman_args(job, s),
     }
 }
@@ -145,9 +152,13 @@ fn is_verify(mode: &str) -> bool {
     mode == "verify"
 }
 
-/// GOD no es un archivo sino una carpeta con el juego troceado.
+/// Algunos modos producen una carpeta en vez de un archivo suelto.
 fn writes_directory(tool: &str) -> bool {
     tool == "iso2god"
+}
+
+fn mode_writes_directory(job: &Job) -> bool {
+    writes_directory(&job.tool) || job.mode == "ps3extract"
 }
 
 /// Suma recursiva del contenido de una carpeta, para poder informar del tamaño.
@@ -166,7 +177,7 @@ fn dir_size(path: &Path) -> u64 {
 
 /// Borra el resultado a medias, sea archivo o carpeta.
 fn remove_output(job: &Job) {
-    if writes_directory(&job.tool) {
+    if mode_writes_directory(job) {
         let _ = std::fs::remove_dir_all(&job.output);
     } else {
         let _ = std::fs::remove_file(&job.output);
@@ -176,7 +187,7 @@ fn remove_output(job: &Job) {
 /// Tamaño del resultado, sea un archivo suelto o una carpeta entera.
 fn output_size_of(job: &Job) -> u64 {
     let p = Path::new(&job.output);
-    if writes_directory(&job.tool) {
+    if mode_writes_directory(job) {
         dir_size(p)
     } else {
         std::fs::metadata(p).map(|m| m.len()).unwrap_or(0)
@@ -469,7 +480,13 @@ async fn run_job(app: AppHandle, id: String) {
             Some(j) => j.clone(),
             None => return,
         };
-        let exe = crate::tools::locate(&job.tool, &s).map(|(p, _)| p);
+        // ps3iso-utils son cuatro programas en una sola descarga: hay que coger
+        // el que toque segun el modo.
+        let exe = if job.tool == "ps3iso" {
+            crate::tools::locate_sibling("ps3iso", crate::ps3::exe_for(&job.mode))
+        } else {
+            crate::tools::locate(&job.tool, &s).map(|(p, _)| p)
+        };
         (job, s, exe)
     };
 

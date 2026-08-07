@@ -1,4 +1,5 @@
 import { invoke } from "@tauri-apps/api/core";
+import type { Ps3Scan, TrimResult } from "./ps3";
 import type {
   ChdmanStatus,
   InputInfo,
@@ -46,4 +47,6 @@ export const api = {
   threeDsKeysStatus: () => invoke<ThreeDsKeys>("threeds_keys_status"),
   xboxProbe: (path: string) => invoke<string>("xbox_probe", { path }),
   appPaths: () => invoke<{ portable: boolean; config_dir: string }>("app_paths"),
+  ps3Scan: (dir: string) => invoke<Ps3Scan>("ps3_scan", { dir }),
+  ps3Trim: (dir: string, paths: string[]) => invoke<TrimResult>("ps3_trim", { dir, paths }),
 };

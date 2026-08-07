@@ -109,6 +109,7 @@ export interface Settings {
   nsz_level: number;
   nsz_threads: number;
   xbox_trim: boolean;
+  ps3_split_fat32: boolean;
 }
 
 /** Un archivo puesto en la mesa de trabajo, ya con su perfil asignado. */

@@ -6,6 +6,7 @@ import {
   Gamepad2,
   Layers,
   Package,
+  Scissors,
   Search,
   Settings,
   Wand2,
@@ -34,6 +35,7 @@ const SECTIONS: { title: string; items: NavItem[] }[] = [
       { id: "switch", label: "Switch", icon: Gamepad2, desc: "NSP, NSZ, XCI, XCZ" },
       { id: "threeds", label: "3DS", icon: Layers, desc: "CIA, CCI y Z3DS" },
       { id: "xbox360", label: "Xbox 360", icon: Disc3, desc: "ISO → GOD" },
+      { id: "ps3", label: "PlayStation 3", icon: Scissors, desc: "Adelgazar juegos" },
     ],
   },
 ];

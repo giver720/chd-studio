@@ -282,7 +282,17 @@ const XBOX_PROFILE: SystemProfile = {
   color: "#7bc043",
 };
 
+const PS3_PROFILE: SystemProfile = {
+  id: "ps3",
+  name: "PlayStation 3",
+  maker: "Sony · 2006",
+  mode: "createdvd",
+  accepts: ["iso"],
+  color: "#4a6cf7",
+};
+
 export function systemById(id: string): SystemProfile {
+  if (id === "ps3") return PS3_PROFILE;
   if (id === "switch") return SWITCH_PROFILE;
   if (id === "3ds") return THREEDS_PROFILE;
   if (id === "xbox360") return XBOX_PROFILE;
@@ -343,4 +353,7 @@ export const MODE_LABELS: Record<string, string> = {
   cia2cci: "CIA → CCI",
   cci2cia: "CCI → CIA",
   iso2god: "ISO → GOD",
+  ps3extract: "ISO → carpeta",
+  ps3build: "Carpeta → ISO",
+  ps3split: "Partir para FAT32",
 };

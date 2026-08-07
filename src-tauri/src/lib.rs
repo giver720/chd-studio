@@ -1,5 +1,6 @@
 mod chdman;
 mod jobs;
+mod ps3;
 mod settings;
 mod switch;
 mod threeds;
@@ -200,6 +201,18 @@ fn output_for(spec: &JobSpec, s: &Settings) -> (String, Option<String>) {
         return (dir.join(&stem).to_string_lossy().to_string(), None);
     }
 
+    // PS3: extraer da una carpeta, reconstruir da un ISO, partir no toca nada
+    if ps3::is_mode(&spec.mode) {
+        return match spec.mode.as_str() {
+            "ps3build" => (
+                dir.join(format!("{stem}.iso")).to_string_lossy().to_string(),
+                None,
+            ),
+            "ps3split" => (spec.input.clone(), None),
+            _ => (dir.join(&stem).to_string_lossy().to_string(), None),
+        };
+    }
+
     // Los modos de 3DS necesitan saber la extension de entrada para elegir la de salida
     if threeds::is_mode(&spec.mode) {
         let in_ext = input
@@ -251,6 +264,7 @@ fn add_jobs(app: AppHandle, state: State<AppState>, specs: Vec<JobSpec>) -> Vec<
         let tool = switch::tool_for(&spec.mode)
             .or_else(|| threeds::tool_for(&spec.mode))
             .or_else(|| xbox360::is_mode(&spec.mode).then_some(xbox360::MODE))
+            .or_else(|| ps3::tool_for(&spec.mode))
             .unwrap_or("chdman")
             .to_string();
 
@@ -484,6 +498,18 @@ fn threeds_keys_status(state: State<AppState>) -> threeds::KeysStatus {
     threeds::keys_status(&s)
 }
 
+/// Lee una carpeta de juego de PS3 extraida y clasifica lo que hay dentro.
+#[tauri::command]
+fn ps3_scan(dir: String) -> ps3::Ps3Scan {
+    ps3::scan(&dir)
+}
+
+/// Borra lo seleccionado. Se niega con lo protegido y con rutas de fuera.
+#[tauri::command]
+fn ps3_trim(dir: String, paths: Vec<String>) -> Result<ps3::TrimResult, String> {
+    ps3::trim(&dir, &paths).map_err(|e| e.to_string())
+}
+
 #[derive(Serialize)]
 pub struct AppPaths {
     /// true si se esta ejecutando la version portable
@@ -567,6 +593,8 @@ pub fn run() {
             switch_keys_status,
             threeds_keys_status,
             xbox_probe,
+            ps3_scan,
+            ps3_trim,
             app_paths,
             reveal
         ])
