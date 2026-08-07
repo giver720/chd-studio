@@ -1,0 +1,206 @@
+//! Conversiones de formatos de Nintendo 3DS.
+//!
+//! Tres herramientas, cada una con su papel:
+//!   * `z3ds_compressor` - comprime al formato Z3DS (zstd seekable) que Azahar
+//!     admite desde la version 2123. Solo comprime: la descompresion la hace el
+//!     propio emulador al cargar la ROM.
+//!   * `3dsconv`         - CCI/.3ds -> CIA instalable. Necesita `boot9.bin`.
+//!   * `cia-to-cci`      - CIA -> CCI descifrado. Necesita `aes_keys.txt`.
+//!
+//! Las claves son del usuario. CHD Studio comprueba si existen y avisa, pero no
+//! las incluye ni ayuda a conseguirlas.
+
+use crate::settings::Settings;
+use serde::Serialize;
+use std::path::PathBuf;
+
+/// (modo, herramienta, extension de salida)
+pub const MODES: &[(&str, &str, &str)] = &[
+    ("z3dscompress", "z3ds", ""), // la extension depende de la entrada
+    ("cci2cia", "3dsconv", "cia"),
+    // CIA -> CCI encadena ctrtool y makerom; se anota el primero
+    ("cia2cci", "ctrtool", "cci"),
+];
+
+pub fn tool_for(mode: &str) -> Option<&'static str> {
+    MODES
+        .iter()
+        .find(|m| m.0 == mode)
+        .map(|m| m.1)
+        .filter(|t| !t.is_empty())
+}
+
+pub fn is_mode(mode: &str) -> bool {
+    MODES.iter().any(|m| m.0 == mode)
+}
+
+pub fn is_3ds_ext(ext: &str) -> bool {
+    matches!(ext, "3ds" | "cci" | "cia" | "cxi" | "3dsx")
+}
+
+/// Extension comprimida que corresponde a cada formato de entrada.
+/// `.3ds` es el mismo contenedor que `.cci`, asi que comparte destino.
+pub fn z3ds_ext(ext: &str) -> &'static str {
+    match ext {
+        "cia" => "zcia",
+        "cxi" => "zcxi",
+        "3dsx" => "z3dsx",
+        _ => "zcci",
+    }
+}
+
+/// Extension de salida de un modo, sabiendo la de entrada.
+pub fn output_ext(mode: &str, input_ext: &str) -> Option<&'static str> {
+    match mode {
+        "z3dscompress" => Some(z3ds_ext(input_ext)),
+        "cci2cia" => Some("cia"),
+        "cia2cci" => Some("cci"),
+        _ => None,
+    }
+}
+
+pub fn suggest_mode(ext: &str) -> &'static str {
+    match ext {
+        "cia" => "cia2cci",
+        _ => "z3dscompress",
+    }
+}
+
+// ------------------------------------------------------------------ claves
+
+#[derive(Debug, Clone, Serialize)]
+pub struct KeysStatus {
+    /// boot9.bin, que necesita 3dsconv
+    pub boot9: Option<String>,
+    /// aes_keys.txt, que necesita cia-to-cci
+    pub aes_keys: Option<String>,
+    pub expected_dir: String,
+}
+
+fn first_existing(paths: &[PathBuf]) -> Option<PathBuf> {
+    paths.iter().find(|p| p.is_file()).cloned()
+}
+
+/// Resuelve un archivo de claves: la ruta elegida a mano (archivo o carpeta que
+/// lo contiene) tiene prioridad sobre la carpeta por defecto.
+fn resolve(custom: &Option<String>, names: &[&str], fallback_dir: &PathBuf) -> Option<PathBuf> {
+    if let Some(c) = custom {
+        let p = PathBuf::from(c);
+        if p.is_file() {
+            return Some(p);
+        }
+        if let Some(found) = first_existing(&names.iter().map(|n| p.join(n)).collect::<Vec<_>>()) {
+            return Some(found);
+        }
+    }
+    first_existing(&names.iter().map(|n| fallback_dir.join(n)).collect::<Vec<_>>())
+}
+
+pub fn boot9_path(s: &Settings) -> Option<PathBuf> {
+    let d = dirs::home_dir().unwrap_or_default().join(".3ds");
+    resolve(&s.boot9_path, &["boot9.bin", "boot9_prot.bin"], &d)
+}
+
+pub fn aes_keys_path(s: &Settings) -> Option<PathBuf> {
+    let d = dirs::home_dir().unwrap_or_default().join(".3ds");
+    resolve(&s.aes_keys_path, &["aes_keys.txt"], &d)
+}
+
+pub fn keys_status(s: &Settings) -> KeysStatus {
+    let d = dirs::home_dir().unwrap_or_default().join(".3ds");
+    KeysStatus {
+        boot9: boot9_path(s).map(|p| p.to_string_lossy().to_string()),
+        aes_keys: aes_keys_path(s).map(|p| p.to_string_lossy().to_string()),
+        expected_dir: d.to_string_lossy().to_string(),
+    }
+}
+
+// ------------------------------------------------------------- argumentos
+
+/// `z3ds_compressor <entrada> [salida]`. Le pasamos siempre la salida explicita
+/// para que un `.3ds` acabe como `.zcci` y no como un `.z3ds` que Azahar ignora.
+pub fn z3ds_args(input: &str, output: &str) -> Vec<String> {
+    vec![input.to_string(), output.to_string()]
+}
+
+/// `3dsconv --output=<dir> [--overwrite] [--boot9=<ruta>] <entrada>`
+pub fn conv_args(input: &str, out_dir: &str, s: &Settings) -> Vec<String> {
+    let mut a = vec![format!("--output={out_dir}")];
+    if s.overwrite {
+        a.push("--overwrite".into());
+    }
+    if let Some(b9) = boot9_path(s) {
+        a.push(format!("--boot9={}", b9.display()));
+    }
+    a.push(input.to_string());
+    a
+}
+
+// ------------------------------------------------------- CIA -> CCI
+
+/// `ctrtool --contents=<carpeta> <entrada.cia>`
+pub fn ctrtool_args(input: &str, contents_dir: &str) -> Vec<String> {
+    vec![format!("--contents={contents_dir}"), input.to_string()]
+}
+
+/// ctrtool no tiene bandera para las claves: siempre lee `boot9.bin` de
+/// `<HOME>/.3ds/`. Para respetar la ruta que haya elegido el usuario le
+/// preparamos un HOME temporal con una copia del archivo dentro.
+pub fn prepare_ctrtool_home(s: &Settings, work: &PathBuf) -> Option<PathBuf> {
+    let b9 = boot9_path(s)?;
+    let home = work.join("home");
+    let d = home.join(".3ds");
+    std::fs::create_dir_all(&d).ok()?;
+    std::fs::copy(&b9, d.join("boot9.bin")).ok()?;
+    Some(home)
+}
+
+/// Lee la carpeta que dejo ctrtool y empareja cada archivo con su indice.
+///
+/// ctrtool nombra el contenido empezando por el indice (`0000.<id>.ncch`), asi
+/// que se intenta leerlo del nombre; si no hay forma, se usa el orden alfabetico.
+pub fn collect_contents(dir: &PathBuf) -> Vec<(PathBuf, u32)> {
+    let Ok(rd) = std::fs::read_dir(dir) else {
+        return vec![];
+    };
+
+    let mut files: Vec<PathBuf> = rd
+        .flatten()
+        .map(|e| e.path())
+        .filter(|p| p.is_file())
+        .filter(|p| {
+            // Nos quedamos solo con el contenido, no con el ticket ni el TMD
+            let n = p
+                .file_name()
+                .map(|f| f.to_string_lossy().to_lowercase())
+                .unwrap_or_default();
+            !n.contains("tmd") && !n.contains("tik") && !n.contains("cert") && !n.contains("footer")
+        })
+        .collect();
+
+    files.sort();
+
+    files
+        .into_iter()
+        .enumerate()
+        .map(|(pos, p)| {
+            let idx = p
+                .file_name()
+                .and_then(|f| f.to_str())
+                .and_then(|f| f.split('.').next())
+                .and_then(|head| u32::from_str_radix(head, 16).ok())
+                .unwrap_or(pos as u32);
+            (p, idx)
+        })
+        .collect()
+}
+
+/// `makerom -f cci -o <salida> -content <archivo>:<indice> ...`
+pub fn makerom_args(output: &str, contents: &[(PathBuf, u32)]) -> Vec<String> {
+    let mut a = vec!["-f".into(), "cci".into(), "-o".into(), output.to_string()];
+    for (path, idx) in contents {
+        a.push("-content".into());
+        a.push(format!("{}:{}", path.display(), idx));
+    }
+    a
+}

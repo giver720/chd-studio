@@ -1,0 +1,15 @@
+node_modules
+dist
+node_modules/.tmp
+src-tauri/target
+src-tauri/gen/schemas
+.DS_Store
+
+# Las herramientas de terceros se descargan al preparar una version.
+# No se guardan en el repositorio: usa `npm run tools:fetch` y `npm run chdman`.
+src-tauri/binaries/*
+!src-tauri/binaries/LEEME.txt
+
+# Clave privada de firma del actualizador: NUNCA debe subirse
+*.key
+.tauri/
