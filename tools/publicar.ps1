@@ -92,7 +92,14 @@ $manifest = [ordered]@{
         }
     }
 }
-$manifest | ConvertTo-Json -Depth 6 | Out-File (Join-Path $out "latest.json") -Encoding utf8
+# Sin BOM: Out-File -Encoding utf8 mete EF BB BF y el actualizador de Tauri no
+# sabe leer un JSON que empiece por ahi ("error decoding response body")
+$json = $manifest | ConvertTo-Json -Depth 6
+[System.IO.File]::WriteAllText(
+    (Join-Path $out "latest.json"),
+    $json,
+    (New-Object System.Text.UTF8Encoding $false)
+)
 
 Copy-Item $setup.FullName $out -Force
 
