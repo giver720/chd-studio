@@ -109,6 +109,7 @@ export interface Settings {
   nsz_level: number;
   nsz_threads: number;
   xbox_trim: boolean;
+  xbox_skip_update: boolean;
   ps3_split_fat32: boolean;
 }
 

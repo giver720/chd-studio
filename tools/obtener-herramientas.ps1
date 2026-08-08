@@ -30,7 +30,8 @@ $tools = @(
     @{ id = "z3ds";     repo = "energeticokay/z3ds_compress";  asset = "windows";    tag = "";        exe = "z3ds_compressor.exe" },
     @{ id = "4nxci";    repo = "tetj/4NXCI-2026";              asset = ".exe";       tag = "";        exe = "4nxci.exe" },
     @{ id = "ps3iso";   repo = "bucanero/ps3iso-utils";        asset = "Win64";      tag = "";        exe = "extractps3iso.exe" },
-    @{ id = "maxcso";   repo = "unknownbrackets/maxcso";       asset = "windows.7z"; tag = "";        exe = "maxcso.exe" }
+    @{ id = "maxcso";   repo = "unknownbrackets/maxcso";       asset = "windows.7z"; tag = "";        exe = "maxcso.exe" },
+    @{ id = "xiso";     repo = "XboxDev/extract-xiso";         asset = "Win64_Release"; tag = "";     exe = "extract-xiso.exe" }
 )
 
 $notas = @()

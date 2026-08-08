@@ -14,6 +14,7 @@ import {
 import { useEffect, useState } from "react";
 import { api } from "../lib/api";
 import { bytes } from "../lib/format";
+import { XBOX_OPS, opById } from "../lib/xbox";
 import { useStore } from "../store";
 import { DropZone } from "./DropZone";
 import { Toggle } from "./ui";
@@ -28,6 +29,7 @@ export function XboxView({ dragging }: { dragging: boolean }) {
     refreshTools,
     consoleFiles,
     addConsoleFiles,
+    setConsoleOp,
     removeConsoleFile,
     clearConsoleFiles,
   } = useStore();
@@ -42,8 +44,10 @@ export function XboxView({ dragging }: { dragging: boolean }) {
     refreshTools();
   }, []);
 
-  const iso2god = tools.find((t) => t.id === "iso2god");
-  const missing = iso2god && !iso2god.found;
+  // Cada operación usa su herramienta, así que solo se avisa de la que falte
+  const needed = new Set(files.map((f) => opById(f.op).tool));
+  const missingTools = tools.filter((t) => needed.has(t.id) && !t.found);
+  const missing = missingTools.length > 0;
 
   async function handlePaths(paths: string[]) {
     const infos = await api.inspectPaths(paths);
@@ -77,7 +81,7 @@ export function XboxView({ dragging }: { dragging: boolean }) {
 
   async function run() {
     if (!files.length) return;
-    await api.addJobs(files.map((f) => ({ input: f.path, mode: "iso2god", system: "xbox360" })));
+    await api.addJobs(files.map((f) => ({ input: f.path, mode: f.op, system: "xbox360" })));
     clearConsoleFiles("xbox360");
     await refreshJobs();
     notify("ok", `${files.length} ${files.length === 1 ? "conversión" : "conversiones"} en cola`);
@@ -113,9 +117,11 @@ export function XboxView({ dragging }: { dragging: boolean }) {
         <div className="mb-4 flex items-start gap-3 rounded-xl border border-amber-400/25 bg-amber-400/[0.07] p-3.5">
           <AlertTriangle size={17} className="mt-0.5 shrink-0 text-amber-400" />
           <div className="min-w-0 flex-1">
-            <p className="text-[0.8rem] font-medium">Falta iso2god</p>
+            <p className="text-[0.8rem] font-medium">
+              Falta {missingTools.map((m) => m.name).join(" y ")}
+            </p>
             <p className="mt-1 text-[0.7rem] leading-relaxed text-[var(--color-muted)]">
-              Es un único ejecutable de 1 MB. CHD Studio puede descargarlo por ti.
+              CHD Studio puede descargarlo por ti; son ejecutables de un par de MB.
             </p>
           </div>
           <button
@@ -140,8 +146,14 @@ export function XboxView({ dragging }: { dragging: boolean }) {
         <Toggle
           checked={settings.xbox_trim}
           onChange={(v) => patchSettings({ xbox_trim: v })}
-          label="Recortar el espacio vacío"
+          label="Recortar el espacio vacío (GOD)"
           hint="Los discos de Xbox 360 llevan una zona de relleno enorme que no hace falta. Aquí es donde está casi todo el ahorro."
+        />
+        <Toggle
+          checked={settings.xbox_skip_update}
+          onChange={(v) => patchSettings({ xbox_skip_update: v })}
+          label="Omitir $SystemUpdate al extraer"
+          hint="Es el actualizador de firmware que trae el disco. No hace falta para jugar y suele ocupar bastante."
         />
         <div className="mt-2 flex items-center gap-3 px-3">
           <label className="text-[0.72rem] font-medium text-[var(--color-muted)]">
@@ -191,6 +203,17 @@ export function XboxView({ dragging }: { dragging: boolean }) {
                       {titles[f.path] && ` · ${titles[f.path]}`}
                     </span>
                   </span>
+                  <select
+                    className="field w-[170px] shrink-0 py-1.5 text-xs"
+                    value={f.op}
+                    onChange={(e) => setConsoleOp("xbox360", f.path, e.target.value)}
+                  >
+                    {XBOX_OPS.map((o) => (
+                      <option key={o.id} value={o.id} title={o.desc}>
+                        {o.label}
+                      </option>
+                    ))}
+                  </select>
                   <button
                     onClick={() => removeConsoleFile("xbox360", f.path)}
                     className="btn btn-quiet btn-danger px-2 py-1 opacity-0 group-hover:opacity-100"
@@ -204,39 +227,44 @@ export function XboxView({ dragging }: { dragging: boolean }) {
         </>
       ) : (
         <div className="mt-6">
-          <h2 className="mb-2 text-[0.8rem] font-semibold">Qué es GOD</h2>
-          <div className="grid grid-cols-3 gap-2">
-            {[
-              {
-                t: "Formato nativo",
-                d: "Games On Demand es como la consola guarda los juegos de la tienda, así que no hace falta parchear nada.",
-              },
-              {
-                t: "Troceado en 1 GB",
-                d: "Al partirse en trozos cabe en discos formateados en FAT32, que no admiten archivos de más de 4 GB.",
-              },
-              {
-                t: "Sin relleno",
-                d: "Con «Recortar» se tira la zona vacía del disco original, que en muchos juegos son varios GB.",
-              },
-            ].map((c) => (
-              <div key={c.t} className="glass rounded-xl p-3">
-                <p className="text-[0.78rem] font-semibold">{c.t}</p>
-                <p className="mt-1 text-[0.68rem] leading-snug text-[var(--color-muted)]">{c.d}</p>
+          <h2 className="mb-2 text-[0.8rem] font-semibold">Qué formato elegir</h2>
+          <div className="grid grid-cols-2 gap-2">
+            {XBOX_OPS.map((o) => (
+              <div key={o.id} className="glass rounded-xl p-3.5">
+                <p className="text-[0.82rem] font-semibold">{o.label}</p>
+                <p className="mt-1 text-[0.7rem] leading-snug text-[var(--color-muted)]">{o.desc}</p>
               </div>
             ))}
           </div>
+
+          <div className="glass mt-2 rounded-xl p-3.5">
+            <p className="text-[0.78rem] font-semibold">Si un juego no arranca, prueba el otro</p>
+            <p className="mt-1 text-[0.7rem] leading-relaxed text-[var(--color-muted)]">
+              GOD ocupa menos y va en FAT32, pero <span className="text-[var(--color-ink)]">no todos
+              los juegos funcionan en ese formato</span>. La carpeta con el{" "}
+              <span className="mono">default.xex</span> es la opción compatible: es el juego tal cual
+              venía en el disco, y los lanzadores lo leen directamente.
+            </p>
+          </div>
+
           <p className="mt-3 text-[0.68rem] leading-relaxed text-[var(--color-faint)]">
-            Lo hace{" "}
+            Con{" "}
             <button
               className="underline"
               onClick={() => openUrl("https://github.com/iliazeus/iso2god-rs")}
             >
               iso2god
+            </button>{" "}
+            y{" "}
+            <button
+              className="underline"
+              onClick={() => openUrl("https://github.com/XboxDev/extract-xiso")}
+            >
+              extract-xiso
             </button>
-            . Ojo con una confusión habitual: <span className="mono">.xex</span> no es un formato al
-            que convertir, es el ejecutable que va dentro del ISO. Lo que se convierte de verdad es a
-            GOD.
+            , que reconoce los tres formatos de disco (XGD1, XGD2 y XGD3). Una aclaración:{" "}
+            <span className="mono">.xex</span> no es un formato al que convertir, es el ejecutable
+            que va dentro; lo que se hace es sacarlo del ISO junto al resto del juego.
           </p>
         </div>
       )}

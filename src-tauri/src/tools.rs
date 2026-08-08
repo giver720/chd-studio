@@ -143,6 +143,19 @@ pub const TOOLS: &[ToolSpec] = &[
         license: "MIT",
     },
     ToolSpec {
+        id: "xiso",
+        name: "extract-xiso",
+        exe: "extract-xiso",
+        kind: ToolKind::Github {
+            repo: "XboxDev/extract-xiso",
+            asset: "Win64_Release",
+            tag: "",
+        },
+        purpose: "Extrae ISOs de Xbox 360 a carpeta con default.xex",
+        family: "xbox360",
+        license: "Ver repositorio",
+    },
+    ToolSpec {
         id: "ps3iso",
         name: "ps3iso-utils",
         exe: "extractps3iso",

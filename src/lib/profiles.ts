@@ -363,6 +363,8 @@ export const MODE_LABELS: Record<string, string> = {
   cia2cci: "CIA → CCI",
   cci2cia: "CCI → CIA",
   iso2god: "ISO → GOD",
+  iso2folder: "ISO → carpeta",
+  folder2iso: "Carpeta → ISO",
   ps3extract: "ISO → carpeta",
   ps3build: "Carpeta → ISO",
   ps3split: "Partir para FAT32",

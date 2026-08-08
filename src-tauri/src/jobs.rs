@@ -136,6 +136,10 @@ fn build_args(job: &Job, s: &Settings) -> Vec<String> {
         "z3ds" => crate::threeds::z3ds_args(&job.input, &job.output),
         "3dsconv" => crate::threeds::conv_args(&job.input, &out_dir_of(job), s),
         "iso2god" => crate::xbox360::args(&job.input, &job.output, s),
+        "xiso" => match job.mode.as_str() {
+            "folder2iso" => crate::xbox360::build_args(&job.input, &job.output),
+            _ => crate::xbox360::extract_args(&job.input, &job.output, s),
+        },
         "maxcso" => crate::psp::args(&job.mode, &job.input, &job.output, s),
         "ps3iso" => match job.mode.as_str() {
             "ps3build" => crate::ps3::build_args(&job.input, &job.output, s.ps3_split_fat32),
@@ -159,7 +163,7 @@ fn writes_directory(tool: &str) -> bool {
 }
 
 fn mode_writes_directory(job: &Job) -> bool {
-    writes_directory(&job.tool) || job.mode == "ps3extract"
+    writes_directory(&job.tool) || job.mode == "ps3extract" || job.mode == "iso2folder"
 }
 
 /// Suma recursiva del contenido de una carpeta, para poder informar del tamaño.

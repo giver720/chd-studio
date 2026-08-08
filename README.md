@@ -123,6 +123,17 @@ indica dónde mirar.
 | Conversión | Herramienta | Notas |
 |---|---|---|
 | ISO → GOD | `iso2god` | Games On Demand, el formato de la tienda de la consola |
+| ISO → carpeta | `extract-xiso` | Saca el `default.xex` y todos los archivos del juego |
+| Carpeta → ISO | `extract-xiso` | El camino de vuelta |
+
+**Cuál usar.** GOD ocupa menos y va en discos FAT32, pero **no todos los juegos arrancan en ese
+formato**. La carpeta con el `default.xex` es la opción compatible: es el juego tal cual venía en el
+disco, y los lanzadores como Aurora o Freestyle Dash lo leen directamente. Si un juego falla en GOD,
+extráelo a carpeta.
+
+`extract-xiso` reconoce los tres formatos de disco de Xbox (XGD1, XGD2 y XGD3), así que sirve tanto
+para Xbox 360 como para Xbox original. Al extraer se omite `$SystemUpdate` por defecto, que es el
+actualizador de firmware del disco y no hace falta para jugar.
 
 GOD no es un archivo sino una carpeta con el juego troceado en partes de 1 GB, así que **cabe en
 discos formateados en FAT32** (que no admiten archivos de más de 4 GB) y la consola lo reconoce sin
@@ -137,9 +148,8 @@ comprobar que el ISO es válido antes de una conversión larga.
 `iso2god` también acepta ISOs de Xbox original.
 
 > **Sobre `.xex`:** no es un formato al que convertir, es el ejecutable que va *dentro* del ISO
-> (`default.xex`). Lo que se convierte de verdad es a GOD. Para extraer el contenido de un ISO de
-> Xbox 360 no hay una herramienta de línea de comandos mantenida: `extract-xiso` solo documenta
-> soporte para Xbox original, así que no se incluye.
+> (`default.xex`). Lo que se hace es sacarlo del ISO junto al resto del juego, que es justo lo que
+> hace «ISO → carpeta».
 
 ## PlayStation 3
 

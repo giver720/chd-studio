@@ -36,6 +36,8 @@ pub struct Settings {
     pub nsz_threads: u32,
     /// Recortar el espacio vacio del ISO al pasarlo a GOD.
     pub xbox_trim: bool,
+    /// Saltarse $SystemUpdate al extraer un ISO de Xbox a carpeta.
+    pub xbox_skip_update: bool,
     /// Partir los archivos grandes de PS3 en trozos de 4 GB para FAT32.
     pub ps3_split_fat32: bool,
 }
@@ -59,6 +61,7 @@ impl Default for Settings {
             nsz_level: 18,
             nsz_threads: 0,
             xbox_trim: true,
+            xbox_skip_update: true,
             ps3_split_fat32: false,
         }
     }

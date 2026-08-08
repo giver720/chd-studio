@@ -203,8 +203,14 @@ fn output_for(spec: &JobSpec, s: &Settings) -> (String, Option<String>) {
         .unwrap_or_else(|| input.parent().map(|p| p.to_path_buf()).unwrap_or_default());
     let stem = stem_of(&input);
 
-    // GOD no es un archivo: cada juego va a su propia carpeta
+    // GOD y la extraccion dan carpeta; reconstruir da un ISO
     if xbox360::is_mode(&spec.mode) {
+        if spec.mode == "folder2iso" {
+            return (
+                dir.join(format!("{stem}.iso")).to_string_lossy().to_string(),
+                None,
+            );
+        }
         return (dir.join(&stem).to_string_lossy().to_string(), None);
     }
 
@@ -277,7 +283,7 @@ fn add_jobs(app: AppHandle, state: State<AppState>, specs: Vec<JobSpec>) -> Vec<
         // Cada modo sabe que herramienta lo ejecuta
         let tool = switch::tool_for(&spec.mode)
             .or_else(|| threeds::tool_for(&spec.mode))
-            .or_else(|| xbox360::is_mode(&spec.mode).then_some(xbox360::MODE))
+            .or_else(|| xbox360::tool_for(&spec.mode))
             .or_else(|| ps3::tool_for(&spec.mode))
             .or_else(|| psp::is_mode(&spec.mode).then_some("maxcso"))
             .unwrap_or("chdman")

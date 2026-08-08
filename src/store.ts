@@ -121,6 +121,7 @@ const DEFAULT_SETTINGS: Settings = {
   nsz_level: 18,
   nsz_threads: 0,
   xbox_trim: true,
+  xbox_skip_update: true,
   ps3_split_fat32: false,
 };
 
