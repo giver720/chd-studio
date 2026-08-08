@@ -123,6 +123,7 @@ const DEFAULT_SETTINGS: Settings = {
   switch_keys_path: null,
   boot9_path: null,
   aes_keys_path: null,
+  seeddb_path: null,
   nsz_level: 18,
   nsz_threads: 0,
   xbox_trim: true,

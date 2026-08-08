@@ -372,8 +372,20 @@ async fn kill_pid(pid: u32) {
     }
 }
 
-/// CIA -> CCI no es un solo comando: hay que extraer el contenido con ctrtool
-/// y volver a montarlo con makerom, asi que lleva su propio recorrido.
+/// CIA -> CCI descifrado.
+///
+/// No basta con sacar el contenido y volver a empaquetarlo: dentro del CIA cada
+/// particion es un NCCH con su propio cifrado, y Azahar no sabe descifrar. Hay
+/// que deshacerlo aqui, y para eso hacen falta tres herramientas:
+///
+///   1. `ctrtool --contents`  saca las particiones (aun cifradas)
+///   2. `3dstool --header`    copia la cabecera NCCH, que va en claro
+///   3. `ctrtool --exefs...`  descifra las secciones con boot9 y la seeddb
+///   4. `3dstool -cvtf`       las vuelve a montar marcadas como no cifradas
+///   5. `makerom -f cci`      junta las particiones en el CCI final
+///
+/// Los intermedios se van borrando segun dejan de hacer falta: un juego grande
+/// llegaria a ocupar cuatro veces su tamano si se guardaran todos a la vez.
 async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
     let state = app.state::<AppState>();
 
@@ -389,26 +401,32 @@ async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
         }
     };
 
-    let Some(ctrtool) = crate::tools::locate("ctrtool", &s).map(|(p, _)| p) else {
-        return fail("Falta ctrtool. Instalalo desde Ajustes → Herramientas.".into());
-    };
-    let Some(makerom) = crate::tools::locate("makerom", &s).map(|(p, _)| p) else {
-        return fail("Falta makerom. Instalalo desde Ajustes → Herramientas.".into());
+    let paso = |texto: &str, pct: f32| {
+        let st = app.state::<AppState>();
+        if let Some(j) = st.update(&id, |j| {
+            j.phase = texto.to_string();
+            j.progress = pct;
+        }) {
+            emit_job(&app, &j);
+        }
     };
 
-    // Carpeta de trabajo propia para no dejar restos junto al juego
+    let Some(ctrtool) = crate::tools::locate("ctrtool", &s).map(|(p, _)| p) else {
+        return fail("Falta ctrtool. Instalalo desde Ajustes -> Herramientas.".into());
+    };
+    let Some(tresdstool) = crate::tools::locate("3dstool", &s).map(|(p, _)| p) else {
+        return fail("Falta 3dstool. Instalalo desde Ajustes -> Herramientas.".into());
+    };
+    let Some(makerom) = crate::tools::locate("makerom", &s).map(|(p, _)| p) else {
+        return fail("Falta makerom. Instalalo desde Ajustes -> Herramientas.".into());
+    };
+
     let work = std::env::temp_dir().join(format!("chd-studio-cia-{}", id));
     if let Err(e) = std::fs::create_dir_all(&work) {
         return fail(format!("No se pudo crear la carpeta temporal: {e}"));
     }
 
-    if let Some(j) = state.update(&id, |j| {
-        j.phase = "Extrayendo el CIA".into();
-        j.progress = 15.0;
-    }) {
-        emit_job(&app, &j);
-    }
-
+    // ctrtool solo lee boot9 de <HOME>/.3ds, asi que se le monta uno temporal
     let mut env: Vec<(&str, String)> = vec![];
     if let Some(home) = crate::threeds::prepare_ctrtool_home(&s, &work) {
         let h = home.to_string_lossy().to_string();
@@ -416,15 +434,12 @@ async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
         env.push(("USERPROFILE", h));
     }
 
+    paso("Extrayendo el CIA", 5.0);
     let args = crate::threeds::ctrtool_args(&job.input, &work);
     match chdman::run_capture_env(&ctrtool, &args, &env).await {
         Ok((false, out)) => {
             let _ = std::fs::remove_dir_all(&work);
-            let tail = out
-                .lines()
-                .rev()
-                .find(|l| !l.trim().is_empty())
-                .unwrap_or("ctrtool fallo");
+            let tail = out.lines().rev().find(|l| !l.trim().is_empty()).unwrap_or("ctrtool fallo");
             return fail(format!("ctrtool: {tail}"));
         }
         Err(e) => {
@@ -434,34 +449,102 @@ async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
         Ok((true, _)) => {}
     }
 
-    let parts = crate::threeds::collect_contents(&work);
-    if parts.is_empty() {
+    let partes = crate::threeds::collect_contents(&work);
+    if partes.is_empty() {
         let _ = std::fs::remove_dir_all(&work);
-        return fail(
-            "ctrtool leyo el CIA pero no extrajo contenido. Si el juego es de eShop puede necesitar \
-             boot9.bin o una seeddb; comprueba la ruta de las claves en esta misma pantalla."
-                .into(),
+        return fail("ctrtool no extrajo ningun contenido del CIA.".into());
+    }
+
+    // Cada particion se descifra y se vuelve a montar por separado
+    let total = partes.len().max(1);
+    let mut descifradas: Vec<(String, u32)> = vec![];
+
+    for (n, (nombre, idx)) in partes.iter().enumerate() {
+        let base = 10.0 + (n as f32 / total as f32) * 75.0;
+        let tipo = crate::threeds::tipo_particion(*idx);
+        let ncch = work.join(nombre);
+        let sec = work.join(format!("p{idx}"));
+        if let Err(e) = std::fs::create_dir_all(&sec) {
+            let _ = std::fs::remove_dir_all(&work);
+            return fail(format!("No se pudo crear la carpeta de trabajo: {e}"));
+        }
+
+        paso(&format!("Leyendo la particion {}", idx + 1), base);
+        let args = crate::threeds::header_args(
+            tipo,
+            &ncch.to_string_lossy(),
+            &sec.join("ncch.bin").to_string_lossy(),
         );
+        if let Ok((false, out)) = chdman::run_capture(&tresdstool, &args).await {
+            let _ = std::fs::remove_dir_all(&work);
+            let tail = out.lines().rev().find(|l| !l.trim().is_empty()).unwrap_or("");
+            return fail(format!("3dstool no pudo leer la cabecera: {tail}"));
+        }
+
+        paso(
+            &format!("Descifrando la particion {}", idx + 1),
+            base + 20.0 / total as f32,
+        );
+        let args = crate::threeds::split_args(&ncch.to_string_lossy(), &sec, &s);
+        match chdman::run_capture_env(&ctrtool, &args, &env).await {
+            Ok((_, out)) if out.to_lowercase().contains("unable to decrypt") => {
+                let _ = std::fs::remove_dir_all(&work);
+                let falta_seed = out.to_lowercase().contains("seed");
+                return fail(if falta_seed {
+                    "Este juego usa cifrado por semilla y no se encontro seeddb.bin. \
+                     Indicale su ruta en esta misma pantalla."
+                        .into()
+                } else {
+                    "No se pudo descifrar el contenido. Revisa que boot9.bin sea correcto."
+                        .to_string()
+                });
+            }
+            Err(e) => {
+                let _ = std::fs::remove_dir_all(&work);
+                return fail(format!("No se pudo descifrar: {e}"));
+            }
+            Ok(_) => {}
+        }
+
+        // El NCCH cifrado ya no hace falta y ocupa lo mismo que el juego
+        let _ = std::fs::remove_file(&ncch);
+
+        paso(
+            &format!("Rearmando la particion {}", idx + 1),
+            base + 45.0 / total as f32,
+        );
+        let salida = work.join(format!("dec{idx}.{tipo}"));
+        let args = crate::threeds::rebuild_args(tipo, &salida.to_string_lossy(), &sec);
+        match chdman::run_capture(&tresdstool, &args).await {
+            Ok((false, out)) => {
+                let _ = std::fs::remove_dir_all(&work);
+                let tail = out.lines().rev().find(|l| !l.trim().is_empty()).unwrap_or("");
+                return fail(format!("3dstool no pudo rearmar la particion: {tail}"));
+            }
+            Err(e) => {
+                let _ = std::fs::remove_dir_all(&work);
+                return fail(format!("No se pudo rearmar la particion: {e}"));
+            }
+            Ok((true, _)) => {}
+        }
+
+        let _ = std::fs::remove_dir_all(&sec);
+        descifradas.push((
+            salida.file_name().unwrap().to_string_lossy().to_string(),
+            *idx,
+        ));
     }
 
-    if let Some(j) = state.update(&id, |j| {
-        j.phase = format!("Montando el CCI ({} partes)", parts.len());
-        j.progress = 60.0;
-    }) {
-        emit_job(&app, &j);
-    }
-
+    paso("Montando el CCI", 88.0);
     if let Some(parent) = Path::new(&job.output).parent() {
         let _ = std::fs::create_dir_all(parent);
     }
 
-    // makerom se lanza dentro de la carpeta de trabajo porque parte sus
-    // argumentos por los dos puntos y una ruta como C:\... lo rompe
-    let args = crate::threeds::makerom_args(&job.output, &parts);
-    let result = chdman::run_capture_in(&makerom, &args, &[], Some(&work)).await;
+    let args = crate::threeds::makerom_args(&job.output, &descifradas);
+    let resultado = chdman::run_capture_in(&makerom, &args, &[], Some(&work)).await;
     let _ = std::fs::remove_dir_all(&work);
 
-    match result {
+    match resultado {
         Ok((true, _)) => {}
         Ok((false, out)) => {
             let tail = out
@@ -489,6 +572,7 @@ async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
         emit_job(&app, &j);
     }
 }
+
 
 /// Ejecuta un trabajo de principio a fin, emitiendo progreso al frontend.
 async fn run_job(app: AppHandle, id: String) {

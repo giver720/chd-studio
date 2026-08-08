@@ -70,10 +70,12 @@ pub fn suggest_mode(ext: &str) -> &'static str {
 
 #[derive(Debug, Clone, Serialize)]
 pub struct KeysStatus {
-    /// boot9.bin, que necesita 3dsconv
+    /// boot9.bin, la bootROM de la consola
     pub boot9: Option<String>,
-    /// aes_keys.txt, que necesita cia-to-cci
+    /// aes_keys.txt, para herramientas antiguas
     pub aes_keys: Option<String>,
+    /// seeddb.bin, imprescindible para los juegos con cifrado por semilla
+    pub seeddb: Option<String>,
     pub expected_dir: String,
 }
 
@@ -111,6 +113,7 @@ pub fn keys_status(s: &Settings) -> KeysStatus {
     KeysStatus {
         boot9: boot9_path(s).map(|p| p.to_string_lossy().to_string()),
         aes_keys: aes_keys_path(s).map(|p| p.to_string_lossy().to_string()),
+        seeddb: seeddb_path(s).map(|p| p.to_string_lossy().to_string()),
         expected_dir: d.to_string_lossy().to_string(),
     }
 }
@@ -140,6 +143,85 @@ pub fn conv_args(input: &str, out_dir: &str, s: &Settings) -> Vec<String> {
 
 /// Prefijo con el que ctrtool nombra el contenido que extrae.
 pub const PREFIJO: &str = "c";
+
+/// Las secciones en que se parte un NCCH. `arg` es como las llama ctrtool y
+/// `flag` como las llama 3dstool al reconstruir.
+pub const SECCIONES: &[(&str, &str, &str)] = &[
+    // (nombre de archivo, opcion de ctrtool, opcion de 3dstool)
+    ("exh.bin", "--exheader", "--exh"),
+    ("logo.bin", "--logo", "--logo"),
+    ("plain.bin", "--plainrgn", "--plain"),
+    ("exefs.bin", "--exefs", "--exefs"),
+    ("romfs.bin", "--romfs", "--romfs"),
+];
+
+pub fn seeddb_path(s: &Settings) -> Option<PathBuf> {
+    let d = dirs::home_dir().unwrap_or_default().join(".3ds");
+    resolve(&s.seeddb_path, &["seeddb.bin"], &d)
+}
+
+/// `3dstool -xvtf <tipo> <ncch> --header <salida>`
+///
+/// La cabecera NCCH va en claro, asi que se puede sacar del contenido cifrado.
+/// ctrtool no la exporta, de ahi que haga falta 3dstool tambien para esto.
+pub fn header_args(tipo: &str, ncch: &str, header: &str) -> Vec<String> {
+    vec![
+        "-xvtf".into(),
+        tipo.to_string(),
+        ncch.to_string(),
+        "--header".into(),
+        header.to_string(),
+    ]
+}
+
+/// `ctrtool [--seeddb=...] --exheader=... --exefs=... --romfs=... <ncch>`
+///
+/// Aqui es donde ocurre el descifrado de verdad: ctrtool usa boot9 y, para los
+/// juegos con cifrado por semilla, tambien la seeddb.
+pub fn split_args(ncch: &str, dir: &Path, s: &Settings) -> Vec<String> {
+    let mut a = vec![];
+    if let Some(sd) = seeddb_path(s) {
+        a.push(format!("--seeddb={}", sd.display()));
+    }
+    for (nombre, opt, _) in SECCIONES {
+        a.push(format!("{opt}={}", dir.join(nombre).display()));
+    }
+    a.push(ncch.to_string());
+    a
+}
+
+/// `3dstool -cvtf <tipo> <salida> --not-encrypt --header ... --exh ... [...]`
+///
+/// Solo se le pasan las secciones que ctrtool llego a escribir: no todos los
+/// contenidos tienen logo o region plana. `--not-encrypt` deja marcado en la
+/// cabecera que el resultado va sin cifrar, que es lo que espera Azahar.
+pub fn rebuild_args(tipo: &str, salida: &str, dir: &Path) -> Vec<String> {
+    let mut a = vec![
+        "-cvtf".to_string(),
+        tipo.to_string(),
+        salida.to_string(),
+        "--not-encrypt".into(),
+        "--header".into(),
+        dir.join("ncch.bin").to_string_lossy().to_string(),
+    ];
+    for (nombre, _, flag) in SECCIONES {
+        let f = dir.join(nombre);
+        if f.is_file() && std::fs::metadata(&f).map(|m| m.len()).unwrap_or(0) > 0 {
+            a.push(flag.to_string());
+            a.push(f.to_string_lossy().to_string());
+        }
+    }
+    a
+}
+
+/// La particion 0 lleva el ejecutable del juego; las demas son datos.
+pub fn tipo_particion(idx: u32) -> &'static str {
+    if idx == 0 {
+        "cxi"
+    } else {
+        "cfa"
+    }
+}
 
 /// `ctrtool --contents=<prefijo> <entrada.cia>`
 ///

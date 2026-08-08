@@ -80,15 +80,25 @@ export function ThreeDsView({ dragging }: { dragging: boolean }) {
       </div>
 
       {keys && (
-        <div className="mb-4">
+        <div className="mb-4 grid grid-cols-2 gap-2">
           <KeyPicker
             label={keys.boot9 ? "boot9.bin localizado" : "Falta boot9.bin"}
             file="boot9.bin"
             found={!!keys.boot9}
             path={keys.boot9}
-            hint="Convertir entre CIA y CCI exige el volcado de la bootROM de tu propia consola. Comprimir a Z3DS no la necesita. CHD Studio no la incluye ni te ayuda a obtenerla."
+            hint="La bootROM de tu propia consola. Hace falta para descifrar. Comprimir a Z3DS no la necesita."
             fallback={keys.expected_dir}
             settingKey="boot9_path"
+            onChange={refreshKeys}
+          />
+          <KeyPicker
+            label={keys.seeddb ? "seeddb.bin localizado" : "Falta seeddb.bin"}
+            file="seeddb.bin"
+            found={!!keys.seeddb}
+            path={keys.seeddb}
+            hint="Los juegos de eShop posteriores a 2015 llevan una semilla propia que no está en boot9. Sin este archivo no se pueden descifrar."
+            fallback={keys.expected_dir}
+            settingKey="seeddb_path"
             onChange={refreshKeys}
           />
         </div>

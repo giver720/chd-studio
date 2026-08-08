@@ -25,6 +25,7 @@ New-Item -ItemType Directory -Force $tmp | Out-Null
 $tools = @(
     @{ id = "iso2god";  repo = "iliazeus/iso2god-rs";          asset = "windows";    tag = "";        exe = "iso2god.exe" },
     @{ id = "3dsconv";  repo = "ihaveamac/3dsconv";            asset = ".exe";       tag = "";        exe = "3dsconv.exe" },
+    @{ id = "3dstool";  repo = "dnasdw/3dstool";               asset = "3dstool.zip"; tag = "";      exe = "3dstool.exe" },
     @{ id = "ctrtool";  repo = "3DSGuy/Project_CTR";           asset = "win_x64";    tag = "ctrtool"; exe = "ctrtool.exe" },
     @{ id = "makerom";  repo = "3DSGuy/Project_CTR";           asset = "win_x86_64"; tag = "makerom"; exe = "makerom.exe" },
     @{ id = "z3ds";     repo = "energeticokay/z3ds_compress";  asset = "windows";    tag = "";        exe = "z3ds_compressor.exe" },

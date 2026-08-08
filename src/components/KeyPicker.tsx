@@ -25,7 +25,7 @@ export function KeyPicker({
   path: string | null;
   hint: string;
   fallback: string;
-  settingKey: keyof Pick<Settings, "switch_keys_path" | "boot9_path" | "aes_keys_path">;
+  settingKey: keyof Pick<Settings, "switch_keys_path" | "boot9_path" | "aes_keys_path" | "seeddb_path">;
   onChange: () => void;
 }) {
   const { settings, patchSettings } = useStore();

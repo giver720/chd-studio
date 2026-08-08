@@ -90,6 +90,7 @@ export interface KeysStatus {
 export interface ThreeDsKeys {
   boot9: string | null;
   aes_keys: string | null;
+  seeddb: string | null;
   expected_dir: string;
 }
 
@@ -107,6 +108,7 @@ export interface Settings {
   switch_keys_path: string | null;
   boot9_path: string | null;
   aes_keys_path: string | null;
+  seeddb_path: string | null;
   nsz_level: number;
   nsz_threads: number;
   xbox_trim: boolean;

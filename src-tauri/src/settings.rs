@@ -30,6 +30,8 @@ pub struct Settings {
     pub boot9_path: Option<String>,
     /// Ruta elegida a mano para aes_keys.txt (3DS).
     pub aes_keys_path: Option<String>,
+    /// Ruta a seeddb.bin, que hace falta para los juegos con cifrado por semilla.
+    pub seeddb_path: Option<String>,
     /// Nivel de compresion para nsz (por defecto 18; el maximo util es 22).
     pub nsz_level: u8,
     /// Reservar mas hilos a nsz; 0 = automatico.
@@ -64,6 +66,7 @@ impl Default for Settings {
             switch_keys_path: None,
             boot9_path: None,
             aes_keys_path: None,
+            seeddb_path: None,
             nsz_level: 18,
             nsz_threads: 0,
             xbox_trim: true,

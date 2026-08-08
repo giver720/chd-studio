@@ -107,6 +107,19 @@ pub const TOOLS: &[ToolSpec] = &[
         license: "MIT",
     },
     ToolSpec {
+        id: "3dstool",
+        name: "3dstool",
+        exe: "3dstool",
+        kind: ToolKind::Github {
+            repo: "dnasdw/3dstool",
+            asset: "3dstool.zip",
+            tag: "",
+        },
+        purpose: "Reconstruye el contenido de 3DS ya descifrado",
+        family: "3ds",
+        license: "MIT",
+    },
+    ToolSpec {
         id: "ctrtool",
         name: "ctrtool",
         exe: "ctrtool",
