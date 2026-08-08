@@ -1,11 +1,11 @@
 import { open } from "@tauri-apps/plugin-dialog";
 import { AnimatePresence, motion } from "framer-motion";
-import { AlertTriangle, FolderInput, Gauge, Loader2, Package2, Play, Trash2, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { AlertTriangle, FolderInput, Package2, Play, Trash2, X } from "lucide-react";
+import { useEffect } from "react";
 import { api } from "../lib/api";
 import { bytes } from "../lib/format";
 import { PRESETS } from "../lib/profiles";
-import { PSP_EXT, PSP_OPS, opsFor, parseMeasure } from "../lib/psp";
+import { PSP_EXT, PSP_OPS, opsFor } from "../lib/psp";
 import { useStore } from "../store";
 import type { Preset } from "../lib/profiles";
 import { DropZone } from "./DropZone";
@@ -27,10 +27,6 @@ export function PspView({ dragging }: { dragging: boolean }) {
   } = useStore();
   const files = consoleFiles.psp;
 
-  /** Resultado de --measure por archivo, para enseñar el ahorro sin convertir. */
-  const [measured, setMeasured] = useState<Record<string, string>>({});
-  const [measuring, setMeasuring] = useState(false);
-
   useEffect(() => {
     refreshTools();
   }, []);
@@ -48,22 +44,6 @@ export function PspView({ dragging }: { dragging: boolean }) {
     addConsoleFiles("psp", ok);
   }
 
-  /** Calcula cuánto ocuparía cada archivo sin llegar a escribir nada. */
-  async function measureAll() {
-    setMeasuring(true);
-    const found: Record<string, string> = {};
-    for (const f of files) {
-      if (f.op === "cso2iso") continue;
-      try {
-        found[f.path] = parseMeasure(await api.pspMeasure(f.path, f.op)) ?? "sin datos";
-      } catch (e) {
-        found[f.path] = `no se pudo medir: ${e}`;
-      }
-    }
-    setMeasured((m) => ({ ...m, ...found }));
-    setMeasuring(false);
-  }
-
   async function run() {
     if (!files.length) return;
     await api.addJobs(files.map((f) => ({ input: f.path, mode: f.op, system: "psp" })));
@@ -71,8 +51,6 @@ export function PspView({ dragging }: { dragging: boolean }) {
     await refreshJobs();
     notify("ok", `${files.length} ${files.length === 1 ? "trabajo encolado" : "trabajos encolados"}`);
   }
-
-  const comprimibles = files.filter((f) => f.op !== "cso2iso").length;
 
   return (
     <div className="scroll flex-1 p-5">
@@ -86,12 +64,6 @@ export function PspView({ dragging }: { dragging: boolean }) {
           </p>
         </div>
         <div className="flex gap-2">
-          {comprimibles > 0 && (
-            <button className="btn btn-ghost" onClick={measureAll} disabled={measuring || !!missing}>
-              {measuring ? <Loader2 size={15} className="animate-spin" /> : <Gauge size={15} />}
-              Medir ahorro
-            </button>
-          )}
           {files.length > 0 && (
             <button className="btn btn-primary" onClick={run} disabled={!!missing}>
               <Play size={15} /> Convertir {files.length}
@@ -138,6 +110,10 @@ export function PspView({ dragging }: { dragging: boolean }) {
             onChange={(v) => patchSettings({ preset: v })}
             options={PRESETS.map((p) => ({ id: p.id, label: p.name, hint: p.desc }))}
           />
+          <p className="mt-1.5 text-[0.64rem] leading-snug text-[var(--color-faint)]">
+            En un UMD de 1,5 GB: Rápida deja el 33,3 % en 8 s; las otras dos, el 33,1 % en 100 s.
+            Para PSP la diferencia es mínima, así que Rápida casi siempre compensa.
+          </p>
         </div>
         <div className="min-w-[220px] flex-1">
           <label className="mb-1.5 block text-[0.68rem] font-medium text-[var(--color-muted)]">
@@ -184,9 +160,6 @@ export function PspView({ dragging }: { dragging: boolean }) {
                     <span className="block truncate text-[0.82rem] font-medium">{f.name}</span>
                     <span className="block truncate text-[0.68rem] text-[var(--color-faint)]">
                       {f.ext.toUpperCase()} · {bytes(f.size)}
-                      {measured[f.path] && (
-                        <span className="text-emerald-400"> · {measured[f.path]}</span>
-                      )}
                     </span>
                   </span>
                   <select

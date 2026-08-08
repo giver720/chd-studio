@@ -50,18 +50,3 @@ export function opsFor(ext: string): PspOp[] {
 export function defaultOp(ext: string): string {
   return ext === "iso" ? "iso2cso" : "cso2iso";
 }
-
-/**
- * maxcso escribe el resultado de --measure en una línea con el tamaño y el
- * porcentaje. Se saca el porcentaje para enseñar el ahorro.
- */
-export function parseMeasure(text: string): string | null {
-  const pct = [...text.matchAll(/([\d.]+)\s*%/g)].pop();
-  if (pct) return `quedaría en el ${pct[1]} %`;
-  const line = text
-    .split(/\r?\n/)
-    .map((l) => l.trim())
-    .filter(Boolean)
-    .pop();
-  return line ?? null;
-}

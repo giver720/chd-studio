@@ -58,12 +58,19 @@ pub fn args(mode: &str, input: &str, output: &str, s: &Settings) -> Vec<String> 
     } else if let Some(f) = formato(mode) {
         a.push(format!("--format={f}"));
 
-        // El preset general de la app decide cuanto esfuerzo se le mete
+        // El preset general de la app decide cuanto esfuerzo se le mete.
+        //
+        // Medido sobre un UMD de 1,47 GB:
+        //   --fast                        33,3 %   en   8 s
+        //   por defecto                   33,1 %   en  99 s
+        //   con 7zdeflate y libdeflate    33,1 %   en  98 s
+        //   anadiendo zopfli                 ?     en ~25 min
+        //
+        // Por eso zopfli no se usa: multiplica por veinte el tiempo para ganar,
+        // como mucho, una fraccion de punto.
         match s.preset.as_str() {
             "fast" => a.push("--fast".into()),
             "max" => {
-                // Zopfli aprieta mas que zlib a costa de tardar bastante mas
-                a.push("--use-zopfli".into());
                 a.push("--use-7zdeflate".into());
                 a.push("--use-libdeflate".into());
             }
@@ -81,12 +88,6 @@ pub fn args(mode: &str, input: &str, output: &str, s: &Settings) -> Vec<String> 
     a
 }
 
-/// Argumentos para calcular cuanto ocuparia sin llegar a escribir nada.
-pub fn measure_args(input: &str, mode: &str) -> Vec<String> {
-    let mut a = vec!["--measure".to_string()];
-    if let Some(f) = formato(mode) {
-        a.push(format!("--format={f}"));
-    }
-    a.push(input.to_string());
-    a
-}
+// No hay funcion para `--measure`: maxcso solo escribe su resultado cuando la
+// salida es una consola de verdad. Desde la aplicacion nunca devuelve nada, ni
+// siquiera redirigiendolo a un archivo, asi que la opcion se retiro.

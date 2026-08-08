@@ -536,28 +536,6 @@ fn threeds_keys_status(state: State<AppState>) -> threeds::KeysStatus {
     threeds::keys_status(&s)
 }
 
-/// Calcula cuanto ocuparia el archivo comprimido, sin llegar a escribirlo.
-#[tauri::command]
-async fn psp_measure(
-    state: State<'_, AppState>,
-    path: String,
-    mode: String,
-) -> Result<String, String> {
-    let s = state.settings.lock().unwrap().clone();
-    let exe = tools::locate("maxcso", &s)
-        .map(|(p, _)| p)
-        .ok_or("Falta maxcso. Instalalo desde Ajustes → Herramientas.")?;
-
-    let (ok, text) = chdman::run_capture(&exe, &psp::measure_args(&path, &mode))
-        .await
-        .map_err(|e| e.to_string())?;
-
-    if !ok && text.trim().is_empty() {
-        return Err("maxcso no pudo leer ese archivo".into());
-    }
-    Ok(text)
-}
-
 /// Lee una carpeta de juego de PS3 extraida y clasifica lo que hay dentro.
 #[tauri::command]
 fn ps3_scan(dir: String) -> ps3::Ps3Scan {
@@ -655,7 +633,6 @@ pub fn run() {
             xbox_probe,
             ps3_scan,
             ps3_trim,
-            psp_measure,
             app_paths,
             reveal
         ])

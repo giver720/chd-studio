@@ -49,5 +49,4 @@ export const api = {
   appPaths: () => invoke<{ portable: boolean; config_dir: string }>("app_paths"),
   ps3Scan: (dir: string) => invoke<Ps3Scan>("ps3_scan", { dir }),
   ps3Trim: (dir: string, paths: string[]) => invoke<TrimResult>("ps3_trim", { dir, paths }),
-  pspMeasure: (path: string, mode: string) => invoke<string>("psp_measure", { path, mode }),
 };
