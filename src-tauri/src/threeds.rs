@@ -12,7 +12,7 @@
 
 use crate::settings::Settings;
 use serde::Serialize;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 /// (modo, herramienta, extension de salida)
 pub const MODES: &[(&str, &str, &str)] = &[
@@ -138,9 +138,20 @@ pub fn conv_args(input: &str, out_dir: &str, s: &Settings) -> Vec<String> {
 
 // ------------------------------------------------------- CIA -> CCI
 
-/// `ctrtool --contents=<carpeta> <entrada.cia>`
-pub fn ctrtool_args(input: &str, contents_dir: &str) -> Vec<String> {
-    vec![format!("--contents={contents_dir}"), input.to_string()]
+/// Prefijo con el que ctrtool nombra el contenido que extrae.
+pub const PREFIJO: &str = "c";
+
+/// `ctrtool --contents=<prefijo> <entrada.cia>`
+///
+/// Ojo: `--contents` NO es una carpeta aunque lo parezca. ctrtool lo usa como
+/// prefijo y escribe `<prefijo>.<indice>.<id>`, asi que si se le pasa una
+/// carpeta los archivos acaban al lado de ella, no dentro.
+pub fn ctrtool_args(input: &str, work_dir: &Path) -> Vec<String> {
+    let prefijo = work_dir.join(PREFIJO);
+    vec![
+        format!("--contents={}", prefijo.display()),
+        input.to_string(),
+    ]
 }
 
 /// ctrtool no tiene bandera para las claves: siempre lee `boot9.bin` de
@@ -155,52 +166,46 @@ pub fn prepare_ctrtool_home(s: &Settings, work: &PathBuf) -> Option<PathBuf> {
     Some(home)
 }
 
-/// Lee la carpeta que dejo ctrtool y empareja cada archivo con su indice.
-///
-/// ctrtool nombra el contenido empezando por el indice (`0000.<id>.ncch`), asi
-/// que se intenta leerlo del nombre; si no hay forma, se usa el orden alfabetico.
-pub fn collect_contents(dir: &PathBuf) -> Vec<(PathBuf, u32)> {
-    let Ok(rd) = std::fs::read_dir(dir) else {
+/// Recoge lo que dejo ctrtool: archivos `c.<indice>.<id>` en la carpeta de
+/// trabajo. Devuelve solo el nombre, porque makerom se ejecuta con esa carpeta
+/// como directorio actual (ver `makerom_args`).
+pub fn collect_contents(work_dir: &Path) -> Vec<(String, u32)> {
+    let Ok(rd) = std::fs::read_dir(work_dir) else {
         return vec![];
     };
 
-    let mut files: Vec<PathBuf> = rd
+    let mut encontrados: Vec<(String, u32)> = rd
         .flatten()
         .map(|e| e.path())
         .filter(|p| p.is_file())
-        .filter(|p| {
-            // Nos quedamos solo con el contenido, no con el ticket ni el TMD
-            let n = p
-                .file_name()
-                .map(|f| f.to_string_lossy().to_lowercase())
-                .unwrap_or_default();
-            !n.contains("tmd") && !n.contains("tik") && !n.contains("cert") && !n.contains("footer")
+        .filter_map(|p| {
+            let nombre = p.file_name()?.to_str()?.to_string();
+            let mut partes = nombre.split('.');
+            // Solo lo que empiece por el prefijo que le dimos a ctrtool
+            if partes.next()? != PREFIJO {
+                return None;
+            }
+            let idx = u32::from_str_radix(partes.next()?, 16).ok()?;
+            Some((nombre, idx))
         })
         .collect();
 
-    files.sort();
-
-    files
-        .into_iter()
-        .enumerate()
-        .map(|(pos, p)| {
-            let idx = p
-                .file_name()
-                .and_then(|f| f.to_str())
-                .and_then(|f| f.split('.').next())
-                .and_then(|head| u32::from_str_radix(head, 16).ok())
-                .unwrap_or(pos as u32);
-            (p, idx)
-        })
-        .collect()
+    encontrados.sort_by_key(|(_, idx)| *idx);
+    encontrados
 }
 
-/// `makerom -f cci -o <salida> -content <archivo>:<indice> ...`
-pub fn makerom_args(output: &str, contents: &[(PathBuf, u32)]) -> Vec<String> {
+/// `makerom -f cci -o <salida> -content <archivo>:<indice>:<id> ...`
+///
+/// Dos cosas que la ayuda de makerom no cuenta bien:
+///   * para CCI tambien hacen falta los tres campos, no solo `archivo:indice`;
+///   * parte el argumento por los dos puntos, asi que una ruta absoluta de
+///     Windows (`C:\...`) lo rompe. Por eso se pasan nombres relativos y el
+///     proceso se lanza con la carpeta de trabajo como directorio actual.
+pub fn makerom_args(output: &str, contents: &[(String, u32)]) -> Vec<String> {
     let mut a = vec!["-f".into(), "cci".into(), "-o".into(), output.to_string()];
-    for (path, idx) in contents {
+    for (nombre, idx) in contents {
         a.push("-content".into());
-        a.push(format!("{}:{}", path.display(), idx));
+        a.push(format!("{nombre}:{idx}:{idx}"));
     }
     a
 }

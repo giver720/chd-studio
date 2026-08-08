@@ -272,7 +272,21 @@ pub async fn run_capture_env(
     args: &[String],
     env: &[(&str, String)],
 ) -> anyhow::Result<(bool, String)> {
+    run_capture_in(exe, args, env, None).await
+}
+
+/// Como `run_capture_env` pero ademas permite fijar el directorio de trabajo,
+/// que hace falta para poder pasarle rutas relativas a makerom.
+pub async fn run_capture_in(
+    exe: &Path,
+    args: &[String],
+    env: &[(&str, String)],
+    cwd: Option<&Path>,
+) -> anyhow::Result<(bool, String)> {
     let mut cmd = tokio::process::Command::new(exe);
+    if let Some(d) = cwd {
+        cmd.current_dir(d);
+    }
     // stdin cerrado a proposito: varias de estas herramientas piden datos por
     // teclado si no entienden los argumentos, y sin esto se quedan colgadas
     cmd.args(args)

@@ -382,8 +382,7 @@ async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
 
     // Carpeta de trabajo propia para no dejar restos junto al juego
     let work = std::env::temp_dir().join(format!("chd-studio-cia-{}", id));
-    let contents = work.join("contents");
-    if let Err(e) = std::fs::create_dir_all(&contents) {
+    if let Err(e) = std::fs::create_dir_all(&work) {
         return fail(format!("No se pudo crear la carpeta temporal: {e}"));
     }
 
@@ -401,7 +400,7 @@ async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
         env.push(("USERPROFILE", h));
     }
 
-    let args = crate::threeds::ctrtool_args(&job.input, &contents.to_string_lossy());
+    let args = crate::threeds::ctrtool_args(&job.input, &work);
     match chdman::run_capture_env(&ctrtool, &args, &env).await {
         Ok((false, out)) => {
             let _ = std::fs::remove_dir_all(&work);
@@ -419,11 +418,12 @@ async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
         Ok((true, _)) => {}
     }
 
-    let parts = crate::threeds::collect_contents(&contents);
+    let parts = crate::threeds::collect_contents(&work);
     if parts.is_empty() {
         let _ = std::fs::remove_dir_all(&work);
         return fail(
-            "ctrtool no extrajo ningun contenido. Suele significar que falta boot9.bin o que el CIA esta cifrado."
+            "ctrtool leyo el CIA pero no extrajo contenido. Si el juego es de eShop puede necesitar \
+             boot9.bin o una seeddb; comprueba la ruta de las claves en esta misma pantalla."
                 .into(),
         );
     }
@@ -439,8 +439,10 @@ async fn run_cia2cci(app: AppHandle, id: String, job: Job, s: Settings) {
         let _ = std::fs::create_dir_all(parent);
     }
 
+    // makerom se lanza dentro de la carpeta de trabajo porque parte sus
+    // argumentos por los dos puntos y una ruta como C:\... lo rompe
     let args = crate::threeds::makerom_args(&job.output, &parts);
-    let result = chdman::run_capture(&makerom, &args).await;
+    let result = chdman::run_capture_in(&makerom, &args, &[], Some(&work)).await;
     let _ = std::fs::remove_dir_all(&work);
 
     match result {
