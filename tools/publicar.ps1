@@ -77,6 +77,10 @@ Write-Host "  Generando latest.json..." -ForegroundColor Cyan
 $sigFile = "$($setup.FullName).sig"
 if (-not (Test-Path $sigFile)) { throw "No aparecio la firma $sigFile. Revisa que createUpdaterArtifacts este activo." }
 
+# GitHub sustituye los espacios del nombre por puntos al subir el asset, asi
+# que la URL tiene que llevarlos ya cambiados o el actualizador dara 404.
+$assetName = $setup.Name -replace ' ', '.'
+
 $manifest = [ordered]@{
     version   = $version
     notes     = "Consulta las notas de la release en GitHub."
@@ -84,7 +88,7 @@ $manifest = [ordered]@{
     platforms = [ordered]@{
         "windows-x86_64" = [ordered]@{
             signature = (Get-Content $sigFile -Raw).Trim()
-            url       = "https://github.com/giver720/chd-studio/releases/download/v$version/$($setup.Name)"
+            url       = "https://github.com/giver720/chd-studio/releases/download/v$version/$assetName"
         }
     }
 }

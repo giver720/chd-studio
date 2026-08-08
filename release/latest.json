@@ -1,11 +1,11 @@
 ﻿{
-    "version":  "1.0.0",
-    "notes":  "Primera version de CHD Studio.",
-    "pub_date":  "2026-08-07T22:52:33Z",
+    "version":  "1.1.0",
+    "notes":  "Modulos nuevos: 3DS, Xbox 360, PS3 y PSP.",
+    "pub_date":  "2026-08-08T03:07:51Z",
     "platforms":  {
                       "windows-x86_64":  {
-                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSVNDTWNrMmRiSTBKNlBQUWZFV1lUaHJxSUc3ekJEZWtZWldGcXJLS3doN3VBbGNzM1pOU1ltZnBRbmRkNUFiYnNvRGpOOUZmZ0hnVzhUZDFVR3BUb2JsWE1QeW1iWXc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTQzMTAwCWZpbGU6Q0hEIFN0dWRpb18xLjAuMF94NjQtc2V0dXAuZXhlCnp4TitHU2lLRHljSXZvNDNHUmRVTktQQ3RCUHBBUGdXZ1pMMmJlNTZqUkpwa2Y0K0ZGazlpcmtRUFBwc1dYUDlLM1JUL1JwMkhLRWVYalVxUm5XMkJRPT0K",
-                                             "url":  "https://github.com/giver720/chd-studio/releases/download/v1.0.0/CHD.Studio_1.0.0_x64-setup.exe"
+                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUSVNDTWNrMmRiSTkxQ3YvTGliZ3BnbFVVSmNsL05MenpGRkhMZFZFcHFBTlpBelZ2ODgwZ2ljbmgrNGUzNUNhUHZkU0hkRVlQVWhPeWFtT1dOYjhRTk9VWkdaMldyd2dBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg2MTU4NDEwCWZpbGU6Q0hEIFN0dWRpb18xLjEuMF94NjQtc2V0dXAuZXhlCkFhYk8wNzBpZ0xXNnN2TWJoZWFSc2Z0V0VHNXRncEwrWU8rcHcyTzgyUHpWZWJTWlY2ZzdhUFFzdFJRdlBBQ0E4MU9mSTdWTy8zUzZZdEoySjJXVEJnPT0K",
+                                             "url":  "https://github.com/giver720/chd-studio/releases/download/v1.1.0/CHD.Studio_1.1.0_x64-setup.exe"
                                          }
                   }
 }
