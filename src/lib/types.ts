@@ -57,7 +57,8 @@ export type ToolKind =
   | { type: "bundled" }
   | { type: "python"; package: string }
   | { type: "github"; repo: string; asset: string }
-  | { type: "external"; site: string };
+  | { type: "external"; site: string }
+  | { type: "web"; page: string; base: string; contains: string };
 
 export interface ToolStatus {
   id: string;

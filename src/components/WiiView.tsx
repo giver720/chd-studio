@@ -1,7 +1,16 @@
 import { open } from "@tauri-apps/plugin-dialog";
 import { openUrl } from "@tauri-apps/plugin-opener";
 import { AnimatePresence, motion } from "framer-motion";
-import { AlertTriangle, Download, FolderInput, FolderSearch, Play, Trash2, X } from "lucide-react";
+import {
+  AlertTriangle,
+  Download,
+  FolderInput,
+  FolderSearch,
+  Loader2,
+  Play,
+  Trash2,
+  X,
+} from "lucide-react";
 import { useEffect } from "react";
 import { api } from "../lib/api";
 import { bytes } from "../lib/format";
@@ -19,6 +28,8 @@ export function WiiView({ dragging }: { dragging: boolean }) {
     tools,
     setTools,
     refreshTools,
+    installTool,
+    installingTool,
     consoleFiles,
     addConsoleFiles,
     setConsoleOp,
@@ -100,24 +111,38 @@ export function WiiView({ dragging }: { dragging: boolean }) {
               <p className="text-[0.8rem] font-medium">No se encontró {t.name}</p>
               <p className="mt-1 text-[0.7rem] leading-relaxed text-[var(--color-muted)]">
                 {esWit
-                  ? "Hace falta solo para crear WBFS. Su autor no publica en GitHub, así que CHD Studio no puede descargarlo: bájalo de su web y señálale el ejecutable."
+                  ? "Hace falta solo para crear WBFS. CHD Studio puede descargarlo de la web de su autor (GPL-2.0), o puedes señalarlo si ya lo tienes."
                   : "Viene dentro de Dolphin, y su proyecto no publica en GitHub, así que CHD Studio no puede descargarlo solo. Si ya tienes Dolphin, señálale la carpeta; si no, bájalo de su web y vuelve aquí."}
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
+                {esWit && (
+                  <button
+                    className="btn btn-primary px-2.5 py-1 text-xs"
+                    onClick={() => installTool("wit")}
+                    disabled={installingTool === "wit"}
+                  >
+                    {installingTool === "wit" ? (
+                      <Loader2 size={13} className="animate-spin" />
+                    ) : (
+                      <Download size={13} />
+                    )}
+                    Descargar e instalar
+                  </button>
+                )}
                 <button
                   className="btn btn-ghost px-2.5 py-1 text-xs"
                   onClick={() => browse(t.id, esWit ? "wit" : "DolphinTool")}
                 >
                   <FolderSearch size={13} /> Señalar {esWit ? "wit.exe" : "DolphinTool.exe"}
                 </button>
-                <button
-                  className="btn btn-quiet px-2.5 py-1 text-xs"
-                  onClick={() =>
-                    openUrl(esWit ? "https://wit.wiimm.de/" : "https://dolphin-emu.org/download/")
-                  }
-                >
-                  <Download size={13} /> Descargar {esWit ? "Wiimms ISO Tools" : "Dolphin"}
-                </button>
+                {!esWit && (
+                  <button
+                    className="btn btn-quiet px-2.5 py-1 text-xs"
+                    onClick={() => openUrl("https://dolphin-emu.org/download/")}
+                  >
+                    <Download size={13} /> Descargar Dolphin
+                  </button>
+                )}
               </div>
             </div>
           </div>

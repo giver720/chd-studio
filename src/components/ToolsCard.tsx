@@ -30,6 +30,7 @@ function kindLabel(t: ToolStatus): string {
   if (t.kind.type === "bundled") return "Viaja con CHD Studio";
   if (t.kind.type === "python") return `Paquete de Python · ${t.kind.package}`;
   if (t.kind.type === "external") return "Hay que instalarla aparte";
+  if (t.kind.type === "web") return `Se descarga de ${t.kind.base.replace(/^https?:\/\//, "")}`;
   return `GitHub · ${t.kind.repo}`;
 }
 

@@ -30,6 +30,17 @@ pub enum ToolKind {
     /// Hay que conseguirla aparte: el proyecto no publica en GitHub. La app la
     /// busca en las rutas donde suele instalarse y deja senalarla a mano.
     External { site: &'static str },
+    /// Se descarga de una pagina web corriente, buscando en ella el primer
+    /// enlace que contenga cierto texto. Para proyectos que publican en su
+    /// propio sitio en vez de en GitHub.
+    Web {
+        /// Pagina con la lista de descargas
+        page: &'static str,
+        /// Raiz para los enlaces relativos
+        base: &'static str,
+        /// Fragmento que debe contener el enlace
+        contains: &'static str,
+    },
 }
 
 #[derive(Debug, Clone, Copy, Serialize)]
@@ -213,12 +224,15 @@ pub const TOOLS: &[ToolSpec] = &[
         id: "wit",
         name: "Wiimms ISO Tools",
         exe: "wit",
-        kind: ToolKind::External {
-            site: "https://wit.wiimm.de/",
+        kind: ToolKind::Web {
+            page: "https://wit.wiimm.de/download.html",
+            base: "https://wit.wiimm.de",
+            // La pagina lista las versiones de la mas nueva a la mas vieja
+            contains: "cygwin64.zip",
         },
         purpose: "Crea WBFS para cargadores USB de Wii",
         family: "wii",
-        license: "Ver sitio del autor",
+        license: "GPL-2.0",
     },
 ];
 
@@ -330,7 +344,6 @@ pub fn locate(id: &str, s: &Settings) -> Option<(PathBuf, String)> {
 fn external_dirs(id: &str) -> Vec<PathBuf> {
     let prefijo = match id {
         "dolphintool" => "dolphin",
-        "wit" => "wit",
         _ => return vec![],
     };
 
@@ -739,6 +752,78 @@ pub fn locate_sibling(id: &str, exe: &str) -> Option<PathBuf> {
     which::which(exe).ok()
 }
 
+/// Descarga una herramienta desde una pagina web corriente.
+///
+/// Se busca en el HTML el primer enlace que contenga `contains`. Los sitios que
+/// listan sus versiones lo hacen de la mas nueva a la mas vieja, asi que el
+/// primero es el que interesa. Si el sitio cambia de formato esto dejara de
+/// encontrarlo, y por eso el mensaje de error remite a la pagina.
+pub async fn install_web_tool(
+    id: &str,
+    page: &str,
+    base: &str,
+    contains: &str,
+) -> anyhow::Result<String> {
+    let client = reqwest::Client::builder().user_agent("chd-studio").build()?;
+    let html = client
+        .get(page)
+        .send()
+        .await?
+        .error_for_status()?
+        .text()
+        .await?;
+
+    // Busqueda simple de href="..." sin meter un analizador de HTML entero
+    let enlace = html
+        .split("href=\"")
+        .skip(1)
+        .filter_map(|resto| resto.split('"').next())
+        .find(|h| h.contains(contains))
+        .ok_or_else(|| {
+            anyhow::anyhow!("No se encontro ningun enlace con «{contains}» en {page}")
+        })?;
+
+    let url = if enlace.starts_with("http") {
+        enlace.to_string()
+    } else if enlace.starts_with('/') {
+        format!("{base}{enlace}")
+    } else {
+        format!("{base}/{enlace}")
+    };
+
+    let bytes = client
+        .get(&url)
+        .send()
+        .await?
+        .error_for_status()?
+        .bytes()
+        .await?;
+
+    let dest = tools_dir().join(id);
+    let _ = std::fs::remove_dir_all(&dest);
+    std::fs::create_dir_all(&dest)?;
+
+    let lower = url.to_lowercase();
+    if lower.ends_with(".zip") {
+        zip::ZipArchive::new(std::io::Cursor::new(bytes))?.extract(&dest)?;
+        unpack_nested_tarballs(&dest)?;
+    } else if lower.ends_with(".7z") {
+        let nombre = url.rsplit('/').next().unwrap_or("descarga.7z");
+        extract_7z(&bytes, nombre, &dest).await?;
+    } else if lower.ends_with(".tar.gz") || lower.ends_with(".tgz") {
+        let dec = flate2::read::GzDecoder::new(std::io::Cursor::new(bytes));
+        tar::Archive::new(dec).unpack(&dest)?;
+    } else {
+        let nombre = spec(id)
+            .map(|s| exe_name(s.exe))
+            .unwrap_or_else(|| "descarga.bin".into());
+        std::fs::write(dest.join(nombre), &bytes)?;
+    }
+
+    // El nombre del archivo lleva la version, que es lo que se muestra
+    Ok(url.rsplit('/').next().unwrap_or("descargado").to_string())
+}
+
 /// Punto de entrada unico que usa la interfaz para el boton «Instalar».
 pub async fn install(id: &str) -> anyhow::Result<String> {
     let spec = spec(id).ok_or_else(|| anyhow::anyhow!("Herramienta desconocida: {id}"))?;
@@ -755,6 +840,14 @@ pub async fn install(id: &str) -> anyhow::Result<String> {
         ToolKind::Github { repo, asset, tag } => {
             let found = install_github_tool(id, repo, asset, tag).await?;
             Ok(format!("{} {found} descargado", spec.name))
+        }
+        ToolKind::Web {
+            page,
+            base,
+            contains,
+        } => {
+            let archivo = install_web_tool(id, page, base, contains).await?;
+            Ok(format!("{} descargado ({archivo})", spec.name))
         }
     }
 }

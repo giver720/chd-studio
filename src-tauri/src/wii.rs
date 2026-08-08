@@ -75,7 +75,8 @@ pub fn wbfs_args(input: &str, output: &str, s: &Settings) -> Vec<String> {
     if s.wii_wbfs_split {
         a.push("--split".into());
     }
-    a.push("--dest".into());
+    // --DEST en mayusculas crea la carpeta de destino si no existe
+    a.push("--DEST".into());
     a.push(output.to_string());
     a
 }
