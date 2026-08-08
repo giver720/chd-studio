@@ -583,6 +583,47 @@ async fn run_job(app: AppHandle, id: String) {
     }
     drop(tx);
 
+    // Varias herramientas (maxcso, extract-xiso, las de PS3...) callan cuando
+    // su salida va a una tuberia en vez de a una consola, asi que nunca llega
+    // un porcentaje. Sin esto el trabajo parece colgado aunque este avanzando.
+    // El latido mira cuanto ha escrito ya y lo va contando.
+    let saw_progress = Arc::new(AtomicBool::new(false));
+    let done_flag = Arc::new(AtomicBool::new(false));
+    {
+        let app = app.clone();
+        let id = id.clone();
+        let job_out = job.output.clone();
+        let is_dir = mode_writes_directory(&job);
+        let saw = saw_progress.clone();
+        let done = done_flag.clone();
+        tauri::async_runtime::spawn(async move {
+            loop {
+                tokio::time::sleep(Duration::from_millis(1200)).await;
+                if done.load(Ordering::Relaxed) {
+                    break;
+                }
+                if saw.load(Ordering::Relaxed) {
+                    continue;
+                }
+                let p = Path::new(&job_out);
+                let size = if is_dir {
+                    dir_size(p)
+                } else {
+                    std::fs::metadata(p).map(|m| m.len()).unwrap_or(0)
+                };
+                let st = app.state::<AppState>();
+                if let Some(j) = st.update(&id, |j| {
+                    j.output_size = size;
+                    if j.phase == "Iniciando" {
+                        j.phase = "Procesando".into();
+                    }
+                }) {
+                    emit_job(&app, &j);
+                }
+            }
+        });
+    }
+
     let mut last_emit = Instant::now() - Duration::from_secs(1);
     let mut last_pct = -1.0f32;
 
@@ -592,6 +633,7 @@ async fn run_job(app: AppHandle, id: String) {
         }
 
         if let Some((pct, ratio, phase)) = parse_progress(&line) {
+            saw_progress.store(true, Ordering::Relaxed);
             let changed = (pct - last_pct).abs() >= 0.2;
             if changed && last_emit.elapsed() >= Duration::from_millis(120) {
                 last_pct = pct;
@@ -638,6 +680,8 @@ async fn run_job(app: AppHandle, id: String) {
         }
         let _ = child.start_kill();
     }
+
+    done_flag.store(true, Ordering::Relaxed);
 
     let ok = match child.wait().await {
         Ok(st) => st.success(),

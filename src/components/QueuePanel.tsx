@@ -107,15 +107,34 @@ function JobRow({ job }: { job: Job }) {
 
       {running && (
         <div className="mt-2.5">
-          <div className="bar live">
-            <i style={{ width: `${Math.max(2, job.progress)}%` }} />
-          </div>
-          <p className="mt-1.5 flex justify-between text-[0.66rem] text-[var(--color-muted)]">
-            <span>{job.phase}</span>
-            <span className="mono">
-              {job.progress.toFixed(1)} %{job.ratio != null && ` · ratio ${job.ratio.toFixed(0)} %`}
-            </span>
-          </p>
+          {/* Hay herramientas que no dicen por dónde van cuando su salida no es
+              una consola. En ese caso se muestra lo que llevan escrito. */}
+          {job.progress > 0 ? (
+            <>
+              <div className="bar live">
+                <i style={{ width: `${Math.max(2, job.progress)}%` }} />
+              </div>
+              <p className="mt-1.5 flex justify-between text-[0.66rem] text-[var(--color-muted)]">
+                <span>{job.phase}</span>
+                <span className="mono">
+                  {job.progress.toFixed(1)} %
+                  {job.ratio != null && ` · ratio ${job.ratio.toFixed(0)} %`}
+                </span>
+              </p>
+            </>
+          ) : (
+            <>
+              <div className="bar indeterminate">
+                <i />
+              </div>
+              <p className="mt-1.5 flex justify-between text-[0.66rem] text-[var(--color-muted)]">
+                <span>{job.phase}</span>
+                <span className="mono">
+                  {job.output_size > 0 ? `${bytes(job.output_size)} escritos` : "trabajando…"}
+                </span>
+              </p>
+            </>
+          )}
         </div>
       )}
 

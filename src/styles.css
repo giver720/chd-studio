@@ -221,6 +221,21 @@ select.field option {
   }
 }
 
+/* Para las herramientas que no dicen por dónde van: en vez de una barra
+   parada en cero, un tramo que recorre el carril. */
+.bar.indeterminate > i {
+  width: 34%;
+  animation: slide 1.4s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+@keyframes slide {
+  from {
+    left: -34%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
 .scroll {
   overflow-y: auto;
   scrollbar-width: thin;
