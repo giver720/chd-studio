@@ -40,6 +40,12 @@ pub struct Settings {
     pub xbox_skip_update: bool,
     /// Partir los archivos grandes de PS3 en trozos de 4 GB para FAT32.
     pub ps3_split_fat32: bool,
+    /// Quitar los datos de relleno del disco al convertir juegos de Wii.
+    pub wii_scrub: bool,
+    /// Nivel de compresion zstd para RVZ (Dolphin recomienda 5).
+    pub wii_level: u8,
+    /// Partir el WBFS en trozos para que quepa en FAT32.
+    pub wii_wbfs_split: bool,
 }
 
 impl Default for Settings {
@@ -63,6 +69,9 @@ impl Default for Settings {
             xbox_trim: true,
             xbox_skip_update: true,
             ps3_split_fat32: false,
+            wii_scrub: true,
+            wii_level: 5,
+            wii_wbfs_split: true,
         }
     }
 }

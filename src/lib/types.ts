@@ -56,13 +56,14 @@ export interface ChdmanStatus {
 export type ToolKind =
   | { type: "bundled" }
   | { type: "python"; package: string }
-  | { type: "github"; repo: string; asset: string };
+  | { type: "github"; repo: string; asset: string }
+  | { type: "external"; site: string };
 
 export interface ToolStatus {
   id: string;
   name: string;
   purpose: string;
-  family: "chd" | "switch" | "3ds" | "ps3" | "xbox360";
+  family: "chd" | "switch" | "3ds" | "ps3" | "xbox360" | "psp" | "wii";
   license: string;
   kind: ToolKind;
   found: boolean;
@@ -111,6 +112,9 @@ export interface Settings {
   xbox_trim: boolean;
   xbox_skip_update: boolean;
   ps3_split_fat32: boolean;
+  wii_scrub: boolean;
+  wii_level: number;
+  wii_wbfs_split: boolean;
 }
 
 /** Un archivo puesto en la mesa de trabajo, ya con su perfil asignado. */

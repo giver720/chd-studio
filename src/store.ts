@@ -4,6 +4,7 @@ import { AUTO, ALL_SYSTEMS, codecsFor, type Preset } from "./lib/profiles";
 import { SWITCH_EXT, defaultOp as switchDefaultOp } from "./lib/switch";
 import { THREEDS_EXT, defaultOp as threeDsDefaultOp } from "./lib/threeds";
 import { PSP_EXT, defaultOp as pspDefaultOp } from "./lib/psp";
+import { WII_EXT, defaultOp as wiiDefaultOp } from "./lib/wii";
 import type {
   ChdmanStatus,
   InputInfo,
@@ -23,9 +24,10 @@ export type View =
   | "xbox360"
   | "ps3"
   | "psp"
+  | "wii"
   | "settings";
 
-export type ConsoleFamily = "switch" | "threeds" | "xbox360" | "psp";
+export type ConsoleFamily = "switch" | "threeds" | "xbox360" | "psp" | "wii";
 
 export interface ConsoleFile extends InputInfo {
   op: string;
@@ -36,6 +38,7 @@ function defaultOpFor(family: ConsoleFamily, ext: string): string {
   if (family === "switch") return switchDefaultOp(ext);
   if (family === "threeds") return threeDsDefaultOp(ext);
   if (family === "psp") return pspDefaultOp(ext);
+  if (family === "wii") return wiiDefaultOp(ext);
   return "iso2god";
 }
 
@@ -45,6 +48,7 @@ export const FAMILY_EXT: Record<ConsoleFamily, string[]> = {
   threeds: THREEDS_EXT,
   xbox360: ["iso"],
   psp: PSP_EXT,
+  wii: WII_EXT,
 };
 
 /**
@@ -58,6 +62,7 @@ export function familyOf(ext: string): ConsoleFamily | "chd" {
   if (THREEDS_EXT.includes(ext)) return "threeds";
   // Los comprimidos de PSP son inconfundibles; el .iso se queda en CHD
   if (ext === "cso" || ext === "zso" || ext === "dax") return "psp";
+  if (ext === "rvz" || ext === "wia" || ext === "gcz" || ext === "gcm") return "wii";
   return "chd";
 }
 
@@ -122,6 +127,9 @@ const DEFAULT_SETTINGS: Settings = {
   nsz_threads: 0,
   xbox_trim: true,
   xbox_skip_update: true,
+  wii_scrub: true,
+  wii_level: 5,
+  wii_wbfs_split: true,
   ps3_split_fat32: false,
 };
 
@@ -166,7 +174,7 @@ export const useStore = create<AppStore>((set, get) => ({
     }
   },
 
-  consoleFiles: { switch: [], threeds: [], xbox360: [], psp: [] },
+  consoleFiles: { switch: [], threeds: [], xbox360: [], psp: [], wii: [] },
   addConsoleFiles: (family, infos) => {
     const current = get().consoleFiles[family];
     const seen = new Set(current.map((c) => c.path));

@@ -300,7 +300,17 @@ const PSP_PROFILE: SystemProfile = {
   color: "#7a8ff7",
 };
 
+const WII_PROFILE: SystemProfile = {
+  id: "wii",
+  name: "Wii / GameCube",
+  maker: "Nintendo · 2006",
+  mode: "createdvd",
+  accepts: ["iso", "rvz", "wia", "gcz"],
+  color: "#4fb0c6",
+};
+
 export function systemById(id: string): SystemProfile {
+  if (id === "wii") return WII_PROFILE;
   if (id === "psp") return PSP_PROFILE;
   if (id === "ps3") return PS3_PROFILE;
   if (id === "switch") return SWITCH_PROFILE;
@@ -372,4 +382,9 @@ export const MODE_LABELS: Record<string, string> = {
   iso2zso: "ISO → ZSO",
   iso2dax: "ISO → DAX",
   cso2iso: "→ ISO",
+  iso2rvz: "ISO → RVZ",
+  iso2wia: "ISO → WIA",
+  iso2gcz: "ISO → GCZ",
+  rvz2iso: "→ ISO",
+  iso2wbfs: "ISO → WBFS",
 };

@@ -13,6 +13,8 @@ const FAMILY_LABEL: Record<string, string> = {
   "3ds": "Nintendo 3DS",
   ps3: "PlayStation 3",
   xbox360: "Xbox 360",
+  psp: "PSP",
+  wii: "Wii y GameCube",
 };
 
 const SOURCE_LABEL: Record<string, string> = {
@@ -27,6 +29,7 @@ const SOURCE_LABEL: Record<string, string> = {
 function kindLabel(t: ToolStatus): string {
   if (t.kind.type === "bundled") return "Viaja con CHD Studio";
   if (t.kind.type === "python") return `Paquete de Python · ${t.kind.package}`;
+  if (t.kind.type === "external") return "Hay que instalarla aparte";
   return `GitHub · ${t.kind.repo}`;
 }
 

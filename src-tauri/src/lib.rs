@@ -6,6 +6,7 @@ mod settings;
 mod switch;
 mod threeds;
 mod tools;
+mod wii;
 mod xbox360;
 
 use jobs::{AppState, Job};
@@ -81,9 +82,13 @@ fn classify(path: &Path) -> InputInfo {
         return info;
     }
     // El .iso lo reclaman varios modulos, asi que aqui solo entran los
-    // comprimidos, que si son inconfundibles de PSP
+    // comprimidos, que si son inconfundibles de cada consola
     if psp::is_psp_ext(&ext) && ext != "iso" {
         info.suggested_mode = psp::suggest_mode(&ext).into();
+        return info;
+    }
+    if wii::is_wii_ext(&ext) && ext != "iso" {
+        info.suggested_mode = wii::suggest_mode(&ext).into();
         return info;
     }
     if CD_EXT.contains(&ext.as_str()) {
@@ -214,6 +219,17 @@ fn output_for(spec: &JobSpec, s: &Settings) -> (String, Option<String>) {
         return (dir.join(&stem).to_string_lossy().to_string(), None);
     }
 
+    if wii::is_mode(&spec.mode) {
+        let e = wii::output_ext(&spec.mode).unwrap_or("rvz");
+        if e.is_empty() {
+            return (spec.input.clone(), None);
+        }
+        return (
+            dir.join(format!("{stem}.{e}")).to_string_lossy().to_string(),
+            None,
+        );
+    }
+
     if let Some(e) = psp::output_ext(&spec.mode) {
         return (
             dir.join(format!("{stem}.{e}")).to_string_lossy().to_string(),
@@ -286,6 +302,7 @@ fn add_jobs(app: AppHandle, state: State<AppState>, specs: Vec<JobSpec>) -> Vec<
             .or_else(|| xbox360::tool_for(&spec.mode))
             .or_else(|| ps3::tool_for(&spec.mode))
             .or_else(|| psp::is_mode(&spec.mode).then_some("maxcso"))
+            .or_else(|| wii::is_mode(&spec.mode).then_some(wii::tool_for(&spec.mode)))
             .unwrap_or("chdman")
             .to_string();
 

@@ -9,6 +9,7 @@ import {
   Package,
   Scissors,
   Search,
+  Sparkles,
   Settings,
   Wand2,
 } from "lucide-react";
@@ -38,6 +39,7 @@ const SECTIONS: { title: string; items: NavItem[] }[] = [
       { id: "xbox360", label: "Xbox 360", icon: Disc3, desc: "ISO → GOD o carpeta" },
       { id: "ps3", label: "PlayStation 3", icon: Scissors, desc: "Adelgazar juegos" },
       { id: "psp", label: "PSP", icon: Gauge, desc: "ISO ↔ CSO y ZSO" },
+      { id: "wii", label: "Wii y GameCube", icon: Sparkles, desc: "ISO → RVZ" },
     ],
   },
 ];

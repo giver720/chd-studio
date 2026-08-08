@@ -27,6 +27,9 @@ pub enum ToolKind {
         /// Vacio = usar simplemente la ultima release.
         tag: &'static str,
     },
+    /// Hay que conseguirla aparte: el proyecto no publica en GitHub. La app la
+    /// busca en las rutas donde suele instalarse y deja senalarla a mano.
+    External { site: &'static str },
 }
 
 #[derive(Debug, Clone, Copy, Serialize)]
@@ -182,6 +185,28 @@ pub const TOOLS: &[ToolSpec] = &[
         family: "psp",
         license: "ISC",
     },
+    ToolSpec {
+        id: "dolphintool",
+        name: "DolphinTool",
+        exe: "DolphinTool",
+        kind: ToolKind::External {
+            site: "https://dolphin-emu.org/download/",
+        },
+        purpose: "Convierte discos de Wii y GameCube a RVZ",
+        family: "wii",
+        license: "GPL-2.0 (Dolphin)",
+    },
+    ToolSpec {
+        id: "wit",
+        name: "Wiimms ISO Tools",
+        exe: "wit",
+        kind: ToolKind::External {
+            site: "https://wit.wiimm.de/",
+        },
+        purpose: "Crea WBFS para cargadores USB de Wii",
+        family: "wii",
+        license: "Ver sitio del autor",
+    },
 ];
 
 pub fn spec(id: &str) -> Option<&'static ToolSpec> {
@@ -275,7 +300,76 @@ pub fn locate(id: &str, s: &Settings) -> Option<(PathBuf, String)> {
         return Some((p, "path".into()));
     }
 
+    // Las externas se buscan donde suele instalarlas su propio programa
+    if matches!(spec.kind, ToolKind::External { .. }) {
+        for d in external_dirs(id) {
+            let c = d.join(&name);
+            if c.is_file() {
+                return Some((c, "sistema".into()));
+            }
+        }
+    }
+
     None
+}
+
+/// Carpetas donde buscar una herramienta que viene dentro de otro programa.
+fn external_dirs(id: &str) -> Vec<PathBuf> {
+    let prefijo = match id {
+        "dolphintool" => "dolphin",
+        "wit" => "wit",
+        _ => return vec![],
+    };
+
+    // Estos programas se instalan en sitios muy variados, asi que se rastrean
+    // las raices buscando carpetas cuyo nombre empiece por el del programa
+    let mut dirs = vec![];
+    let mut raices: Vec<PathBuf> = vec![];
+
+    #[cfg(windows)]
+    {
+        for letra in ["C", "D", "E", "F"] {
+            let raiz = PathBuf::from(format!("{letra}:\\"));
+            if raiz.is_dir() {
+                raices.push(raiz.clone());
+                // Un nivel de carpetas contenedoras: emuladores, Emulators...
+                if let Ok(rd) = std::fs::read_dir(&raiz) {
+                    for e in rd.flatten().take(60) {
+                        if e.path().is_dir() {
+                            raices.push(e.path());
+                        }
+                    }
+                }
+            }
+        }
+        for p in ["Program Files", "Program Files (x86)"] {
+            raices.push(PathBuf::from(format!("C:\\{p}")));
+        }
+        if let Some(home) = dirs::home_dir() {
+            raices.push(home.join("Downloads"));
+            raices.push(home.join("AppData").join("Local").join("Programs"));
+        }
+    }
+
+    for raiz in raices {
+        let Ok(rd) = std::fs::read_dir(&raiz) else {
+            continue;
+        };
+        for e in rd.flatten() {
+            let p = e.path();
+            if !p.is_dir() {
+                continue;
+            }
+            let n = e.file_name().to_string_lossy().to_lowercase();
+            if n.starts_with(prefijo) {
+                // wit reparte sus programas en una subcarpeta bin
+                dirs.push(p.join("bin"));
+                dirs.push(p);
+            }
+        }
+    }
+
+    dirs
 }
 
 fn find_in(dir: &std::path::Path, name: &str, depth: usize) -> Option<PathBuf> {
@@ -303,6 +397,7 @@ async fn probe_version(id: &str, path: &std::path::Path) -> Option<String> {
     // que hay que darles justo el que documentan
     let arg = match id {
         "z3ds" | "4nxci" | "ps3iso" => "--help",
+        "dolphintool" => "--help",
         _ => "--version",
     };
     // Cinco segundos de sobra para que una herramienta diga su version
@@ -341,7 +436,10 @@ pub async fn status_of(id: &str, s: &Settings) -> ToolStatus {
         path,
         source,
         version,
-        installable: !matches!(spec.kind, ToolKind::Bundled),
+        installable: !matches!(
+            spec.kind,
+            ToolKind::Bundled | ToolKind::External { .. }
+        ),
     }
 }
 
@@ -633,6 +731,10 @@ pub async fn install(id: &str) -> anyhow::Result<String> {
     let spec = spec(id).ok_or_else(|| anyhow::anyhow!("Herramienta desconocida: {id}"))?;
     match spec.kind {
         ToolKind::Bundled => anyhow::bail!("{} ya viene incluida con CHD Studio", spec.name),
+        ToolKind::External { site } => anyhow::bail!(
+            "{} viene dentro de otro programa y hay que instalarlo aparte: {site}",
+            spec.name
+        ),
         ToolKind::Python { package } => {
             install_python_package(package).await?;
             Ok(format!("{} instalado con pip", spec.name))

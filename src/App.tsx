@@ -14,6 +14,7 @@ import { Sidebar } from "./components/Sidebar";
 import { SwitchView } from "./components/SwitchView";
 import { ThreeDsView } from "./components/ThreeDsView";
 import { TitleBar } from "./components/TitleBar";
+import { WiiView } from "./components/WiiView";
 import { XboxView } from "./components/XboxView";
 import { api } from "./lib/api";
 import type { InputInfo, Job } from "./lib/types";
@@ -84,6 +85,7 @@ export default function App() {
       threeds: [],
       xbox360: [],
       psp: [],
+      wii: [],
     };
     const chd: InputInfo[] = [];
     for (const i of infos) {
@@ -97,6 +99,7 @@ export default function App() {
       ["switch", buckets.switch.length],
       ["threeds", buckets.threeds.length],
       ["psp", buckets.psp.length],
+      ["wii", buckets.wii.length],
     ];
     const [winner, best] = counts.sort((a, b) => b[1] - a[1])[0];
 
@@ -180,6 +183,7 @@ export default function App() {
               {view === "xbox360" && <XboxView dragging={dragging} />}
               {view === "ps3" && <Ps3View />}
               {view === "psp" && <PspView dragging={dragging} />}
+              {view === "wii" && <WiiView dragging={dragging} />}
               {view === "inspect" && <InspectView />}
               {view === "settings" && <SettingsView />}
             </motion.div>

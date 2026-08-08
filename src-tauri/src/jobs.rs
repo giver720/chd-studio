@@ -141,6 +141,18 @@ fn build_args(job: &Job, s: &Settings) -> Vec<String> {
             _ => crate::xbox360::extract_args(&job.input, &job.output, s),
         },
         "maxcso" => crate::psp::args(&job.mode, &job.input, &job.output, s),
+        "wit" => crate::wii::wbfs_args(&job.input, &job.output, s),
+        "dolphintool" => {
+            // Carpeta propia para los temporales de Dolphin
+            let user = crate::settings::config_dir().join("dolphin");
+            let _ = std::fs::create_dir_all(&user);
+            let user = user.to_string_lossy().to_string();
+            if job.mode == "wiiverify" {
+                crate::wii::verify_args(&job.input, &user)
+            } else {
+                crate::wii::convert_args(&job.mode, &job.input, &job.output, &user, s)
+            }
+        }
         "ps3iso" => match job.mode.as_str() {
             "ps3build" => crate::ps3::build_args(&job.input, &job.output, s.ps3_split_fat32),
             "ps3split" => crate::ps3::split_args(&job.input),
