@@ -49,7 +49,10 @@ if (-not $setup) { throw "No se genero el instalador" }
 # --- 3. Portable -----------------------------------------------------------
 Write-Host "  Armando la version portable..." -ForegroundColor Cyan
 $out = Join-Path $root "release"
-$port = Join-Path $out "CHD-Studio-$version-portable"
+New-Item -ItemType Directory -Force $out | Out-Null
+
+# Se monta en la carpeta temporal y solo el .zip acaba en release/
+$port = Join-Path $env:TEMP "CHD-Studio-$version-portable"
 if (Test-Path $port) { Remove-Item $port -Recurse -Force }
 New-Item -ItemType Directory -Force $port | Out-Null
 
@@ -68,8 +71,7 @@ Borralo si prefieres que se comporte como la version instalada.
 Copy-Item "README.md" $port -ErrorAction SilentlyContinue
 
 $zip = Join-Path $out "CHD-Studio-$version-portable.zip"
-if (Test-Path $zip) { Remove-Item $zip -Force }
-Compress-Archive -Path "$port\*" -DestinationPath $zip
+Compress-Archive -Path "$port\*" -DestinationPath $zip -Force
 Remove-Item $port -Recurse -Force
 
 # --- 4. latest.json --------------------------------------------------------
