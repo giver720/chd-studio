@@ -13,3 +13,6 @@ src-tauri/binaries/*
 # Clave privada de firma del actualizador: NUNCA debe subirse
 *.key
 .tauri/
+
+# Los artefactos de cada version van a GitHub Releases, no al repositorio
+release/
