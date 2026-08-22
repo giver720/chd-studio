@@ -2,7 +2,7 @@ name: Linux .deb
 
 on:
   push:
-    branches: [main, linux-ubuntu-deb]
+    branches: [main]
     tags: ["v*"]
   pull_request:
   workflow_dispatch:
@@ -21,10 +21,10 @@ jobs:
 
     steps:
       - name: Obtener el codigo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Preparar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -62,7 +62,7 @@ jobs:
           sudo apt-get install -y "./$deb"
           command -v chd-studio
           command -v chdman
-          chdman --help >/dev/null
+          chdman --help 2>&1 | grep -qi chdman
 
       - name: Prueba de arranque de la interfaz
         run: |
