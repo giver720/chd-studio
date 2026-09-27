@@ -12129,6 +12129,43 @@
       "updated_at": "2021-03-17"
     },
     {
+      "id": "universal-db:SamtendoNetwork/cirrus",
+      "platforms": [
+        "3ds"
+      ],
+      "name": "Cirrus",
+      "summary": "3DS switcher for Samtendo Network",
+      "author": "Samtendo Network",
+      "version": "v3.0.0",
+      "license": "GNU General Public License v3.0",
+      "icon_url": "https://cdn.samtendo.net/images/Cirrus.png",
+      "release_url": "https://github.com/SamtendoNetwork/cirrus/releases",
+      "downloads": [
+        {
+          "format": "zip",
+          "filename": "3dsx.zip",
+          "url": "https://github.com/SamtendoNetwork/cirrus/releases/download/v3.0.0/3dsx.zip",
+          "size": 733229
+        },
+        {
+          "format": "zip",
+          "filename": "cia.zip",
+          "url": "https://github.com/SamtendoNetwork/cirrus/releases/download/v3.0.0/cia.zip",
+          "size": 1016773
+        },
+        {
+          "format": "zip",
+          "filename": "combined.zip",
+          "url": "https://github.com/SamtendoNetwork/cirrus/releases/download/v3.0.0/combined.zip",
+          "size": 1453362
+        }
+      ],
+      "source": "Universal-DB",
+      "source_url": "https://db.universal-team.net/",
+      "license_url": null,
+      "updated_at": "2026-09-26T19:57:51Z"
+    },
+    {
       "id": "universal-db:regimensocial/Citrahold-3DS",
       "platforms": [
         "3ds"
@@ -50059,7 +50096,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 7699,
+      "popularity": 7747,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50086,7 +50123,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2609,
+      "popularity": 2614,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50113,7 +50150,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7210,
+      "popularity": 7276,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50140,7 +50177,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4888,
+      "popularity": 4900,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50167,7 +50204,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 44490,
+      "popularity": 44652,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50194,7 +50231,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 225,
+      "popularity": 228,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50518,6 +50555,32 @@
       "license_url": null,
       "popularity": null,
       "updated_at": "2026-09-23 11:21:00 UTC+8"
+    },
+    {
+      "id": "ps5-payloads-atlas:ps5upload-5.35.0.elf",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "PS5upload",
+      "summary": "Integrated PS5 file, mount, save-management, monitoring, and remote package-install payload with a companion desktop client.",
+      "author": "",
+      "version": "v5.35.0",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://github.com/phantomptr/ps5upload",
+      "downloads": [
+        {
+          "format": "elf",
+          "filename": "ps5upload-5.35.0.elf",
+          "url": "https://github.com/phantomptr/ps5upload/releases/download/v5.35.0/ps5upload-5.35.0.elf",
+          "sha256": "94a996dc7adaaf264545ffc3b7f4fb471a52569630ea5538ee18d20039c4213b"
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2026-09-27 20:07:01 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1187",
