@@ -1654,7 +1654,7 @@
       "name": "3dslibris",
       "summary": "An ebook and manga reader for Nintendo 3DS",
       "author": "Rigle",
-      "version": "v2.8.1",
+      "version": "v2.9.0",
       "license": "Other",
       "icon_url": "https://raw.githubusercontent.com/RigleGit/3dslibris/refs/heads/main/assets/release/icon-32x32.png",
       "release_url": "https://github.com/RigleGit/3dslibris/releases",
@@ -1662,38 +1662,38 @@
         {
           "format": "3dsx",
           "filename": "3dslibris-debug.3dsx",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.8.1/3dslibris-debug.3dsx",
-          "size": 14401128
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris-debug.3dsx",
+          "size": 14414984
         },
         {
           "format": "cia",
           "filename": "3dslibris-debug.cia",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.8.1/3dslibris-debug.cia",
-          "size": 13145024
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris-debug.cia",
+          "size": 13251520
         },
         {
           "format": "zip",
           "filename": "3dslibris-sdmc.zip",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.8.1/3dslibris-sdmc.zip",
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris-sdmc.zip",
           "size": 5020749
         },
         {
           "format": "3dsx",
           "filename": "3dslibris.3dsx",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.8.1/3dslibris.3dsx",
-          "size": 14528176
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris.3dsx",
+          "size": 14541244
         },
         {
           "format": "cia",
           "filename": "3dslibris.cia",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.8.1/3dslibris.cia",
-          "size": 13280192
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris.cia",
+          "size": 13386688
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-06-23T15:43:37Z"
+      "updated_at": "2026-09-28T21:44:14Z"
     },
     {
       "id": "universal-db:s4ammy/3DSLink",
@@ -8456,7 +8456,7 @@
       "name": "Booru3DS",
       "summary": "A Safebooru and Konachan API client for the Nintendo 3DS. (SFW)",
       "author": "MisakiP_",
-      "version": "v1.1",
+      "version": "v1.4",
       "license": "MIT License",
       "icon_url": "https://raw.githubusercontent.com/Misakii-P/Booru3DS/refs/heads/master/assets/booru3ds.png",
       "release_url": "https://github.com/Misakii-P/Booru3DS/releases",
@@ -8464,14 +8464,20 @@
         {
           "format": "3dsx",
           "filename": "booru3ds.3dsx",
-          "url": "https://github.com/Misakii-P/Booru3DS/releases/download/v1.1/booru3ds.3dsx",
-          "size": 2595852
+          "url": "https://github.com/Misakii-P/Booru3DS/releases/download/v1.4/booru3ds.3dsx",
+          "size": 2602380
+        },
+        {
+          "format": "cia",
+          "filename": "booru3ds.cia",
+          "url": "https://github.com/Misakii-P/Booru3DS/releases/download/v1.4/booru3ds.cia",
+          "size": 3052480
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-25T18:27:59Z"
+      "updated_at": "2026-09-28T20:45:35Z"
     },
     {
       "id": "open-shop-channel-wii:BootMiiConfigurationEditor",
@@ -50096,7 +50102,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 7874,
+      "popularity": 7942,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50123,7 +50129,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2626,
+      "popularity": 2632,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50150,7 +50156,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7397,
+      "popularity": 7465,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50177,7 +50183,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4928,
+      "popularity": 4937,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50204,7 +50210,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 45007,
+      "popularity": 45219,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50231,7 +50237,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 238,
+      "popularity": 242,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -53545,7 +53551,7 @@
         "3ds"
       ],
       "name": "ReSharp3DS",
-      "summary": "C# runtime and SDK for Nintendo 3DS",
+      "summary": "Porting C# for Nintendo 3DS",
       "author": "Saiitanaa",
       "version": "v2.2.6",
       "license": "GNU General Public License v3.0",
