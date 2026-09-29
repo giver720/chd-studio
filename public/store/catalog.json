@@ -1174,6 +1174,37 @@
       "updated_at": "2025-09-26T01:08:03Z"
     },
     {
+      "id": "universal-db:quatric/3DS-DNS-Switcher",
+      "platforms": [
+        "3ds"
+      ],
+      "name": "3DS-DNS-Switcher",
+      "summary": "A Nintendo 3DS application for quickly switching the DNS used by existing Wi-Fi connections.",
+      "author": "quatric",
+      "version": "v1.1",
+      "license": null,
+      "icon_url": "https://raw.githubusercontent.com/quatric/3DS-DNS-Switcher/main/standalone/assets/icon-v2.png",
+      "release_url": "https://github.com/quatric/3DS-DNS-Switcher/releases",
+      "downloads": [
+        {
+          "format": "3dsx",
+          "filename": "3DS-DNS-Switcher.3dsx",
+          "url": "https://github.com/quatric/3DS-DNS-Switcher/releases/download/v1.1/3DS-DNS-Switcher.3dsx",
+          "size": 210800
+        },
+        {
+          "format": "cia",
+          "filename": "3DS-DNS-Switcher.cia",
+          "url": "https://github.com/quatric/3DS-DNS-Switcher/releases/download/v1.1/3DS-DNS-Switcher.cia",
+          "size": 330688
+        }
+      ],
+      "source": "Universal-DB",
+      "source_url": "https://db.universal-team.net/",
+      "license_url": null,
+      "updated_at": "2026-09-28T18:15:31Z"
+    },
+    {
       "id": "universal-db:xPsycho999/3ds-fastfetch",
       "platforms": [
         "3ds"
@@ -30150,6 +30181,37 @@
       "updated_at": "2022-08-05"
     },
     {
+      "id": "universal-db:breakgimme/icytower-3ds",
+      "platforms": [
+        "3ds"
+      ],
+      "name": "Icy Tower 3DS",
+      "summary": "Open-source Icy Tower remake",
+      "author": "breakgimme",
+      "version": "1.0",
+      "license": "MIT License",
+      "icon_url": "https://raw.githubusercontent.com/breakgimme/icytower-3ds/refs/heads/master/icon.png",
+      "release_url": "https://github.com/breakgimme/icytower-3ds/releases",
+      "downloads": [
+        {
+          "format": "3dsx",
+          "filename": "icytower.3dsx",
+          "url": "https://github.com/breakgimme/icytower-3ds/releases/download/1.0/icytower.3dsx",
+          "size": 12149740
+        },
+        {
+          "format": "cia",
+          "filename": "icytower.cia",
+          "url": "https://github.com/breakgimme/icytower-3ds/releases/download/1.0/icytower.cia",
+          "size": 12383168
+        }
+      ],
+      "source": "Universal-DB",
+      "source_url": "https://db.universal-team.net/",
+      "license_url": null,
+      "updated_at": "2026-09-28T17:42:07Z"
+    },
+    {
       "id": "vitadbtoo-psp:954",
       "platforms": [
         "psp"
@@ -46803,7 +46865,7 @@
       "name": "pegasus-dl",
       "summary": "PS5 payload that serves a local web interface for downloading and installing game or application package data.",
       "author": "",
-      "version": "v1.9.0",
+      "version": "v1.10.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/pegasus-ps5/pegasus-dl",
@@ -46811,15 +46873,15 @@
         {
           "format": "elf",
           "filename": "pegasus_dl.elf",
-          "url": "https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.9.0/pegasus_dl.elf",
-          "sha256": "6336c626f0fbdef1272cc5d4e0239d7b44bf40f8106679083cf50d4c8e02389b"
+          "url": "https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.10.0/pegasus_dl.elf",
+          "sha256": "724b245d8de08e5a16865180fac7f30eda72b94d45c9cc73686d9b2defc33f66"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-09-15 18:05:53 UTC+8"
+      "updated_at": "2026-09-30 01:14:24 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:847",
@@ -50102,7 +50164,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 7984,
+      "popularity": 8049,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50129,7 +50191,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2641,
+      "popularity": 2664,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50156,7 +50218,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7506,
+      "popularity": 7566,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50183,7 +50245,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4948,
+      "popularity": 4995,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50210,7 +50272,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 45344,
+      "popularity": 45534,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50237,7 +50299,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 248,
+      "popularity": 250,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50355,30 +50417,30 @@
       "updated_at": "2026-06-19 20:34:09 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5-unified-autoloader-v0.1.4-955249d.elf",
+      "id": "ps5-payloads-atlas:ps5-unified-autoloader-v0.1.5-915a65e.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5 Unified Autoloader",
       "summary": "Standalone ELF autoloader that reads autoload.txt from USB or /data and sends listed payloads to elfldr.",
       "author": "",
-      "version": "v0.1.4-955249d",
+      "version": "v0.1.5-915a65e",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/itsplk/ps5-unified-autoloader",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5-unified-autoloader-v0.1.4-955249d.elf",
-          "url": "https://github.com/itsPLK/ps5-unified-autoloader/releases/download/v0.1.4-955249d/ps5-unified-autoloader-v0.1.4-955249d.elf",
-          "sha256": "31d12ba2b0b11462a91756f4b8c7857e90674fc8df02fe74155c7c2a8f27a4fd"
+          "filename": "ps5-unified-autoloader-v0.1.5-915a65e.elf",
+          "url": "https://github.com/itsPLK/ps5-unified-autoloader/releases/download/v0.1.5-915a65e/ps5-unified-autoloader-v0.1.5-915a65e.elf",
+          "sha256": "c8e36ea06cfd37c5fad356ff9fcd09d3e62065d88170b5119ce8f1eeb3efacac"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-08-16 21:35:51 UTC+8"
+      "updated_at": "2026-09-29 22:03:59 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:web-file-mgr-v1.9.elf",
@@ -50563,30 +50625,30 @@
       "updated_at": "2026-09-23 11:21:00 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5upload-5.39.0.elf",
+      "id": "ps5-payloads-atlas:ps5upload-5.39.1.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5upload",
       "summary": "Integrated PS5 file, mount, save-management, monitoring, and remote package-install payload with a companion desktop client.",
       "author": "",
-      "version": "v5.39.0",
+      "version": "v5.39.1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/phantomptr/ps5upload",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5upload-5.39.0.elf",
-          "url": "https://github.com/phantomptr/ps5upload/releases/download/v5.39.0/ps5upload-5.39.0.elf",
-          "sha256": "e8f39878d26b190e05403e0429b763dc66aa44180de39e34c51a86cca20856c7"
+          "filename": "ps5upload-5.39.1.elf",
+          "url": "https://github.com/phantomptr/ps5upload/releases/download/v5.39.1/ps5upload-5.39.1.elf",
+          "sha256": "a50d66033f66cb9d6600c810066b699e59b1a0cc3d7e98bffd5a0b6eb9ebd1a3"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-09-29 13:13:28 UTC+8"
+      "updated_at": "2026-09-29 17:05:51 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1187",
@@ -53551,7 +53613,7 @@
         "3ds"
       ],
       "name": "ReSharp3DS",
-      "summary": "Porting C# for Nintendo 3DS",
+      "summary": "Porting nanoCLR C# for Nintendo 3DS",
       "author": "Saiitanaa",
       "version": "v2.2.6",
       "license": "GNU General Public License v3.0",
@@ -76341,30 +76403,30 @@
       "updated_at": "2021-04-06"
     },
     {
-      "id": "ps5-payloads-atlas:webkit-autoloader-installer_v0.4.0.elf",
+      "id": "ps5-payloads-atlas:webkit-autoloader-installer_v0.5.0.elf",
       "platforms": [
         "ps5"
       ],
       "name": "WebKit Autoloader (installer)",
       "summary": "Installs an autoloader reachable from the PS5's own web browser, so payloads can be launched from the console without sending them from a PC every time. One-shot installer ELF: send it, it installs, it exits. Run it after your kernel exploit, like any other payload.",
       "author": "",
-      "version": "v0.4.0",
+      "version": "v0.5.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/itsplk/ps5-webkit-autoloader",
       "downloads": [
         {
           "format": "elf",
-          "filename": "webkit-autoloader-installer_v0.4.0.elf",
-          "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/download/v0.4.0/webkit-autoloader-installer_v0.4.0.elf",
-          "sha256": "179d5e52ec3e0f595900b40883c0e10cc1fba1efc275a547f47e828d45d05915"
+          "filename": "webkit-autoloader-installer_v0.5.0.elf",
+          "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/download/v0.5.0/webkit-autoloader-installer_v0.5.0.elf",
+          "sha256": "83c2128520267515fe2f197db35427bb95b7273934e52ad3c6bf668a4ef27b7f"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-08-24 08:54:26 UTC+8"
+      "updated_at": "2026-09-29 22:35:31 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:websrv-ps5.elf",
