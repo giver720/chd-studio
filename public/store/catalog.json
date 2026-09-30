@@ -50164,7 +50164,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8049,
+      "popularity": 8106,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50191,7 +50191,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2664,
+      "popularity": 2681,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50218,7 +50218,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7566,
+      "popularity": 7593,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50245,7 +50245,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4995,
+      "popularity": 5038,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50272,7 +50272,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 45534,
+      "popularity": 45595,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50299,7 +50299,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 250,
+      "popularity": 251,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50469,30 +50469,30 @@
       "updated_at": "2026-09-16 12:09:18 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5-app-dumper.elf",
+      "id": "ps5-payloads-atlas:ps5-app-dumper_v2.00.elf",
       "platforms": [
         "ps5"
       ],
       "name": "ps5-app-dumper",
       "summary": "Dumps installed PS5 apps to USB or internal storage in fakepkg/folder format. Reads config from /data/ps5-app-dumper/config.ini.",
       "author": "",
-      "version": "v1.11",
+      "version": "v2.00",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/echostretch/ps5-app-dumper",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5-app-dumper.elf",
-          "url": "https://github.com/EchoStretch/ps5-app-dumper/releases/download/v1.11/ps5-app-dumper.elf",
-          "sha256": "18483751ebaea6879b020a9dd87c0a4fb4f1bf09f3708d950362a483f78cc0d0"
+          "filename": "ps5-app-dumper_v2.00.elf",
+          "url": "https://github.com/EchoStretch/ps5-app-dumper/releases/download/v2.00/ps5-app-dumper_v2.00.elf",
+          "sha256": "b6fea71afb8937fcd1a933116c620e989acba25b7049eaeaa00cdc1bd604d686"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-07-28 10:10:49 UTC+8"
+      "updated_at": "2026-09-30 05:54:23 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:ps5-fan-control-v0.3.elf",
