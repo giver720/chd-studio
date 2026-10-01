@@ -1685,7 +1685,7 @@
       "name": "3dslibris",
       "summary": "An ebook and manga reader for Nintendo 3DS",
       "author": "Rigle",
-      "version": "v2.9.0",
+      "version": "v2.9.1",
       "license": "Other",
       "icon_url": "https://raw.githubusercontent.com/RigleGit/3dslibris/refs/heads/main/assets/release/icon-32x32.png",
       "release_url": "https://github.com/RigleGit/3dslibris/releases",
@@ -1693,38 +1693,38 @@
         {
           "format": "3dsx",
           "filename": "3dslibris-debug.3dsx",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris-debug.3dsx",
-          "size": 14414984
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.1/3dslibris-debug.3dsx",
+          "size": 14415248
         },
         {
           "format": "cia",
           "filename": "3dslibris-debug.cia",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris-debug.cia",
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.1/3dslibris-debug.cia",
           "size": 13251520
         },
         {
           "format": "zip",
           "filename": "3dslibris-sdmc.zip",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris-sdmc.zip",
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.1/3dslibris-sdmc.zip",
           "size": 5020749
         },
         {
           "format": "3dsx",
           "filename": "3dslibris.3dsx",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris.3dsx",
-          "size": 14541244
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.1/3dslibris.3dsx",
+          "size": 14541556
         },
         {
           "format": "cia",
           "filename": "3dslibris.cia",
-          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.0/3dslibris.cia",
+          "url": "https://github.com/RigleGit/3dslibris/releases/download/v2.9.1/3dslibris.cia",
           "size": 13386688
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-28T21:44:14Z"
+      "updated_at": "2026-10-01T17:38:47Z"
     },
     {
       "id": "universal-db:s4ammy/3DSLink",
@@ -11456,7 +11456,7 @@
       "name": "CheatRunner",
       "summary": "Loads and applies game cheats on the PS5. Send it like any other payload, then browse and toggle cheats for supported titles on the console.",
       "author": "",
-      "version": "v0.17.1",
+      "version": "v0.17.2",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/notmaj0r/cheatrunner",
@@ -11464,15 +11464,15 @@
         {
           "format": "elf",
           "filename": "CheatRunner.elf",
-          "url": "https://github.com/notmaj0r/CheatRunner/releases/download/v0.17.1/CheatRunner.elf",
-          "sha256": "6863f06cb6ff41f846d84a0542c21469b52cacf55c9e6a0e2c74c114b3a55212"
+          "url": "https://github.com/notmaj0r/CheatRunner/releases/download/v0.17.2/CheatRunner.elf",
+          "sha256": "36ad03e236e6603aaaf05d95ed3399c7b54475a9bceba085cbe02899bc88ae0f"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-01 01:34:27 UTC+8"
+      "updated_at": "2026-10-02 02:02:13 UTC+8"
     },
     {
       "id": "universal-db:BernardoGiordano/Checkpoint",
@@ -33586,7 +33586,7 @@
       "name": "Kylin Core",
       "summary": "Game cheat trainer for jailbroken PS5. Apply in-game cheats and modifications to running titles; community-lite build distributed as a single payload.",
       "author": "",
-      "version": "v1.3.1-community-lite",
+      "version": "v2.0.0-community-lite",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/aydencharles/kylin-core-release",
@@ -33594,15 +33594,15 @@
         {
           "format": "elf",
           "filename": "kylin-core.elf",
-          "url": "https://github.com/aydencharles/kylin-core-release/releases/download/v1.3.1-community-lite/kylin-core.elf",
-          "sha256": "90320a4169d61be6e168e605e59c4d8fc89fb978f1772f03c2011e7e8087b8a3"
+          "url": "https://github.com/aydencharles/kylin-core-release/releases/download/v2.0.0-community-lite/kylin-core.elf",
+          "sha256": "7f5245f2db67b131c6f9e991b731117c2c730923a9dd65a2d82b36f2e2b91545"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-06-20 02:21:33 UTC+8"
+      "updated_at": "2026-10-01 21:29:25 UTC+8"
     },
     {
       "id": "hbas-switch:LaDeuda",
@@ -50220,7 +50220,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8267,
+      "popularity": 8315,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50247,7 +50247,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2710,
+      "popularity": 2725,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50274,7 +50274,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7731,
+      "popularity": 7785,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50301,7 +50301,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5138,
+      "popularity": 5164,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50328,7 +50328,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 45993,
+      "popularity": 46170,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50629,30 +50629,30 @@
       "updated_at": "2026-09-29 18:34:22 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5-syslang-zh-Hans-v0.2.elf",
+      "id": "ps5-payloads-atlas:ps5-syslang-zh-Hans-v0.2.1.elf",
       "platforms": [
         "ps5"
       ],
       "name": "ps5-syslang",
       "summary": "ShellUI language-switching payload for changing the PS5 system language, including on region-locked consoles.",
       "author": "",
-      "version": "v0.2",
+      "version": "v0.2.1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/owendswang/ps5-syslang",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5-syslang-zh-Hans-v0.2.elf",
-          "url": "https://github.com/owendswang/ps5-syslang/releases/download/v0.2/ps5-syslang-zh-Hans-v0.2.elf",
-          "sha256": "776287773aabebe588d144d4d5b361abfff56eef9799af79cb30877bbc80bec6"
+          "filename": "ps5-syslang-zh-Hans-v0.2.1.elf",
+          "url": "https://github.com/owendswang/ps5-syslang/releases/download/v0.2.1/ps5-syslang-zh-Hans-v0.2.1.elf",
+          "sha256": "1baaa4aa01540e07dea8e452594d04bfbb06a0a4abcbae342bd8ca24f56c423e"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-06-28 10:57:08 UTC+8"
+      "updated_at": "2026-10-02 01:43:22 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:ps5debug-NG_v1.3.2.elf",
