@@ -50220,7 +50220,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8249,
+      "popularity": 8267,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50247,7 +50247,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2705,
+      "popularity": 2710,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50274,7 +50274,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7710,
+      "popularity": 7731,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50301,7 +50301,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5120,
+      "popularity": 5138,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50328,7 +50328,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 45927,
+      "popularity": 45993,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50355,7 +50355,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 256,
+      "popularity": 257,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -58522,30 +58522,30 @@
       "updated_at": "2026-02-24"
     },
     {
-      "id": "ps5-payloads-atlas:singleDPI.elf",
+      "id": "ps5-payloads-atlas:singleDPI_v0.2.1.elf",
       "platforms": [
         "ps5"
       ],
       "name": "singleDPI",
       "summary": "Standalone DPI payload accepting TCP 9090 JSON package-install requests and an experimental 12800 URL endpoint.",
       "author": "",
-      "version": "0.1.0",
+      "version": "0.2.1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/maxmilu/ps5-direct-package-installer",
       "downloads": [
         {
           "format": "elf",
-          "filename": "singleDPI.elf",
-          "url": "https://github.com/MaxMilu/ps5-direct-package-installer/releases/download/0.1.0/singleDPI.elf",
-          "sha256": "38b96a3c3bfd8f2094d7e69ad2776621184b718f24744c29cbedb2640aae11b2"
+          "filename": "singleDPI_v0.2.1.elf",
+          "url": "https://github.com/MaxMilu/ps5-direct-package-installer/releases/download/0.2.1/singleDPI_v0.2.1.elf",
+          "sha256": "c824b2220f72bb95c514a857b505f85ead93b1d056eefda942381784c4e602bc"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-06-22 00:50:40 UTC+8"
+      "updated_at": "2026-10-01 20:27:43 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1139",
