@@ -252,7 +252,7 @@
           "sha256": null
         }
       ],
-      "popularity": 1972,
+      "popularity": 1991,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/100_Boxes_Wiiu/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -3042,7 +3042,7 @@
           "sha256": null
         }
       ],
-      "popularity": 1141,
+      "popularity": 1184,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/AirAttack/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -3347,7 +3347,7 @@
           "sha256": null
         }
       ],
-      "popularity": 20925,
+      "popularity": 21063,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/AM64DSPatcher/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -4659,7 +4659,7 @@
           "sha256": null
         }
       ],
-      "popularity": 23059,
+      "popularity": 23335,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/AromaUpdater/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -5301,7 +5301,7 @@
           "sha256": "02aa7b58991d168a5520b99eac52f86350502c9775c67e5e5d709a33f5f72a0b"
         }
       ],
-      "popularity": 1581,
+      "popularity": 2028,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/aurorachatforWiiU/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -7764,7 +7764,7 @@
           "sha256": "e17df7bb5c991a1504b1987dd37c28320100633ca66430eafd20e9a83eaa9fda"
         }
       ],
-      "popularity": 1252,
+      "popularity": 1303,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/BlockamokRemix/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -8022,7 +8022,7 @@
           "sha256": null
         }
       ],
-      "popularity": 153153,
+      "popularity": 154695,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Bloopair-Tiramisu/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -8053,7 +8053,7 @@
           "sha256": null
         }
       ],
-      "popularity": 39779,
+      "popularity": 39994,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Bloopair/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -9830,7 +9830,7 @@
           "sha256": null
         }
       ],
-      "popularity": 3265,
+      "popularity": 3277,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/ButtonTester/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -10089,7 +10089,7 @@
           "sha256": "ae5c3c683d028e2552d29816efd0fb2c27227b425f2ba5cfc7295b96f9fb1b30"
         }
       ],
-      "popularity": 7240,
+      "popularity": 8438,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/CafXplorer/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -10122,7 +10122,7 @@
           "sha256": "990eb285fa400d823c3ca8d3d593774e0b7ebda8b03028a1e02152462f84253f"
         }
       ],
-      "popularity": 5650,
+      "popularity": 5783,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/cafmediaplayer/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -12606,7 +12606,7 @@
           "sha256": null
         }
       ],
-      "popularity": 7144,
+      "popularity": 7179,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/CloseHBL/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -12753,10 +12753,10 @@
         "games"
       ],
       "description": "COLD START is a roguelike topdown survival with bombs, upgrades, parrying and a console where you can spawn a car and run enemies over.",
-      "added_at": "2026-07-26",
+      "added_at": "2026-10-01",
       "summary": "roguelike topdown shooter survival game",
       "author": "etonedemid",
-      "version": "3.5.1",
+      "version": "3.6.0",
       "license": "GPLv3",
       "icon_url": null,
       "release_url": "https://github.com/etonedemid/cold-start-nx",
@@ -12765,8 +12765,8 @@
           "format": "hbas",
           "filename": "COLDSTART.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/COLDSTART/manifest.install",
-          "size": 61034,
-          "sha256": "c6059b577c4c8605fdf01b412272ab93404688d3f9c9f43a02f17dc5a69a0fb2"
+          "size": 60553,
+          "sha256": "5626549c8d875e6ef3c2c34d8359d9989a4af1e317a6ff822e61fc26b35b95df"
         }
       ],
       "popularity": 246,
@@ -12774,7 +12774,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2026-07-31"
+      "updated_at": "2026-10-02"
     },
     {
       "id": "universal-db:wavemotion-dave/ColecoDS",
@@ -13095,7 +13095,7 @@
           "sha256": null
         }
       ],
-      "popularity": 1577,
+      "popularity": 1615,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Connect4/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -13293,7 +13293,7 @@
           "sha256": null
         }
       ],
-      "popularity": 16040,
+      "popularity": 16159,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/controller-test/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -13326,7 +13326,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2199,
+      "popularity": 2228,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/ConwaysGameofLife/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -14106,7 +14106,7 @@
           "sha256": null
         }
       ],
-      "popularity": 25994,
+      "popularity": 26057,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Crispy-Doom/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -14139,7 +14139,7 @@
           "sha256": "689908a7d5b7878083187e7f33587e16bc84317204923938a2eac674b3949903"
         }
       ],
-      "popularity": 3686,
+      "popularity": 4175,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/CrispyDoomU/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -17289,7 +17289,7 @@
           "sha256": null
         }
       ],
-      "popularity": 17027,
+      "popularity": 17079,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/disc2appWUTPort/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -17674,7 +17674,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2745,
+      "popularity": 2850,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/DonkeyKongish/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -18146,7 +18146,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4709,
+      "popularity": 4738,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/drc-test/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -18788,7 +18788,7 @@
           "sha256": null
         }
       ],
-      "popularity": 62301,
+      "popularity": 62741,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/dumpling/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -19317,7 +19317,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2524,
+      "popularity": 2567,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/EasyRPG/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -19748,7 +19748,7 @@
           "sha256": null
         }
       ],
-      "popularity": 3079,
+      "popularity": 3243,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/EjectDisc/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -20382,7 +20382,7 @@
           "sha256": null
         }
       ],
-      "popularity": 43498,
+      "popularity": 43671,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/EnvSwap/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -21101,7 +21101,7 @@
           "sha256": null
         }
       ],
-      "popularity": 3441,
+      "popularity": 3459,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Fake-08/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -22454,7 +22454,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4245,
+      "popularity": 4265,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/fireplace-nx-wiiu/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -22485,7 +22485,7 @@
           "sha256": null
         }
       ],
-      "popularity": 3452,
+      "popularity": 3457,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Fireplace-NXU/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -22779,7 +22779,7 @@
           "sha256": null
         }
       ],
-      "popularity": 20850,
+      "popularity": 20967,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/flappy_bird_3d/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -25152,7 +25152,7 @@
           "sha256": null
         }
       ],
-      "popularity": 9074,
+      "popularity": 9151,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/GamepadTester/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -28272,7 +28272,7 @@
           "sha256": null
         }
       ],
-      "popularity": 346894,
+      "popularity": 347569,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/appstore/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -28424,10 +28424,10 @@
         "utilities"
       ],
       "description": "A dedicated application to seamlessly install/update/launch HDR, the gameplay overhaul mod for Smash Ultimate.",
-      "added_at": "2026-07-22",
+      "added_at": "2026-10-01",
       "summary": "Easily install/update/launch HDR!",
       "author": "HDR-Development",
-      "version": "0.8.0",
+      "version": "0.9.1",
       "license": "GPLv3",
       "icon_url": null,
       "release_url": "https://github.com/techyCoder81/hdr-launcher-react",
@@ -28436,8 +28436,8 @@
           "format": "hbas",
           "filename": "hdr-launcher.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/hdr-launcher/manifest.install",
-          "size": 12348,
-          "sha256": "cf144c241e6dc48cb221590a89deda12ba8da93fdfae42aed79dfb7702a8076a"
+          "size": 12616,
+          "sha256": "5639d86ff83817085f12c1d8f3ab727ac44628f428b67ec7fd3857240920d564"
         }
       ],
       "popularity": 25614,
@@ -28445,7 +28445,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2026-07-31"
+      "updated_at": "2026-10-02"
     },
     {
       "id": "vitadbtoo-vita:1071",
@@ -30571,7 +30571,7 @@
           "sha256": null
         }
       ],
-      "popularity": 1759,
+      "popularity": 1773,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Immaterial/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -31874,7 +31874,7 @@
           "sha256": null
         }
       ],
-      "popularity": 1548,
+      "popularity": 1563,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/jezzballu/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -33696,7 +33696,7 @@
           "sha256": null
         }
       ],
-      "popularity": 498,
+      "popularity": 531,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Labyrinth/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -33820,7 +33820,7 @@
           "sha256": null
         }
       ],
-      "popularity": 3539,
+      "popularity": 3551,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/lameIRCU/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -36751,7 +36751,7 @@
           "sha256": null
         }
       ],
-      "popularity": 1433,
+      "popularity": 1447,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/MegaZeux/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -37609,7 +37609,7 @@
           "sha256": null
         }
       ],
-      "popularity": 11262,
+      "popularity": 11297,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/UsendMii_Client/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -37961,7 +37961,7 @@
           "sha256": null
         }
       ],
-      "popularity": 7118,
+      "popularity": 7171,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Minesweeper_WiiU/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -38965,7 +38965,7 @@
           "sha256": null
         }
       ],
-      "popularity": 36862,
+      "popularity": 37399,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/moonlight-wiiu/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -39432,7 +39432,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4075,
+      "popularity": 4122,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/MultiDRCSpaceDemo/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -41956,7 +41956,7 @@
           "sha256": null
         }
       ],
-      "popularity": 31138,
+      "popularity": 31814,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/NooDS/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -42323,7 +42323,7 @@
       "name": "NP Fake Sign-in",
       "summary": "Headless payload that registers PS5 user slots directly via the system registry. Offline account activation without PSN. One-shot ELF: send, runs, exits.",
       "author": "",
-      "version": "v1.3",
+      "version": "v1.4",
       "license": null,
       "icon_url": null,
       "release_url": "https://git.etawen.dev/earthonion/np-fake-signin",
@@ -42331,7 +42331,7 @@
         {
           "format": "elf",
           "filename": "np-fake-signin-ps5.elf",
-          "url": "https://git.etawen.dev/earthonion/np-fake-signin/releases/download/v1.3/np-fake-signin-ps5.elf",
+          "url": "https://git.etawen.dev/earthonion/np-fake-signin/releases/download/v1.4/np-fake-signin-ps5.elf",
           "sha256": null
         }
       ],
@@ -42339,7 +42339,7 @@
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-05-15 19:41:36 UTC+8"
+      "updated_at": "2026-10-02 08:58:43 UTC+8"
     },
     {
       "id": "open-shop-channel-wii:nReader",
@@ -42591,7 +42591,7 @@
           "sha256": null
         }
       ],
-      "popularity": 8339,
+      "popularity": 8393,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/ntrview-wiiu/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -45214,7 +45214,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2853,
+      "popularity": 2886,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Opensupaplex/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -45922,7 +45922,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4740,
+      "popularity": 4852,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/PacManish/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -48961,7 +48961,7 @@
           "sha256": "d9f1df8e05394d62b6b9b0319408af7762c1ba317727e92a41b2a8fa7a25ac73"
         }
       ],
-      "popularity": 0,
+      "popularity": 30,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/PongU/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -50220,7 +50220,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8336,
+      "popularity": 8357,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50247,7 +50247,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2726,
+      "popularity": 2738,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50274,7 +50274,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7805,
+      "popularity": 7833,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50301,7 +50301,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5176,
+      "popularity": 5196,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50328,7 +50328,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 46237,
+      "popularity": 46308,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -53979,7 +53979,7 @@
           "sha256": "0efb679f0938fc462d10c664b0a6709dcd9fb7d3452025786d11af3557a24ecc"
         }
       ],
-      "popularity": 275359,
+      "popularity": 277338,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/retroarch/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -56201,7 +56201,7 @@
           "sha256": null
         }
       ],
-      "popularity": 18331,
+      "popularity": 18538,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/savemii/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -56234,7 +56234,7 @@
           "sha256": "00ad64b99c4f6c7f46e381ec6123a48a12ad08f8b33c251ec606ea6ece508f64"
         }
       ],
-      "popularity": 13571,
+      "popularity": 14598,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/SaveMiiProcessMod/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -56267,7 +56267,7 @@
           "sha256": null
         }
       ],
-      "popularity": 253767,
+      "popularity": 256311,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/SaveMiiModWUTPort/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -56360,7 +56360,7 @@
           "sha256": null
         }
       ],
-      "popularity": 959,
+      "popularity": 961,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/schismtracker/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -56493,7 +56493,7 @@
           "sha256": "001ae02dff8d27e2bdcf02035cf3d79975961ed8706987a09d92a4aeb5767a83"
         }
       ],
-      "popularity": 8677,
+      "popularity": 9016,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/ScratchWiiU/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -57972,7 +57972,7 @@
           "sha256": "819d0b6176062ac1889c2a8db3b878915d8ffd06d405128954d6e854d6d7b6e5"
         }
       ],
-      "popularity": 2344,
+      "popularity": 2392,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/ShoWiFi/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -58060,7 +58060,7 @@
           "sha256": null
         }
       ],
-      "popularity": 9695,
+      "popularity": 9779,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/shutdown-hbl/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -58417,7 +58417,7 @@
           "sha256": null
         }
       ],
-      "popularity": 3593,
+      "popularity": 3610,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Simple_SDL_Snake/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -62995,7 +62995,7 @@
           "sha256": "758a8c62ca3a8787ec6d3d3e310b2a4ae03349651d8a87cf743b93da534daf5d"
         }
       ],
-      "popularity": 3254,
+      "popularity": 3300,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/SuDokuL/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -65973,7 +65973,7 @@
           "sha256": null
         }
       ],
-      "popularity": 832,
+      "popularity": 872,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/TankTrap/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -66442,7 +66442,7 @@
           "sha256": null
         }
       ],
-      "popularity": 4905,
+      "popularity": 4930,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/TetrisU/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -67577,7 +67577,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5968,
+      "popularity": 5997,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/TicketCleaner/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -68957,7 +68957,7 @@
           "sha256": "dfb887e10801f16c8268ca03da5b7ae0d16cc48c519ce8ecbeb9237090f66bd1"
         }
       ],
-      "popularity": 6835,
+      "popularity": 6910,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/Trogdor-Reburninated/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -69624,7 +69624,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5038,
+      "popularity": 5165,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/TWWHDRandomizer/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -69816,7 +69816,7 @@
           "sha256": null
         }
       ],
-      "popularity": 62506,
+      "popularity": 62708,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/UFDiine/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -70795,7 +70795,7 @@
           "sha256": null
         }
       ],
-      "popularity": 22691,
+      "popularity": 23005,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/USBHide/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -71508,7 +71508,7 @@
           "sha256": null
         }
       ],
-      "popularity": 15896,
+      "popularity": 15942,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/vgedit/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -71674,7 +71674,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2337,
+      "popularity": 2381,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/VideoModeChangerAroma/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -76087,7 +76087,7 @@
           "sha256": "29e633a4a888ea208f467e9828e6e8f6f6fea27e186aea303c717b47a517cfbf"
         }
       ],
-      "popularity": 88577,
+      "popularity": 91249,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/CompatTitleInstaller/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -76120,7 +76120,7 @@
           "sha256": null
         }
       ],
-      "popularity": 13845,
+      "popularity": 13981,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/vWii_decaffeinator/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -77071,7 +77071,7 @@
           "sha256": "ab99aeec9d2bc8469f5ebb05db08a01b991601ea158db5db617785e4d1998847"
         }
       ],
-      "popularity": 1095,
+      "popularity": 1963,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/WiiUAlbum/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -77102,7 +77102,7 @@
           "sha256": null
         }
       ],
-      "popularity": 24622,
+      "popularity": 24796,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/WiiUReboot/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -77133,7 +77133,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2929,
+      "popularity": 2936,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/survey/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -77164,7 +77164,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2272,
+      "popularity": 2284,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/wiiu-vnc/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -78675,7 +78675,7 @@
           "sha256": null
         }
       ],
-      "popularity": 73797,
+      "popularity": 74756,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/WiiU-Shell/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -78708,7 +78708,7 @@
           "sha256": null
         }
       ],
-      "popularity": 1162,
+      "popularity": 1184,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/WiiUCrashLogDumper/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -78741,7 +78741,7 @@
           "sha256": null
         }
       ],
-      "popularity": 34159,
+      "popularity": 34723,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/WiiUIdent/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -78806,7 +78806,7 @@
           "sha256": null
         }
       ],
-      "popularity": 16094,
+      "popularity": 16153,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/WiiUScreenshotManager/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -79763,7 +79763,7 @@
           "sha256": null
         }
       ],
-      "popularity": 118404,
+      "popularity": 121441,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/wudd/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -80642,7 +80642,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2444,
+      "popularity": 2453,
       "manifest_url": "https://wiiu.cdn.fortheusers.org/packages/yapesdl/manifest.install",
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
@@ -80980,28 +80980,28 @@
       "name": "zelda-tmc-3ds",
       "summary": "Native Nintendo 3DS port of The Legend of Zelda: The Minish Cap based on Project Picori.",
       "author": "estebanpdn",
-      "version": "v2.1",
+      "version": "v1.0",
       "license": "GNU General Public License v3.0",
       "icon_url": "https://raw.githubusercontent.com/EstebanPdN/zelda-tmc-3ds/main/platform/3ds/assets/icon-48.png",
       "release_url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases",
       "downloads": [
         {
           "format": "3dsx",
-          "filename": "tmc-3ds-v2.1.3dsx",
-          "url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/download/v2.1/tmc-3ds-v2.1.3dsx",
-          "size": 4997520
+          "filename": "tmc-3ds-v1.0.3dsx",
+          "url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/download/v1.0/tmc-3ds-v1.0.3dsx",
+          "size": 3833596
         },
         {
           "format": "cia",
-          "filename": "tmc-3ds-v2.1.cia",
-          "url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/download/v2.1/tmc-3ds-v2.1.cia",
-          "size": 3617728
+          "filename": "tmc-3ds-v1.0.cia",
+          "url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/download/v1.0/tmc-3ds-v1.0.cia",
+          "size": 2368448
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-20T08:16:04Z"
+      "updated_at": "2026-08-12T21:31:37Z"
     },
     {
       "id": "vitadbtoo-vita:993",
