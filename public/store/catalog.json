@@ -12621,7 +12621,7 @@
       "name": "Cloudpoint",
       "summary": "Bringing modern cloud save to 3DS.",
       "author": "dwalker109",
-      "version": "0.7.0",
+      "version": "0.8.0",
       "license": "MIT License",
       "icon_url": "https://media.githubusercontent.com/media/dwalker109/cloudpoint/refs/heads/main/cloudpoint_app/cia/icon.png",
       "release_url": "https://github.com/dwalker109/cloudpoint/releases",
@@ -12629,20 +12629,20 @@
         {
           "format": "3dsx",
           "filename": "cloudpoint.3dsx",
-          "url": "https://github.com/dwalker109/cloudpoint/releases/download/0.7.0/cloudpoint.3dsx",
-          "size": 2923416
+          "url": "https://github.com/dwalker109/cloudpoint/releases/download/0.8.0/cloudpoint.3dsx",
+          "size": 3147296
         },
         {
           "format": "cia",
           "filename": "cloudpoint.cia",
-          "url": "https://github.com/dwalker109/cloudpoint/releases/download/0.7.0/cloudpoint.cia",
-          "size": 2347968
+          "url": "https://github.com/dwalker109/cloudpoint/releases/download/0.8.0/cloudpoint.cia",
+          "size": 2487232
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-08-09T12:50:34Z"
+      "updated_at": "2026-10-02T16:18:57Z"
     },
     {
       "id": "vitadbtoo-psp:941",
@@ -50220,7 +50220,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8357,
+      "popularity": 8420,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50247,7 +50247,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2738,
+      "popularity": 2750,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50274,7 +50274,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7833,
+      "popularity": 7898,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50301,7 +50301,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5196,
+      "popularity": 5228,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50328,7 +50328,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 46308,
+      "popularity": 46503,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50355,7 +50355,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 258,
+      "popularity": 260,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50395,30 +50395,30 @@
       "updated_at": "2020-06-12"
     },
     {
-      "id": "ps5-payloads-atlas:aria2-v1.37.0-0.elf",
+      "id": "ps5-payloads-atlas:aria2-v1.37.0-1.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5 aria2",
       "summary": "aria2 for PS5",
       "author": "",
-      "version": "v1.37.0-0",
+      "version": "v1.37.0-1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/owendswang/ps5-aria2",
       "downloads": [
         {
           "format": "elf",
-          "filename": "aria2-v1.37.0-0.elf",
-          "url": "https://github.com/owendswang/ps5-aria2/releases/download/v1.37.0-0/aria2-v1.37.0-0.elf",
-          "sha256": "38601e346d2d8695ecb5092a99d83220e630b001e2218611604d58e3fe4b698a"
+          "filename": "aria2-v1.37.0-1.elf",
+          "url": "https://github.com/owendswang/ps5-aria2/releases/download/v1.37.0-1/aria2-v1.37.0-1.elf",
+          "sha256": "388f575899a7e3f496538f02c2f0e0eea711415b70ae0d6ef9da48b2da5e98c3"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-09-25 02:52:43 UTC+8"
+      "updated_at": "2026-10-03 01:21:11 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:PS5_Console.elf",
@@ -58522,30 +58522,30 @@
       "updated_at": "2026-02-24"
     },
     {
-      "id": "ps5-payloads-atlas:singleDPI_v0.2.1.elf",
+      "id": "ps5-payloads-atlas:singleDPI_v0.2.2.elf",
       "platforms": [
         "ps5"
       ],
       "name": "singleDPI",
       "summary": "Standalone DPI payload accepting TCP 9090 JSON package-install requests and an experimental 12800 URL endpoint.",
       "author": "",
-      "version": "0.2.1",
+      "version": "0.2.2",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/maxmilu/ps5-direct-package-installer",
       "downloads": [
         {
           "format": "elf",
-          "filename": "singleDPI_v0.2.1.elf",
-          "url": "https://github.com/MaxMilu/ps5-direct-package-installer/releases/download/0.2.1/singleDPI_v0.2.1.elf",
-          "sha256": "c824b2220f72bb95c514a857b505f85ead93b1d056eefda942381784c4e602bc"
+          "filename": "singleDPI_v0.2.2.elf",
+          "url": "https://github.com/MaxMilu/ps5-direct-package-installer/releases/download/0.2.2/singleDPI_v0.2.2.elf",
+          "sha256": "7e58279af299a25b5391d43b7404908574acf36daf13a06de101bc208d4d9b85"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-01 20:27:43 UTC+8"
+      "updated_at": "2026-10-03 01:58:30 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1139",
@@ -68016,7 +68016,7 @@
       "name": "TJAP_3DS",
       "summary": "TJAPlayer for 3DS - Music game of the TJA file.",
       "author": "TogeToge & MarioGames",
-      "version": "v2.4.1",
+      "version": "v2.4.1A",
       "license": null,
       "icon_url": "https://raw.githubusercontent.com/LuMariGames/TJAP_3DS/main/resource/icon.png",
       "release_url": "https://github.com/LuMariGames/TJAP_3DS/releases",
@@ -68024,20 +68024,20 @@
         {
           "format": "3dsx",
           "filename": "TJAP_3DS.3dsx",
-          "url": "https://github.com/LuMariGames/TJAP_3DS/releases/download/v2.4.1/TJAP_3DS.3dsx",
-          "size": 9896528
+          "url": "https://github.com/LuMariGames/TJAP_3DS/releases/download/v2.4.1A/TJAP_3DS.3dsx",
+          "size": 10273124
         },
         {
           "format": "cia",
           "filename": "TJAP_3DS.cia",
-          "url": "https://github.com/LuMariGames/TJAP_3DS/releases/download/v2.4.1/TJAP_3DS.cia",
-          "size": 10056640
+          "url": "https://github.com/LuMariGames/TJAP_3DS/releases/download/v2.4.1A/TJAP_3DS.cia",
+          "size": 10437568
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-26T01:04:29Z"
+      "updated_at": "2026-10-02T21:12:30Z"
     },
     {
       "id": "vitadbtoo-psp:984",
