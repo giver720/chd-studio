@@ -50226,7 +50226,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8508,
+      "popularity": 8551,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50253,7 +50253,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2767,
+      "popularity": 2771,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50280,7 +50280,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7990,
+      "popularity": 8029,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50307,7 +50307,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5269,
+      "popularity": 5281,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50334,7 +50334,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 46769,
+      "popularity": 46911,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50361,7 +50361,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 266,
+      "popularity": 269,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50401,30 +50401,30 @@
       "updated_at": "2020-06-12"
     },
     {
-      "id": "ps5-payloads-atlas:aria2-v1.37.0-1.elf",
+      "id": "ps5-payloads-atlas:aria2-v1.37.0-2.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5 aria2",
       "summary": "aria2 for PS5",
       "author": "",
-      "version": "v1.37.0-1",
+      "version": "v1.37.0-2",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/owendswang/ps5-aria2",
       "downloads": [
         {
           "format": "elf",
-          "filename": "aria2-v1.37.0-1.elf",
-          "url": "https://github.com/owendswang/ps5-aria2/releases/download/v1.37.0-1/aria2-v1.37.0-1.elf",
-          "sha256": "388f575899a7e3f496538f02c2f0e0eea711415b70ae0d6ef9da48b2da5e98c3"
+          "filename": "aria2-v1.37.0-2.elf",
+          "url": "https://github.com/owendswang/ps5-aria2/releases/download/v1.37.0-2/aria2-v1.37.0-2.elf",
+          "sha256": "97486d1f9e557a8a98cedff88b628973da2b3a81bbff3b226ea98afdfc3d5e9d"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-03 01:21:11 UTC+8"
+      "updated_at": "2026-10-04 02:13:23 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:PS5_Console.elf",
