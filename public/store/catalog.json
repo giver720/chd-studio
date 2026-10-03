@@ -1125,7 +1125,7 @@
       "name": "3DS-CLI",
       "summary": "Run full RISCV Linux on many game consoles",
       "author": "cmdada",
-      "version": "5.2.2",
+      "version": "5.3",
       "license": "GNU General Public License v3.0",
       "icon_url": "https://raw.githubusercontent.com/cmdada/3DS-CLI/main/icon.png",
       "release_url": "https://github.com/cmdada/3DS-CLI/releases",
@@ -1133,14 +1133,14 @@
         {
           "format": "zip",
           "filename": "3ds_cli.zip",
-          "url": "https://github.com/cmdada/3DS-CLI/releases/download/5.2.2/3ds_cli.zip",
-          "size": 63108041
+          "url": "https://github.com/cmdada/3DS-CLI/releases/download/5.3/3ds_cli.zip",
+          "size": 63109147
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-26T21:31:31Z"
+      "updated_at": "2026-10-03T02:25:17Z"
     },
     {
       "id": "universal-db:icicle1133/3ds-Controller",
@@ -34324,19 +34324,19 @@
           "format": "3dsx",
           "filename": "isle.3dsx",
           "url": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle.3dsx",
-          "size": 3040536
+          "size": 3044136
         },
         {
           "format": "cia",
           "filename": "isle.cia",
           "url": "https://github.com/isledecomp/isle-portable/releases/download/continuous/isle.cia",
-          "size": 2188224
+          "size": 2190272
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-25T21:13:48Z"
+      "updated_at": "2026-10-03T02:22:10Z"
     },
     {
       "id": "vitadbtoo-vita:1452",
@@ -50220,7 +50220,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8420,
+      "popularity": 8446,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50247,7 +50247,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2750,
+      "popularity": 2758,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50274,7 +50274,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7898,
+      "popularity": 7921,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50301,7 +50301,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5228,
+      "popularity": 5241,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50328,7 +50328,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 46503,
+      "popularity": 46583,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50355,7 +50355,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 260,
+      "popularity": 264,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50525,30 +50525,30 @@
       "updated_at": "2026-09-16 12:09:18 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5-app-dumper_v2.00.elf",
+      "id": "ps5-payloads-atlas:ps5-app-dumper_v2.10.elf",
       "platforms": [
         "ps5"
       ],
       "name": "ps5-app-dumper",
       "summary": "Dumps installed PS5 apps to USB or internal storage in fakepkg/folder format. Reads config from /data/ps5-app-dumper/config.ini.",
       "author": "",
-      "version": "v2.00",
+      "version": "v2.10",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/echostretch/ps5-app-dumper",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5-app-dumper_v2.00.elf",
-          "url": "https://github.com/EchoStretch/ps5-app-dumper/releases/download/v2.00/ps5-app-dumper_v2.00.elf",
-          "sha256": "b6fea71afb8937fcd1a933116c620e989acba25b7049eaeaa00cdc1bd604d686"
+          "filename": "ps5-app-dumper_v2.10.elf",
+          "url": "https://github.com/EchoStretch/ps5-app-dumper/releases/download/v2.10/ps5-app-dumper_v2.10.elf",
+          "sha256": "c850f1df6f2787824d6ddeeed69ce4144e00569b32135973401c2985cfb0345b"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-09-30 05:54:23 UTC+8"
+      "updated_at": "2026-10-03 09:11:22 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:ps5-fan-control-v0.3.elf",
