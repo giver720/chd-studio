@@ -48186,10 +48186,10 @@
         "utilities"
       ],
       "description": "A local bank system for Pokemon games on Nintendo Switch.\nMove Pokemon between your save files and local bank storage.\n\nFeatures\n- Profile Selection\n- Two-Panel Box Viewer\n- Pick & Place\n- Multi-Select\n- Pokemon Details\n\nBank System\n- Create a new bank (up to 32-character name)\n- Rename an existing bank\n- Delete a bank (with confirmation)\n\nEach bank has the same box capacity as its game family (32 or 40 boxes).\nThe bank list shows the number of occupied slots for each bank.\n\nYou can switch between banks from the main view via the menu, with or without saving first.\n\nBackup System\n- When loading a game save on Switch, an automatic backup is created before any modifications.\n- This is a full copy of the mounted save directory.\n\nSave Integrity\n- SCBlock saves (ZA, SV, SwSh, LA): Decrypted, modified, and re-encrypted. A round-trip verification runs on load to confirm the cycle is lossless.\n- BDSP saves: Flat binary with MD5 checksum, recalculated on every save.\n- All saves are written in-place to preserve ",
-      "added_at": "2026-09-28",
+      "added_at": "2026-10-02",
       "summary": "A local bank system for Pokemon games",
       "author": "Insektaure",
-      "version": "2.1.0",
+      "version": "2.2.1",
       "license": "GPLv2",
       "icon_url": null,
       "release_url": "https://github.com/Insektaure/pkHouse",
@@ -48198,8 +48198,8 @@
           "format": "hbas",
           "filename": "pkHouseLocalPokeBank.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/pkHouseLocalPokeBank/manifest.install",
-          "size": 13870,
-          "sha256": "a349e08a035355a48d88f7585eb9f66c950504a3820627a264101768eb7d3e0a"
+          "size": 13944,
+          "sha256": "245e80cfa0e5d05cecfb8239579b0fa577a19f475a06aed34f3c9789e84383a3"
         }
       ],
       "popularity": 4383,
@@ -48207,7 +48207,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2026-09-29"
+      "updated_at": "2026-10-03"
     },
     {
       "id": "universal-db:Universal-Team/pkmn-chest",
@@ -50226,7 +50226,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8476,
+      "popularity": 8508,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50253,7 +50253,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2762,
+      "popularity": 2767,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50280,7 +50280,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 7949,
+      "popularity": 7990,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50307,7 +50307,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5258,
+      "popularity": 5269,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50334,7 +50334,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 46658,
+      "popularity": 46769,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50361,7 +50361,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 265,
+      "popularity": 266,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -57557,7 +57557,7 @@
       "name": "ShadowMount+",
       "summary": "Fully automated background 'Auto-Mounter' payload for jailbroken PS5. Watches scan folders for game folders and .ffpkg/.exfat/.ffpfs/.ffpfsc images, auto-mounts them, stages sce_sys + appmeta + trophy data, and registers them on the home screen.",
       "author": "",
-      "version": "1.7beta2",
+      "version": "1.7beta3",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/drakmor/shadowmountplus",
@@ -57565,15 +57565,15 @@
         {
           "format": "elf",
           "filename": "shadowmountplus.elf",
-          "url": "https://github.com/drakmor/ShadowMountPlus/releases/download/1.7beta2/shadowmountplus.elf",
-          "sha256": "3f716a7b2220c7e87e87452ae05cad689ef842d3beb4cdad6c526cb6dfc2b6b5"
+          "url": "https://github.com/drakmor/ShadowMountPlus/releases/download/1.7beta3/shadowmountplus.elf",
+          "sha256": "2a7427e20ba7a70bd8cd01e47eb00ee7ca82db82dff3da7884f48f9c3fcbe95a"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-09-22 05:17:04 UTC+8"
+      "updated_at": "2026-10-01 21:31:26 UTC+8"
     },
     {
       "id": "universal-db:dnasdw/SharedFontTool",
@@ -61683,7 +61683,7 @@
       "name": "spotify3ds",
       "summary": "Control Spotify from your 3DS",
       "author": "avncharlie",
-      "version": "1.5.2",
+      "version": "1.5.3",
       "license": null,
       "icon_url": "https://raw.githubusercontent.com/avncharlie/spotify3ds/refs/heads/main/assets/icon.png",
       "release_url": "https://github.com/avncharlie/spotify3ds/releases",
@@ -61691,20 +61691,20 @@
         {
           "format": "3dsx",
           "filename": "Spotify3DS.3dsx",
-          "url": "https://github.com/avncharlie/spotify3ds/releases/download/1.5.2/Spotify3DS.3dsx",
-          "size": 1005524
+          "url": "https://github.com/avncharlie/spotify3ds/releases/download/1.5.3/Spotify3DS.3dsx",
+          "size": 1020500
         },
         {
           "format": "cia",
           "filename": "Spotify3DS.cia",
-          "url": "https://github.com/avncharlie/spotify3ds/releases/download/1.5.2/Spotify3DS.cia",
-          "size": 771008
+          "url": "https://github.com/avncharlie/spotify3ds/releases/download/1.5.3/Spotify3DS.cia",
+          "size": 781760
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-08-29T13:59:59Z"
+      "updated_at": "2026-10-03T14:45:16Z"
     },
     {
       "id": "hbas-switch:SPSV",
