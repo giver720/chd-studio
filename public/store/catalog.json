@@ -5451,13 +5451,13 @@
       ],
       "name": "Avuari",
       "summary": "A simple shmup",
-      "description": "Fight with the new prototype for Falcon 4 with the new Proton Catalyst Cannon to battle against the final wave of Eradicators with their group of five motherships and their army.     Controls:  2:Shoot   1:Boost    Dpad: Move   You use the pointer to go  in the menus.\n",
+      "description": "Fight with Falcon 4 and the new Proton Catalyst Cannon to battle against the Eradicators. Controls:  2:Shoot   1:Boost   Dpad: Move  You use the pointer to go in the menus.\n",
       "categories": [
         "games"
       ],
       "requirements": "wii · Wii Remote · SDHC",
       "author": "ColdHorizon",
-      "version": "1.00",
+      "version": "2.00",
       "title_id": "000100014ED97435",
       "license": null,
       "icon_url": "https://hbb1.oscwii.org/api/contents/Avuari/icon.png",
@@ -5467,14 +5467,14 @@
           "format": "zip",
           "filename": "Avuari.zip",
           "url": "https://hbb1.oscwii.org/api/contents/Avuari/Avuari.zip",
-          "size": 8823782
+          "size": 8841152
         }
       ],
       "source": "Open Shop Channel",
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-06-11T00:00:00+00:00"
+      "updated_at": "2026-10-04T01:33:57+00:00"
     },
     {
       "id": "hbas-switch:AXChip8",
@@ -9914,13 +9914,13 @@
       ],
       "name": "ButtonBreakWii",
       "summary": "Button Break for Wii",
-      "description": "A port of Button Break, the Homebrew app for Wii U.. but on the Wii!\t\nv0.1 - First release \t\nv0.2 - Added Nunchuk buttons.. more presses!\t\t\nv0.3 - Added lines in between presses\t\t\nv0.4 - Added the right Punctuation and changed Minus and Plus to Select and Start\t\nv0.5 - Made 2 different apps - Wii Remote and Nunchuk because there was no way to just only use the wii remote in v0.4.\nv0.6 - Made the 2 apps into one.\nv0.7 - Added where you can actually exit the program instead of turning the wii completely off.\nv0.8 - Fixed the bug where if you hold the Nunchuk buttons it will keep repeating itself.\nv0.9 - Added a Button Counter\nv1.0 - Made the text feel more like the OG Button Break for Wii U.",
+      "description": "A port of Button Break, the Homebrew app for Wii U.. but on the Wii!\t\nv0.1 - First release \t\n0.2 - Added Nunchuk buttons.. more presses!\t\t\nv0.3 - Added lines in between presses\t\t\nv0.4 - Added the right Punctuation and changed Minus and Plus to Select and Start\t\nv0.5 - Made 2 different apps - Wii Remote and Nunchuk because there was no way to just only use the wii remote in v0.4.\nv0.6 - Made the 2 apps into one.\nv0.7 - Added where you can actually exit the program instead of turning the wii completely off.\nv0.8 - Fixed the bug where if you hold the Nunchuk buttons it will keep repeating itself.\nv0.9 - Added a Button Counter\nv1.0 - Made the text feel more like the OG Button Break for Wii U.\nv1.1 - Added GameCube contoller support. (Finally)",
       "categories": [
         "games"
       ],
-      "requirements": "wii · vwii · wii_mini · Wii Remote · Nunchuk · SDHC",
+      "requirements": "wii · vwii · wii_mini · Wii Remote · Nunchuk · GameCube Controller · SDHC",
       "author": "Strong Enough",
-      "version": "v1.0",
+      "version": "v1.1",
       "title_id": "000100014E5CB0B7",
       "license": null,
       "icon_url": "https://hbb1.oscwii.org/api/contents/buttonbreakwii/icon.png",
@@ -9930,14 +9930,14 @@
           "format": "zip",
           "filename": "buttonbreakwii.zip",
           "url": "https://hbb1.oscwii.org/api/contents/buttonbreakwii/buttonbreakwii.zip",
-          "size": 161123
+          "size": 161576
         }
       ],
       "source": "Open Shop Channel",
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-02-19T00:00:00+00:00"
+      "updated_at": "2026-10-04T01:32:14+00:00"
     },
     {
       "id": "universal-db:trainboy2019/ButtonPresser3DS",
@@ -20541,7 +20541,7 @@
       "name": "Escape Jonnys Backrooms",
       "summary": "Escape Jonny's Backrooms for the Nintendo 3DS is a 2D Backrooms game where you find you're way out of the Backrooms. While someone named Jonny chases you, and you have to survive and escape the maze.",
       "author": "Pixel",
-      "version": "v2.0.0",
+      "version": "v2.1.0",
       "license": null,
       "icon_url": "https://raw.githubusercontent.com/Pixel6763/Escape-Jonny-s-Backrooms-3DS/main/icon.png",
       "release_url": "https://github.com/Pixel6763/Escape-Jonny-s-Backrooms-3DS/releases",
@@ -20549,14 +20549,20 @@
         {
           "format": "3dsx",
           "filename": "Escape_Jonnys_Backrooms.3dsx",
-          "url": "https://github.com/Pixel6763/Escape-Jonny-s-Backrooms-3DS/releases/download/v2.0.0/Escape_Jonnys_Backrooms.3dsx",
-          "size": 193172
+          "url": "https://github.com/Pixel6763/Escape-Jonny-s-Backrooms-3DS/releases/download/v2.1.0/Escape_Jonnys_Backrooms.3dsx",
+          "size": 253308
+        },
+        {
+          "format": "cia",
+          "filename": "Escape_Jonnys_Backrooms.cia",
+          "url": "https://github.com/Pixel6763/Escape-Jonny-s-Backrooms-3DS/releases/download/v2.1.0/Escape_Jonnys_Backrooms.cia",
+          "size": 393664
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-07-16T21:51:08Z"
+      "updated_at": "2026-10-04T02:09:26Z"
     },
     {
       "id": "vitadbtoo-vita:263",
@@ -21638,7 +21644,7 @@
       ],
       "requirements": "wii · vwii · wii_mini · Wii Remote · Wii Remote · Wii Remote · Wii Remote · Nunchuk · Classic Controller · GameCube Controller · SDHC",
       "author": "Tantric",
-      "version": "4.0.1",
+      "version": "4.0.2",
       "title_id": "000100014E3DC7D1",
       "license": null,
       "icon_url": "https://hbb1.oscwii.org/api/contents/fceugx/icon.png",
@@ -21648,14 +21654,14 @@
           "format": "zip",
           "filename": "fceugx.zip",
           "url": "https://hbb1.oscwii.org/api/contents/fceugx/fceugx.zip",
-          "size": 3054554
+          "size": 3137117
         }
       ],
       "source": "Open Shop Channel",
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-08-11T00:00:00+00:00"
+      "updated_at": "2026-10-04T01:35:50+00:00"
     },
     {
       "id": "open-shop-channel-wii:fceugx-channel-installer",
@@ -50226,7 +50232,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8551,
+      "popularity": 8590,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50253,7 +50259,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2771,
+      "popularity": 2777,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50280,7 +50286,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8029,
+      "popularity": 8066,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50307,7 +50313,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5281,
+      "popularity": 5298,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50334,7 +50340,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 46911,
+      "popularity": 47013,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50361,7 +50367,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 269,
+      "popularity": 271,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -55794,10 +55800,10 @@
       "name": "SaltyNX",
       "categories": [],
       "description": "Background process for the Nintendo Switch for file/code modification\n\nCreated by: https://github.com/shinyquagsire23\n\nThis fork includes many QoL improvements\n\n\nFor additional functions you need SaltyNX-Tool.\n\n",
-      "added_at": "2026-09-26",
+      "added_at": "2026-10-03",
       "summary": "Background process for the Nintendo Switch for file/code modification",
       "author": "masagrator, shinyquagsire23",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "license": "n/a",
       "icon_url": null,
       "release_url": "https://github.com/masagrator/SaltyNX/releases",
@@ -55806,8 +55812,8 @@
           "format": "hbas",
           "filename": "SaltyNX.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/SaltyNX/manifest.install",
-          "size": 421,
-          "sha256": "099ad631a3e9752e8596d491ae6bc6a90369869265b6309b217e9fb1af53850b"
+          "size": 475,
+          "sha256": "272753a0cf2326ea0bb3411b1a4b47c81f4eebcfe2ef15b295c3ab3755c5bba4"
         }
       ],
       "popularity": 149124,
@@ -55815,7 +55821,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2026-09-27"
+      "updated_at": "2026-10-04"
     },
     {
       "id": "hbas-switch:SaltyNX-Tool",
@@ -55827,10 +55833,10 @@
         "utilities"
       ],
       "description": "To manage functions of this SaltyNX fork min. 0.2.0a\n\nTo use only in Applet mode. ",
-      "added_at": "2025-11-15",
+      "added_at": "2026-10-03",
       "summary": "To manage SaltyNX functions",
       "author": "masagrator",
-      "version": "1.1.1",
+      "version": "1.2.0",
       "license": "GPLv3",
       "icon_url": null,
       "release_url": "https://github.com/masagrator/SaltyNX-Tool/releases",
@@ -55839,8 +55845,8 @@
           "format": "hbas",
           "filename": "SaltyNX-Tool.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/SaltyNX-Tool/manifest.install",
-          "size": 6574,
-          "sha256": "889f56ec3f06b24c5b98f115065fbe260b8173ce9e38a80316689d171e657332"
+          "size": 2499,
+          "sha256": "4c012524998f32cc00147698ea1b587019b6bb2116aece30e2b68e13a16e1461"
         }
       ],
       "popularity": 33740,
@@ -55848,7 +55854,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2025-11-16"
+      "updated_at": "2026-10-04"
     },
     {
       "id": "hbas-switch:Sandboxels",
@@ -59767,7 +59773,7 @@
       ],
       "requirements": "wii · vwii · wii_mini · Wii Remote · Wii Remote · Wii Remote · Wii Remote · Nunchuk · Classic Controller · GameCube Controller · SDHC",
       "author": "Tantric",
-      "version": "5.0.2",
+      "version": "5.0.3",
       "title_id": "000100014E18E199",
       "license": null,
       "icon_url": "https://hbb1.oscwii.org/api/contents/snes9xgx/icon.png",
@@ -59777,14 +59783,14 @@
           "format": "zip",
           "filename": "snes9xgx.zip",
           "url": "https://hbb1.oscwii.org/api/contents/snes9xgx/snes9xgx.zip",
-          "size": 3342788
+          "size": 3384430
         }
       ],
       "source": "Open Shop Channel",
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-08-11T00:00:00+00:00"
+      "updated_at": "2026-10-04T01:31:53+00:00"
     },
     {
       "id": "open-shop-channel-wii:snes9xgx-channel-installer",
@@ -71906,7 +71912,7 @@
       ],
       "requirements": "wii · vwii · wii_mini · Wii Remote · Wii Remote · Wii Remote · Wii Remote · Nunchuk · Classic Controller · GameCube Controller · SDHC",
       "author": "Tantric",
-      "version": "3.0.2",
+      "version": "3.0.3",
       "title_id": "000100014E113DA1",
       "license": null,
       "icon_url": "https://hbb1.oscwii.org/api/contents/vbagx/icon.png",
@@ -71916,14 +71922,14 @@
           "format": "zip",
           "filename": "vbagx.zip",
           "url": "https://hbb1.oscwii.org/api/contents/vbagx/vbagx.zip",
-          "size": 3904737
+          "size": 3991850
         }
       ],
       "source": "Open Shop Channel",
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-08-12T00:00:00+00:00"
+      "updated_at": "2026-10-04T01:32:54+00:00"
     },
     {
       "id": "open-shop-channel-wii:VC_Test",
@@ -79258,7 +79264,7 @@
       ],
       "requirements": "wii · vwii · wii_mini · Wii Remote",
       "author": "Abdelali221",
-      "version": "1.6",
+      "version": "1.6.1",
       "title_id": "000100014E7414F4",
       "license": null,
       "icon_url": "https://hbb1.oscwii.org/api/contents/WNPV/icon.png",
@@ -79268,14 +79274,14 @@
           "format": "zip",
           "filename": "WNPV.zip",
           "url": "https://hbb1.oscwii.org/api/contents/WNPV/WNPV.zip",
-          "size": 237339
+          "size": 238879
         }
       ],
       "source": "Open Shop Channel",
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-02-15T00:00:00+00:00"
+      "updated_at": "2026-10-04T01:34:22+00:00"
     },
     {
       "id": "hbas-switch:Wolf4SDL-Switch",
