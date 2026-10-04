@@ -5474,7 +5474,7 @@
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-04T01:33:57+00:00"
+      "updated_at": "2026-06-11T00:00:00+00:00"
     },
     {
       "id": "hbas-switch:AXChip8",
@@ -9937,7 +9937,7 @@
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-04T01:32:14+00:00"
+      "updated_at": "2026-02-19T00:00:00+00:00"
     },
     {
       "id": "universal-db:trainboy2019/ButtonPresser3DS",
@@ -21661,7 +21661,7 @@
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-04T01:35:50+00:00"
+      "updated_at": "2026-10-01T00:00:00+00:00"
     },
     {
       "id": "open-shop-channel-wii:fceugx-channel-installer",
@@ -50232,7 +50232,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8590,
+      "popularity": 8620,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50259,7 +50259,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2777,
+      "popularity": 2783,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50286,7 +50286,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8066,
+      "popularity": 8086,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50313,7 +50313,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5298,
+      "popularity": 5307,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50340,7 +50340,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 47013,
+      "popularity": 47099,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -58701,10 +58701,10 @@
       "name": "sLaunch",
       "categories": [],
       "description": "sLaunch is a fast and beautiful home replacement for your switch",
-      "added_at": "2026-09-25",
+      "added_at": "2026-10-03",
       "summary": "Welcome to your new home.",
       "author": "etonedemid",
-      "version": "1.4.1",
+      "version": "1.5.0",
       "license": "MIT",
       "icon_url": null,
       "release_url": "https://github.com/etonedemid/slaunch/",
@@ -58713,8 +58713,8 @@
           "format": "hbas",
           "filename": "sLaunch.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/sLaunch/manifest.install",
-          "size": 65667,
-          "sha256": "47b3e9a831e9bd96c8c680d0f2e1b2a056fdde65d1d5f1cd9d52c7191ecb787f"
+          "size": 69960,
+          "sha256": "9bf19e51df5e6fbd936cdbd01f37bed0362dfdcaf2d0bf7557ccb5772f5b4ffd"
         }
       ],
       "popularity": 504,
@@ -58722,7 +58722,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2026-09-26"
+      "updated_at": "2026-10-04"
     },
     {
       "id": "hbas-switch:SlayTheSwitch",
@@ -59790,7 +59790,7 @@
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-04T01:31:53+00:00"
+      "updated_at": "2026-10-01T00:00:00+00:00"
     },
     {
       "id": "open-shop-channel-wii:snes9xgx-channel-installer",
@@ -71258,7 +71258,7 @@
       "name": "Vapecord-ACNL-Plugin",
       "summary": "An Animal Crossing New Leaf Modding Menu Overlay to use while playing the game.",
       "author": "RedShyGuy",
-      "version": "v3.4.0",
+      "version": "v3.4.1",
       "license": "Other",
       "icon_url": "https://avatars.githubusercontent.com/u/43783060?v=4&size=128",
       "release_url": "https://github.com/RedShyGuy/Vapecord-ACNL-Plugin/releases",
@@ -71266,14 +71266,14 @@
         {
           "format": "zip",
           "filename": "Vapecord.Public.zip",
-          "url": "https://github.com/RedShyGuy/Vapecord-ACNL-Plugin/releases/download/v3.4.0/Vapecord.Public.zip",
-          "size": 8994150
+          "url": "https://github.com/RedShyGuy/Vapecord-ACNL-Plugin/releases/download/v3.4.1/Vapecord.Public.zip",
+          "size": 9004608
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-22T09:50:47Z"
+      "updated_at": "2026-10-04T05:48:16Z"
     },
     {
       "id": "hbas-switch:Vapor_spec",
@@ -71929,7 +71929,7 @@
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-04T01:32:54+00:00"
+      "updated_at": "2026-10-01T00:00:00+00:00"
     },
     {
       "id": "open-shop-channel-wii:VC_Test",
@@ -77067,10 +77067,10 @@
       "name": "Wii U Album",
       "categories": [],
       "description": "An album app for the Wii U. Browse, view, edit, and wirelessly transfer your screenshots and videos to a smart device.\n\nFeatures :\n\nview screenshots and videos stored in : /fs/vol/external01/wiiu/screenshots (Screenshotplugin) /fs/vol/external01/wiiu/videos (Screencaptureplugin)\n\nFilter by media type, application name, sort by date (newest/oldest)\n\nVideo Clipping : Trim videos with visual timeline and preview and export as a new video.\n\nImage Editor : Add customizable text to screenshots.\n\nQR Code Transfer : Scan QR code with a smart device to transfer media.\nSupports single and multi-file transfers (up to 5 files)",
-      "added_at": "2026-09-16",
+      "added_at": "2026-10-03",
       "summary": "Manage screenshots/videos on your Wii U",
       "author": "SudoTronics",
-      "version": "2.0",
+      "version": "3.0",
       "license": "GPLv3",
       "icon_url": null,
       "release_url": "https://github.com/Sudachi-E/WiiUAlbum",
@@ -77079,8 +77079,8 @@
           "format": "hbas",
           "filename": "WiiUAlbum.hbas",
           "url": "https://wiiu.cdn.fortheusers.org/packages/WiiUAlbum/manifest.install",
-          "size": 9087,
-          "sha256": "ab99aeec9d2bc8469f5ebb05db08a01b991601ea158db5db617785e4d1998847"
+          "size": 9461,
+          "sha256": "934ba3d93f6c0ddf1f588b2cb06a110dcfece7b1e200bc13270a423bb02b4f90"
         }
       ],
       "popularity": 1963,
@@ -77088,7 +77088,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
       "license_url": null,
-      "updated_at": "2026-09-17"
+      "updated_at": "2026-10-04"
     },
     {
       "id": "hbas-wiiu:WiiUReboot",
@@ -79281,7 +79281,7 @@
       "source_url": "https://oscwii.org/",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-04T01:34:22+00:00"
+      "updated_at": "2026-09-26T00:00:00+00:00"
     },
     {
       "id": "hbas-switch:Wolf4SDL-Switch",
