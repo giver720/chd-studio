@@ -20565,6 +20565,32 @@
       "updated_at": "2026-10-04T02:09:26Z"
     },
     {
+      "id": "ps5-payloads-atlas:etaHEN-2.5B.bin",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "etaHEN",
+      "summary": "Long-running homebrew enabler with toolbox features. Faster app jailbreak than the on-the-fly path; provides the HijackerCommand IPC many homebrew apps expect on :9028.",
+      "author": "",
+      "version": "2.5B",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://github.com/etahen/etahen",
+      "downloads": [
+        {
+          "format": "bin",
+          "filename": "etaHEN-2.5B.bin",
+          "url": "https://github.com/etaHEN/etaHEN/releases/download/2.5B/etaHEN-2.5B.bin",
+          "sha256": "4845cac45095361b8983b14d6690622183b0dcfbf6d7fda16e161aa91ff0531e"
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2025-12-25 13:31:40 UTC+8"
+    },
+    {
       "id": "vitadbtoo-vita:263",
       "platforms": [
         "psvita"
@@ -41436,34 +41462,34 @@
       "name": "Nimbus",
       "summary": "",
       "author": "Pretendo Network",
-      "version": "v2.1.1",
+      "version": "v2.2.0",
       "license": "GNU General Public License v3.0",
       "icon_url": "https://db.universal-team.net/assets/images/icons/nimbus.png",
       "release_url": "https://github.com/PretendoNetwork/nimbus/releases",
       "downloads": [
         {
           "format": "zip",
-          "filename": "3dsx.2.1.1.zip",
-          "url": "https://github.com/PretendoNetwork/nimbus/releases/download/v2.1.1/3dsx.2.1.1.zip",
-          "size": 730009
+          "filename": "3dsx.2.2.0.zip",
+          "url": "https://github.com/PretendoNetwork/nimbus/releases/download/v2.2.0/3dsx.2.2.0.zip",
+          "size": 1137298
         },
         {
           "format": "zip",
-          "filename": "cia.2.1.1.zip",
-          "url": "https://github.com/PretendoNetwork/nimbus/releases/download/v2.1.1/cia.2.1.1.zip",
-          "size": 960861
+          "filename": "cia.2.2.0.zip",
+          "url": "https://github.com/PretendoNetwork/nimbus/releases/download/v2.2.0/cia.2.2.0.zip",
+          "size": 1399862
         },
         {
           "format": "zip",
-          "filename": "combined.2.1.1.zip",
-          "url": "https://github.com/PretendoNetwork/nimbus/releases/download/v2.1.1/combined.2.1.1.zip",
-          "size": 1383207
+          "filename": "combined.2.2.0.zip",
+          "url": "https://github.com/PretendoNetwork/nimbus/releases/download/v2.2.0/combined.2.2.0.zip",
+          "size": 2229686
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-06-09T22:33:30Z"
+      "updated_at": "2026-10-04T18:18:03Z"
     },
     {
       "id": "universal-db:wavemotion-dave/NINTV-DS",
@@ -45673,6 +45699,32 @@
       "source_url": "https://github.com/DrDecki/VitaDBtoo-db",
       "license_url": null,
       "updated_at": "2023-12-30"
+    },
+    {
+      "id": "ps5-payloads-atlas:orbit_store.elf",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "Orbit Store",
+      "summary": "A modern PS5 download manager with resumable downloads and phone controls",
+      "author": "",
+      "version": "v0.6.0",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://github.com/saawant12/orbit-store-ps5",
+      "downloads": [
+        {
+          "format": "elf",
+          "filename": "orbit_store.elf",
+          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.6.0/orbit_store.elf",
+          "sha256": "71ae6b84b16461a07c9e883bf7e28829800022d08a7fde8d9815f3b7f2e3964b"
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2026-10-05 02:30:38 UTC+8"
     },
     {
       "id": "universal-db:EBLeifEricson/orchestrina",
@@ -50232,7 +50284,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8620,
+      "popularity": 8696,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50259,7 +50311,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2783,
+      "popularity": 2801,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50286,7 +50338,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8086,
+      "popularity": 8160,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50313,7 +50365,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5307,
+      "popularity": 5343,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50340,7 +50392,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 47099,
+      "popularity": 47320,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50367,7 +50419,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 271,
+      "popularity": 276,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50483,6 +50535,32 @@
       "license_url": null,
       "popularity": null,
       "updated_at": "2026-06-19 20:34:09 UTC+8"
+    },
+    {
+      "id": "ps5-payloads-atlas:tailscale.elf",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "PS5 Tailscale",
+      "summary": "Tailscale for jailbroken PS5: reach the console over your tailnet and stream to it with Moonlight/Sunshine (unofficial)",
+      "author": "",
+      "version": "v0.5.2",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://github.com/holdmysocks/ps5-tailscale",
+      "downloads": [
+        {
+          "format": "elf",
+          "filename": "tailscale.elf",
+          "url": "https://github.com/holdmysocks/ps5-tailscale/releases/download/v0.5.2/tailscale.elf",
+          "sha256": "c536b1a00d025a387a69e136804f501d857e04b8f76ff4a7f50e4617273ca0ca"
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2026-10-04 22:45:10 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:ps5-unified-autoloader-v0.1.5-915a65e.elf",
@@ -80992,28 +81070,28 @@
       "name": "zelda-tmc-3ds",
       "summary": "Native Nintendo 3DS port of The Legend of Zelda: The Minish Cap based on Project Picori.",
       "author": "estebanpdn",
-      "version": "v1.0",
+      "version": "v2.1",
       "license": "GNU General Public License v3.0",
       "icon_url": "https://raw.githubusercontent.com/EstebanPdN/zelda-tmc-3ds/main/platform/3ds/assets/icon-48.png",
       "release_url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases",
       "downloads": [
         {
           "format": "3dsx",
-          "filename": "tmc-3ds-v1.0.3dsx",
-          "url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/download/v1.0/tmc-3ds-v1.0.3dsx",
-          "size": 3833596
+          "filename": "tmc-3ds-v2.1.3dsx",
+          "url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/download/v2.1/tmc-3ds-v2.1.3dsx",
+          "size": 4982700
         },
         {
           "format": "cia",
-          "filename": "tmc-3ds-v1.0.cia",
-          "url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/download/v1.0/tmc-3ds-v1.0.cia",
-          "size": 2368448
+          "filename": "tmc-3ds-v2.1.cia",
+          "url": "https://github.com/EstebanPdN/zelda-tmc-3ds/releases/download/v2.1/tmc-3ds-v2.1.cia",
+          "size": 3625920
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-08-12T21:31:37Z"
+      "updated_at": "2026-09-20T08:16:04Z"
     },
     {
       "id": "vitadbtoo-vita:993",
