@@ -12415,7 +12415,7 @@
           "format": "3dsx",
           "filename": "ClassiCube-3ds.3dsx",
           "url": "https://cdn.classicube.net/client/latest/ClassiCube-3ds.3dsx",
-          "size": 783548
+          "size": 783540
         },
         {
           "format": "cia",
@@ -48244,10 +48244,10 @@
         "utilities"
       ],
       "description": "A local bank system for Pokemon games on Nintendo Switch.\nMove Pokemon between your save files and local bank storage.\n\nFeatures\n- Profile Selection\n- Two-Panel Box Viewer\n- Pick & Place\n- Multi-Select\n- Pokemon Details\n\nBank System\n- Create a new bank (up to 32-character name)\n- Rename an existing bank\n- Delete a bank (with confirmation)\n\nEach bank has the same box capacity as its game family (32 or 40 boxes).\nThe bank list shows the number of occupied slots for each bank.\n\nYou can switch between banks from the main view via the menu, with or without saving first.\n\nBackup System\n- When loading a game save on Switch, an automatic backup is created before any modifications.\n- This is a full copy of the mounted save directory.\n\nSave Integrity\n- SCBlock saves (ZA, SV, SwSh, LA): Decrypted, modified, and re-encrypted. A round-trip verification runs on load to confirm the cycle is lossless.\n- BDSP saves: Flat binary with MD5 checksum, recalculated on every save.\n- All saves are written in-place to preserve ",
-      "added_at": "2026-10-02",
+      "added_at": "2026-10-04",
       "summary": "A local bank system for Pokemon games",
       "author": "Insektaure",
-      "version": "2.2.1",
+      "version": "2.3.0",
       "license": "GPLv2",
       "icon_url": null,
       "release_url": "https://github.com/Insektaure/pkHouse",
@@ -48256,8 +48256,8 @@
           "format": "hbas",
           "filename": "pkHouseLocalPokeBank.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/pkHouseLocalPokeBank/manifest.install",
-          "size": 13944,
-          "sha256": "245e80cfa0e5d05cecfb8239579b0fa577a19f475a06aed34f3c9789e84383a3"
+          "size": 14033,
+          "sha256": "4918739b18d46967f1c995537fd00c75aee36e9f9e6c19af024ae1c596afc66e"
         }
       ],
       "popularity": 4383,
@@ -48265,7 +48265,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2026-10-03"
+      "updated_at": "2026-10-05"
     },
     {
       "id": "universal-db:Universal-Team/pkmn-chest",
@@ -50264,168 +50264,6 @@
       "updated_at": "2023-11-05"
     },
     {
-      "id": "ps4-store:268181309",
-      "platforms": [
-        "ps4"
-      ],
-      "name": "PS4 Homebrew Store — homebrew.elf",
-      "summary": "Change log\r\n\r\n- Implemented C++\r\n- App will now check for database updates in the background automatically every 5 mins\r\n- Added the Updates section (BETA)\r\n- Added an Update thread (DB and App updates)\r\n- Added Icon pre-loading on startup (setting)\r\n- Added the ability to upload crash logs after crashing\r\n- Improved overall responsiveness\r\n- Improved the Search feature to not be case sensitive \r\n- Improved readability and memory safety \r\n- Improved background texture/icon loading\r\n- Bug fixes\r\n================= Changed Settings =============\r\n**Before**: Change Freetype  (font) Path | **After**: Pre-Load Icons on Startup\r\n\r\nHOT FIX 5/20/2023\r\n\r\n- Fixed Store categories for other langs",
-      "author": "LightningMods",
-      "version": "4.5",
-      "license": null,
-      "icon_url": null,
-      "release_url": "https://github.com/LightningMods/PS4-Store/releases/tag/4.5",
-      "downloads": [
-        {
-          "format": "elf",
-          "filename": "homebrew.elf",
-          "url": "https://github.com/LightningMods/PS4-Store/releases/download/4.5/homebrew.elf",
-          "size": 4842768,
-          "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
-        }
-      ],
-      "popularity": 8739,
-      "source": "PS4 Homebrew Store",
-      "source_url": "https://github.com/LightningMods/PS4-Store",
-      "license_url": null,
-      "updated_at": "2023-05-19T20:41:59Z"
-    },
-    {
-      "id": "ps4-store:238357415",
-      "platforms": [
-        "ps4"
-      ],
-      "name": "PS4 Homebrew Store — PS5_Update_files.zip",
-      "summary": "Change log\r\n\r\n- Implemented C++\r\n- App will now check for database updates in the background automatically every 5 mins\r\n- Added the Updates section (BETA)\r\n- Added an Update thread (DB and App updates)\r\n- Added Icon pre-loading on startup (setting)\r\n- Added the ability to upload crash logs after crashing\r\n- Improved overall responsiveness\r\n- Improved the Search feature to not be case sensitive \r\n- Improved readability and memory safety \r\n- Improved background texture/icon loading\r\n- Bug fixes\r\n================= Changed Settings =============\r\n**Before**: Change Freetype  (font) Path | **After**: Pre-Load Icons on Startup\r\n\r\nHOT FIX 5/20/2023\r\n\r\n- Fixed Store categories for other langs",
-      "author": "LightningMods",
-      "version": "4.5",
-      "license": null,
-      "icon_url": null,
-      "release_url": "https://github.com/LightningMods/PS4-Store/releases/tag/4.5",
-      "downloads": [
-        {
-          "format": "zip",
-          "filename": "PS5_Update_files.zip",
-          "url": "https://github.com/LightningMods/PS4-Store/releases/download/4.5/PS5_Update_files.zip",
-          "size": 1488211,
-          "sha256": null
-        }
-      ],
-      "popularity": 2807,
-      "source": "PS4 Homebrew Store",
-      "source_url": "https://github.com/LightningMods/PS4-Store",
-      "license_url": null,
-      "updated_at": "2023-05-19T20:41:59Z"
-    },
-    {
-      "id": "ps4-store:268177439",
-      "platforms": [
-        "ps4"
-      ],
-      "name": "PS4 Homebrew Store — Store-R2-Legacy.pkg",
-      "summary": "Change log\r\n\r\n- Implemented C++\r\n- App will now check for database updates in the background automatically every 5 mins\r\n- Added the Updates section (BETA)\r\n- Added an Update thread (DB and App updates)\r\n- Added Icon pre-loading on startup (setting)\r\n- Added the ability to upload crash logs after crashing\r\n- Improved overall responsiveness\r\n- Improved the Search feature to not be case sensitive \r\n- Improved readability and memory safety \r\n- Improved background texture/icon loading\r\n- Bug fixes\r\n================= Changed Settings =============\r\n**Before**: Change Freetype  (font) Path | **After**: Pre-Load Icons on Startup\r\n\r\nHOT FIX 5/20/2023\r\n\r\n- Fixed Store categories for other langs",
-      "author": "LightningMods",
-      "version": "4.5",
-      "license": null,
-      "icon_url": null,
-      "release_url": "https://github.com/LightningMods/PS4-Store/releases/tag/4.5",
-      "downloads": [
-        {
-          "format": "pkg",
-          "filename": "Store-R2-Legacy.pkg",
-          "url": "https://github.com/LightningMods/PS4-Store/releases/download/4.5/Store-R2-Legacy.pkg",
-          "size": 24772608,
-          "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
-        }
-      ],
-      "popularity": 8190,
-      "source": "PS4 Homebrew Store",
-      "source_url": "https://github.com/LightningMods/PS4-Store",
-      "license_url": null,
-      "updated_at": "2023-05-19T20:41:59Z"
-    },
-    {
-      "id": "ps4-store:167233612",
-      "platforms": [
-        "ps4"
-      ],
-      "name": "PS4 Homebrew Store — Store-R2-PS5.pkg",
-      "summary": "Change log\r\n\r\n- Implemented C++\r\n- App will now check for database updates in the background automatically every 5 mins\r\n- Added the Updates section (BETA)\r\n- Added an Update thread (DB and App updates)\r\n- Added Icon pre-loading on startup (setting)\r\n- Added the ability to upload crash logs after crashing\r\n- Improved overall responsiveness\r\n- Improved the Search feature to not be case sensitive \r\n- Improved readability and memory safety \r\n- Improved background texture/icon loading\r\n- Bug fixes\r\n================= Changed Settings =============\r\n**Before**: Change Freetype  (font) Path | **After**: Pre-Load Icons on Startup\r\n\r\nHOT FIX 5/20/2023\r\n\r\n- Fixed Store categories for other langs",
-      "author": "LightningMods",
-      "version": "4.5",
-      "license": null,
-      "icon_url": null,
-      "release_url": "https://github.com/LightningMods/PS4-Store/releases/tag/4.5",
-      "downloads": [
-        {
-          "format": "pkg",
-          "filename": "Store-R2-PS5.pkg",
-          "url": "https://github.com/LightningMods/PS4-Store/releases/download/4.5/Store-R2-PS5.pkg",
-          "size": 43450368,
-          "sha256": null
-        }
-      ],
-      "popularity": 5353,
-      "source": "PS4 Homebrew Store",
-      "source_url": "https://github.com/LightningMods/PS4-Store",
-      "license_url": null,
-      "updated_at": "2023-05-19T20:41:59Z"
-    },
-    {
-      "id": "ps4-store:268177642",
-      "platforms": [
-        "ps4"
-      ],
-      "name": "PS4 Homebrew Store — Store-R2.pkg",
-      "summary": "Change log\r\n\r\n- Implemented C++\r\n- App will now check for database updates in the background automatically every 5 mins\r\n- Added the Updates section (BETA)\r\n- Added an Update thread (DB and App updates)\r\n- Added Icon pre-loading on startup (setting)\r\n- Added the ability to upload crash logs after crashing\r\n- Improved overall responsiveness\r\n- Improved the Search feature to not be case sensitive \r\n- Improved readability and memory safety \r\n- Improved background texture/icon loading\r\n- Bug fixes\r\n================= Changed Settings =============\r\n**Before**: Change Freetype  (font) Path | **After**: Pre-Load Icons on Startup\r\n\r\nHOT FIX 5/20/2023\r\n\r\n- Fixed Store categories for other langs",
-      "author": "LightningMods",
-      "version": "4.5",
-      "license": null,
-      "icon_url": null,
-      "release_url": "https://github.com/LightningMods/PS4-Store/releases/tag/4.5",
-      "downloads": [
-        {
-          "format": "pkg",
-          "filename": "Store-R2.pkg",
-          "url": "https://github.com/LightningMods/PS4-Store/releases/download/4.5/Store-R2.pkg",
-          "size": 24772608,
-          "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
-        }
-      ],
-      "popularity": 47410,
-      "source": "PS4 Homebrew Store",
-      "source_url": "https://github.com/LightningMods/PS4-Store",
-      "license_url": null,
-      "updated_at": "2023-05-19T20:41:59Z"
-    },
-    {
-      "id": "ps4-hen:574675730",
-      "platforms": [
-        "ps4"
-      ],
-      "name": "PS4HEN — hen.bin",
-      "summary": "**Full Changelog**: https://github.com/Scene-Collective/ps4-hen/compare/pre-release-main-181...pre-release-main-182",
-      "author": "Scene-Collective",
-      "version": "pre-release-main-182",
-      "license": null,
-      "icon_url": null,
-      "release_url": "https://github.com/Scene-Collective/ps4-hen/releases/tag/pre-release-main-182",
-      "downloads": [
-        {
-          "format": "bin",
-          "filename": "hen.bin",
-          "url": "https://github.com/Scene-Collective/ps4-hen/releases/download/pre-release-main-182/hen.bin",
-          "size": 500448,
-          "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
-        }
-      ],
-      "popularity": 278,
-      "source": "PS4HEN",
-      "source_url": "https://github.com/Scene-Collective/ps4-hen",
-      "license_url": null,
-      "updated_at": "2026-09-19T11:47:15Z"
-    },
-    {
       "id": "vitadbtoo-vita:560",
       "platforms": [
         "psvita"
@@ -50459,30 +50297,30 @@
       "updated_at": "2020-06-12"
     },
     {
-      "id": "ps5-payloads-atlas:aria2-v1.37.0-2.elf",
+      "id": "ps5-payloads-atlas:aria2-v1.37.0-3.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5 aria2",
       "summary": "aria2 for PS5",
       "author": "",
-      "version": "v1.37.0-2",
+      "version": "v1.37.0-3",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/owendswang/ps5-aria2",
       "downloads": [
         {
           "format": "elf",
-          "filename": "aria2-v1.37.0-2.elf",
-          "url": "https://github.com/owendswang/ps5-aria2/releases/download/v1.37.0-2/aria2-v1.37.0-2.elf",
-          "sha256": "97486d1f9e557a8a98cedff88b628973da2b3a81bbff3b226ea98afdfc3d5e9d"
+          "filename": "aria2-v1.37.0-3.elf",
+          "url": "https://github.com/owendswang/ps5-aria2/releases/download/v1.37.0-3/aria2-v1.37.0-3.elf",
+          "sha256": "802d53a201545ea84a86c1a3bc2f9b84446a1d245ea11108b912116ffbc1a8a6"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-04 02:13:23 UTC+8"
+      "updated_at": "2026-10-05 22:00:24 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:PS5_Console.elf",
@@ -50544,7 +50382,7 @@
       "name": "PS5 Tailscale",
       "summary": "Tailscale for jailbroken PS5: reach the console over your tailnet and stream to it with Moonlight/Sunshine (unofficial)",
       "author": "",
-      "version": "v0.5.2",
+      "version": "v0.6.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/holdmysocks/ps5-tailscale",
@@ -50552,15 +50390,15 @@
         {
           "format": "elf",
           "filename": "tailscale.elf",
-          "url": "https://github.com/holdmysocks/ps5-tailscale/releases/download/v0.5.2/tailscale.elf",
-          "sha256": "c536b1a00d025a387a69e136804f501d857e04b8f76ff4a7f50e4617273ca0ca"
+          "url": "https://github.com/holdmysocks/ps5-tailscale/releases/download/v0.6.0/tailscale.elf",
+          "sha256": "6f73be53ad09370f95a3c4ca4b96ddf193daaa70022f83511b0e352221b0d5cf"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-04 22:45:10 UTC+8"
+      "updated_at": "2026-10-05 20:53:18 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:ps5-unified-autoloader-v0.1.5-915a65e.elf",
@@ -61725,6 +61563,39 @@
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
       "updated_at": "2024-02-17T10:51:50Z"
+    },
+    {
+      "id": "hbas-switch:sporegram",
+      "platforms": [
+        "switch"
+      ],
+      "name": "sporegram",
+      "categories": [
+        "utilities"
+      ],
+      "description": "Sporegram is a Nintendo Switch port of AAhead, the Telegram client for the New Nintendo 3DS by Alex Gakh (Memetrix).\n\nEverything below the interface comes from there and is unchanged in substance: the MTProto transport, the application layer, storage, calls, and the text engine that does UTF-8, wrapping and Telegram's entities. That part was already proven against Telegram on real hardware, which is the only reason a port was affordable at all.\n\nThe interface is new. AAhead's views are composed for two stacked 400×240 panels; reshaping them into one 1280×720 screen turned out to cost more than writing an interface meant for it. So switch/ is written from scratch on SDL2 and FreeType, and none of source/ui/'s views are linked.\n\nSporegram is licensed GPL-3.0, like its upstream, and the whole source is here.",
+      "added_at": "2026-09-17",
+      "summary": "Unofficial Telegram client for Nintendo ",
+      "author": "fungalspores",
+      "version": "1.0",
+      "license": "GPLv3",
+      "icon_url": null,
+      "release_url": "https://github.com/fungalspores/sporegram",
+      "downloads": [
+        {
+          "format": "hbas",
+          "filename": "sporegram.hbas",
+          "url": "https://switch.cdn.fortheusers.org/packages/sporegram/manifest.install",
+          "size": 32079,
+          "sha256": "d7e7b61395a008e3d0344a5039a869faf10575954d0ee4d7d34ed675272a89f0"
+        }
+      ],
+      "popularity": 0,
+      "manifest_url": "https://switch.cdn.fortheusers.org/packages/sporegram/manifest.install",
+      "source": "Homebrew App Store",
+      "source_url": "https://hb-app.store/switch",
+      "license_url": null,
+      "updated_at": "2026-10-05"
     },
     {
       "id": "hbas-switch:SpotifySwitchRemote",
@@ -82129,5 +82000,18 @@
       "homepage": "https://github.com/Scene-Collective/ps4-hen"
     }
   ],
-  "errors": []
+  "errors": [
+    {
+      "source": "ps4-goldhen",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "source": "ps4-store",
+      "error": "HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "source": "ps4-hen",
+      "error": "HTTP Error 403: rate limit exceeded"
+    }
+  ]
 }
