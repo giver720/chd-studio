@@ -17147,7 +17147,7 @@
       "name": "Dingplay-chat-3DS",
       "summary": "Chat with your Dingplay friends from a 3DS: DMs, the world chat and console-only rooms online, or text / drawings / voice over Local Wireless.",
       "author": "Dingplay",
-      "version": "v0.1.1",
+      "version": "v0.1.2",
       "license": null,
       "icon_url": "https://raw.githubusercontent.com/Sonalpt/Dingplay-chat-3DS/main/meta/icon.png",
       "release_url": "https://github.com/Sonalpt/Dingplay-chat-3DS/releases",
@@ -17155,20 +17155,20 @@
         {
           "format": "3dsx",
           "filename": "dingplay-chat.3dsx",
-          "url": "https://github.com/Sonalpt/Dingplay-chat-3DS/releases/download/v0.1.1/dingplay-chat.3dsx",
-          "size": 4178120
+          "url": "https://github.com/Sonalpt/Dingplay-chat-3DS/releases/download/v0.1.2/dingplay-chat.3dsx",
+          "size": 4187956
         },
         {
           "format": "cia",
           "filename": "dingplay-chat.cia",
-          "url": "https://github.com/Sonalpt/Dingplay-chat-3DS/releases/download/v0.1.1/dingplay-chat.cia",
-          "size": 4211648
+          "url": "https://github.com/Sonalpt/Dingplay-chat-3DS/releases/download/v0.1.2/dingplay-chat.cia",
+          "size": 4215744
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-28T08:25:52Z"
+      "updated_at": "2026-10-04T22:48:28Z"
     },
     {
       "id": "hbas-switch:DinoRunNX",
@@ -45708,7 +45708,7 @@
       "name": "Orbit Store",
       "summary": "A modern PS5 download manager with resumable downloads and phone controls",
       "author": "",
-      "version": "v0.6.0",
+      "version": "v0.6.1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/saawant12/orbit-store-ps5",
@@ -45716,15 +45716,15 @@
         {
           "format": "elf",
           "filename": "orbit_store.elf",
-          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.6.0/orbit_store.elf",
-          "sha256": "71ae6b84b16461a07c9e883bf7e28829800022d08a7fde8d9815f3b7f2e3964b"
+          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.6.1/orbit_store.elf",
+          "sha256": "cb548c8c39e45d6a1b72bb81f0b7c74d569fd050aafdd9ce163fa3ac8e738bc2"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-05 02:30:38 UTC+8"
+      "updated_at": "2026-10-05 05:04:57 UTC+8"
     },
     {
       "id": "universal-db:EBLeifEricson/orchestrina",
@@ -50284,7 +50284,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8696,
+      "popularity": 8739,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50311,7 +50311,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2801,
+      "popularity": 2807,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50338,7 +50338,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8160,
+      "popularity": 8190,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50365,7 +50365,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5343,
+      "popularity": 5353,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50392,7 +50392,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 47320,
+      "popularity": 47410,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50419,7 +50419,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 276,
+      "popularity": 278,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
