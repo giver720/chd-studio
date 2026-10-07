@@ -45734,7 +45734,7 @@
       "name": "Orbit Store",
       "summary": "A modern PS5 download manager with resumable downloads and phone controls",
       "author": "",
-      "version": "v0.7.0",
+      "version": "v0.8.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/saawant12/orbit-store-ps5",
@@ -45742,15 +45742,15 @@
         {
           "format": "elf",
           "filename": "orbit_store.elf",
-          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.7.0/orbit_store.elf",
-          "sha256": "12f9f3b7cb66ba45ae6ce3732781a4ae2ed3228f14d4f85fba0cebe6adfa2eb8"
+          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.8.0/orbit_store.elf",
+          "sha256": "f8188366e1b6a36cf7ce1c3429df15a1d0fa69c2a93cb9cca36ea5a46cedbb4d"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-05 22:51:21 UTC+8"
+      "updated_at": "2026-10-07 01:03:55 UTC+8"
     },
     {
       "id": "universal-db:EBLeifEricson/orchestrina",
@@ -49429,7 +49429,7 @@
       "name": "PotatoStream",
       "summary": "Gamestream client for old 2ds/3DS",
       "author": "PainDe0Mie",
-      "version": "v1.2.0",
+      "version": "v1.3.0",
       "license": "GNU General Public License v3.0",
       "icon_url": "https://raw.githubusercontent.com/PainDe0Mie/PotatoStream/n3ds-main/3ds/res/ic_streampotato.png",
       "release_url": "https://github.com/PainDe0Mie/PotatoStream/releases",
@@ -49437,20 +49437,20 @@
         {
           "format": "3dsx",
           "filename": "streampotato.3dsx",
-          "url": "https://github.com/PainDe0Mie/PotatoStream/releases/download/v1.2.0/streampotato.3dsx",
-          "size": 7625640
+          "url": "https://github.com/PainDe0Mie/PotatoStream/releases/download/v1.3.0/streampotato.3dsx",
+          "size": 7676360
         },
         {
           "format": "cia",
           "filename": "streampotato.cia",
-          "url": "https://github.com/PainDe0Mie/PotatoStream/releases/download/v1.2.0/streampotato.cia",
-          "size": 4374464
+          "url": "https://github.com/PainDe0Mie/PotatoStream/releases/download/v1.3.0/streampotato.cia",
+          "size": 4409280
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-08-04T05:59:20Z"
+      "updated_at": "2026-10-06T22:44:00Z"
     },
     {
       "id": "universal-db:nop90/POWDER-3DS",
@@ -50310,7 +50310,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8846,
+      "popularity": 8882,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50337,7 +50337,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2826,
+      "popularity": 2836,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50364,7 +50364,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8350,
+      "popularity": 8401,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50391,7 +50391,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5416,
+      "popularity": 5440,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50418,7 +50418,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 47873,
+      "popularity": 48033,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50445,7 +50445,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 297,
+      "popularity": 299,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50563,30 +50563,30 @@
       "updated_at": "2026-06-19 20:34:09 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:tailscale.elf",
+      "id": "ps5-payloads-atlas:tailscale-0.7.1.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5 Tailscale",
       "summary": "Tailscale for jailbroken PS5: reach the console over your tailnet and stream to it with Moonlight/Sunshine (unofficial)",
       "author": "",
-      "version": "v0.6.0",
+      "version": "v0.7.1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/holdmysocks/ps5-tailscale",
       "downloads": [
         {
           "format": "elf",
-          "filename": "tailscale.elf",
-          "url": "https://github.com/holdmysocks/ps5-tailscale/releases/download/v0.6.0/tailscale.elf",
-          "sha256": "6f73be53ad09370f95a3c4ca4b96ddf193daaa70022f83511b0e352221b0d5cf"
+          "filename": "tailscale-0.7.1.elf",
+          "url": "https://github.com/holdmysocks/ps5-tailscale/releases/download/v0.7.1/tailscale-0.7.1.elf",
+          "sha256": "af320493c8e2fc3443b8f42496ac11aa3db77b112e95777706d835eccd304cb9"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-05 20:53:18 UTC+8"
+      "updated_at": "2026-10-07 07:46:38 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:ps5-unified-autoloader-v0.1.5-915a65e.elf",
@@ -50797,30 +50797,30 @@
       "updated_at": "2026-09-23 11:21:00 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5upload-6.1.2.elf",
+      "id": "ps5-payloads-atlas:ps5upload-6.2.1.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5upload",
       "summary": "Integrated PS5 file, mount, save-management, monitoring, and remote package-install payload with a companion desktop client.",
       "author": "",
-      "version": "v6.1.2",
+      "version": "v6.2.1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/phantomptr/ps5upload",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5upload-6.1.2.elf",
-          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.1.2/ps5upload-6.1.2.elf",
-          "sha256": "1fdf0a79687a4a823dd7c331c267cf492f849bd2bc6666e2db496fc03e544162"
+          "filename": "ps5upload-6.2.1.elf",
+          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.2.1/ps5upload-6.2.1.elf",
+          "sha256": "eb0bf3b9f5c0004cecc5e2c43dbd3d0749fa6e032a9a4b0343c115d79fb10a96"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-06 10:51:32 UTC+8"
+      "updated_at": "2026-10-07 03:31:32 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1187",
@@ -56554,7 +56554,7 @@
       "name": "Scratch Everywhere!",
       "summary": "Play Scratch games on your 3DS!",
       "author": "NateXS",
-      "version": "1.1",
+      "version": "1.2",
       "license": "GNU Lesser General Public License v3.0",
       "icon_url": "https://github.com/ScratchEverywhere/ScratchEverywhere/raw/refs/heads/main/gfx/icon.png",
       "release_url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases",
@@ -56562,26 +56562,26 @@
         {
           "format": "3dsx",
           "filename": "scratch-3ds.3dsx",
-          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.1/scratch-3ds.3dsx",
-          "size": 10953068
+          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2/scratch-3ds.3dsx",
+          "size": 8742724
         },
         {
           "format": "cia",
           "filename": "scratch-3ds.cia",
-          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.1/scratch-3ds.cia",
-          "size": 9282496
+          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2/scratch-3ds.cia",
+          "size": 6874048
         },
         {
           "format": "nds",
           "filename": "scratch-ds.nds",
-          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.1/scratch-ds.nds",
-          "size": 5669376
+          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2/scratch-ds.nds",
+          "size": 6008320
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-07T05:22:27Z"
+      "updated_at": "2026-10-07T03:03:25Z"
     },
     {
       "id": "hbas-wiiu:ScratchWiiU",
