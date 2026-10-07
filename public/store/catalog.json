@@ -12627,7 +12627,7 @@
       "name": "Cloudpoint",
       "summary": "Bringing modern cloud save to 3DS.",
       "author": "dwalker109",
-      "version": "0.8.0",
+      "version": "0.8.1",
       "license": "MIT License",
       "icon_url": "https://media.githubusercontent.com/media/dwalker109/cloudpoint/refs/heads/main/cloudpoint_app/cia/icon.png",
       "release_url": "https://github.com/dwalker109/cloudpoint/releases",
@@ -12635,20 +12635,20 @@
         {
           "format": "3dsx",
           "filename": "cloudpoint.3dsx",
-          "url": "https://github.com/dwalker109/cloudpoint/releases/download/0.8.0/cloudpoint.3dsx",
-          "size": 3147296
+          "url": "https://github.com/dwalker109/cloudpoint/releases/download/0.8.1/cloudpoint.3dsx",
+          "size": 3160144
         },
         {
           "format": "cia",
           "filename": "cloudpoint.cia",
-          "url": "https://github.com/dwalker109/cloudpoint/releases/download/0.8.0/cloudpoint.cia",
-          "size": 2487232
+          "url": "https://github.com/dwalker109/cloudpoint/releases/download/0.8.1/cloudpoint.cia",
+          "size": 2495424
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-10-02T16:18:57Z"
+      "updated_at": "2026-10-07T15:22:56Z"
     },
     {
       "id": "vitadbtoo-psp:941",
@@ -20061,7 +20061,7 @@
       "name": "Emu4Vita++",
       "summary": "Libretro frontend for PSVITA.",
       "author": "noword",
-      "version": "v.0.79",
+      "version": "v.0.81",
       "title_id": "EMU4VPLUS",
       "description": "A frontend for libretro cores for PSVITA.",
       "requirements": "",
@@ -20077,10 +20077,10 @@
       "downloads": [
         {
           "format": "vpk",
-          "filename": "Emu4VitaPlus_v0.79.vpk",
-          "url": "https://github.com/noword/Emu4VitaPlus/releases/download/v0.79/Emu4VitaPlus_v0.79.vpk",
-          "size": 197348129,
-          "md5": "ade0e532e2a6049eec4a0e4eaf3401a9"
+          "filename": "Emu4VitaPlus_v0.81.vpk",
+          "url": "https://github.com/noword/Emu4VitaPlus/releases/download/v0.81/Emu4VitaPlus_v0.81.vpk",
+          "size": 200486427,
+          "md5": null
         }
       ],
       "popularity": 44348,
@@ -40097,13 +40097,13 @@
           "format": "zip",
           "filename": "nzportable-3ds.zip",
           "url": "https://github.com/nzp-team/nzportable/releases/download/nightly/nzportable-3ds.zip",
-          "size": 64541888
+          "size": 64555102
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-24T12:42:12Z"
+      "updated_at": "2026-10-07T17:05:12Z"
     },
     {
       "id": "hbas-switch:NaziZombiesPortable",
@@ -45734,7 +45734,7 @@
       "name": "Orbit Store",
       "summary": "A modern PS5 download manager with resumable downloads and phone controls",
       "author": "",
-      "version": "v0.8.0",
+      "version": "v0.9.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/saawant12/orbit-store-ps5",
@@ -45742,15 +45742,15 @@
         {
           "format": "elf",
           "filename": "orbit_store.elf",
-          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.8.0/orbit_store.elf",
-          "sha256": "f8188366e1b6a36cf7ce1c3429df15a1d0fa69c2a93cb9cca36ea5a46cedbb4d"
+          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v0.9.0/orbit_store.elf",
+          "sha256": "aeef769d81507157837a017886a72c169ee7acb472e7c029a1d5e830735762df"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-07 01:03:55 UTC+8"
+      "updated_at": "2026-10-08 04:19:11 UTC+8"
     },
     {
       "id": "universal-db:EBLeifEricson/orchestrina",
@@ -49888,7 +49888,7 @@
       "name": "Prince of Persia Classic",
       "summary": "Port of Prince of Persia Classic for PSVITA.",
       "author": "MetalSyntax",
-      "version": "v.01.28",
+      "version": "v.01.45",
       "title_id": "POPC00001",
       "description": "Port of Prince of Persia Classic for PSVITA.",
       "requirements": "- libshacccg.suprx in ur0:data\n- kubridge.skprx in ur0:tai\n- fd_fix.skprx in ur0:tai\n- Game Data Files: Android APK, renamed to original.apk, in ux0:data/popclassic",
@@ -49899,10 +49899,10 @@
       "downloads": [
         {
           "format": "vpk",
-          "filename": "popclassic-v01.28.vpk",
-          "url": "https://github.com/MetalSyntax/prince-of-persia-classic-psvita-port/releases/download/v01.28/popclassic-v01.28.vpk",
-          "size": 1368826,
-          "md5": "c0a1d48b6d5bd24db3b68f81397019c7"
+          "filename": "popclassic-v01.46.vpk",
+          "url": "https://github.com/MetalSyntax/prince-of-persia-classic-psvita-port/releases/download/v01.45/popclassic-v01.46.vpk",
+          "size": 3109501,
+          "md5": "fe6cb1f1213f113d84014660887325e1"
         }
       ],
       "popularity": 0,
@@ -50310,7 +50310,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8900,
+      "popularity": 8966,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50337,7 +50337,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2841,
+      "popularity": 2848,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50364,7 +50364,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8420,
+      "popularity": 8467,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50391,7 +50391,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5445,
+      "popularity": 5467,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50418,7 +50418,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 48106,
+      "popularity": 48261,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50445,7 +50445,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 300,
+      "popularity": 304,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50561,6 +50561,32 @@
       "license_url": null,
       "popularity": null,
       "updated_at": "2026-06-19 20:34:09 UTC+8"
+    },
+    {
+      "id": "ps5-payloads-atlas:game-compressor.elf",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "PS5 Game Compressor",
+      "summary": "Standalone PS5 payload for compressing, unpacking, validating, and repairing ShadowMountPlus-mounted games",
+      "author": "",
+      "version": "v1.1.1",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://github.com/gcoding97/ps5-game-compressor",
+      "downloads": [
+        {
+          "format": "elf",
+          "filename": "game-compressor.elf",
+          "url": "https://github.com/gcoding97/PS5-Game-Compressor/releases/download/v1.1.1/game-compressor.elf",
+          "sha256": "5fec05b8a3cb89bafbc97970d5d68d9f31e6fcde873b5523243890e50836592b"
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2026-10-02 14:39:43 UTC+8"
     },
     {
       "id": "ps5-payloads-atlas:tailscale-0.7.1.elf",
@@ -50797,30 +50823,30 @@
       "updated_at": "2026-09-23 11:21:00 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5upload-6.2.3.elf",
+      "id": "ps5-payloads-atlas:ps5upload-6.3.1.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5upload",
       "summary": "Integrated PS5 file, mount, save-management, monitoring, and remote package-install payload with a companion desktop client.",
       "author": "",
-      "version": "v6.2.3",
+      "version": "v6.3.1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/phantomptr/ps5upload",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5upload-6.2.3.elf",
-          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.2.3/ps5upload-6.2.3.elf",
-          "sha256": "19c0455f2e460badba95021501468dd7b06d3b8b3baa0348c7d3bc777d4c5f74"
+          "filename": "ps5upload-6.3.1.elf",
+          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.3.1/ps5upload-6.3.1.elf",
+          "sha256": "2ff17e8096fa06c36fe27f4ea28d750733a9d10677ae6c566fd851f07da6b136"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-07 15:30:57 UTC+8"
+      "updated_at": "2026-10-08 01:02:09 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1187",
@@ -56554,7 +56580,7 @@
       "name": "Scratch Everywhere!",
       "summary": "Play Scratch games on your 3DS!",
       "author": "NateXS",
-      "version": "1.2",
+      "version": "1.2.1",
       "license": "GNU Lesser General Public License v3.0",
       "icon_url": "https://github.com/ScratchEverywhere/ScratchEverywhere/raw/refs/heads/main/gfx/icon.png",
       "release_url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases",
@@ -56562,26 +56588,26 @@
         {
           "format": "3dsx",
           "filename": "scratch-3ds.3dsx",
-          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2/scratch-3ds.3dsx",
-          "size": 8742724
+          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2.1/scratch-3ds.3dsx",
+          "size": 8632264
         },
         {
           "format": "cia",
           "filename": "scratch-3ds.cia",
-          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2/scratch-3ds.cia",
-          "size": 6874048
+          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2.1/scratch-3ds.cia",
+          "size": 6812608
         },
         {
           "format": "nds",
           "filename": "scratch-ds.nds",
-          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2/scratch-ds.nds",
-          "size": 6008320
+          "url": "https://github.com/ScratchEverywhere/ScratchEverywhere/releases/download/1.2.1/scratch-ds.nds",
+          "size": 5915136
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-10-07T03:03:25Z"
+      "updated_at": "2026-10-07T18:41:23Z"
     },
     {
       "id": "hbas-wiiu:ScratchWiiU",
@@ -56593,10 +56619,10 @@
         "utilities"
       ],
       "description": "A custom Scratch runtime that allows you to run Scratch 3 projects on your Wii U! This is an official port of the original runtime for the 3DS.\n\nSee the GitHub README for more info on what features are supported.\n\nMouse\n3DS: Glide your finger/stylus on the bottom screen to move the mouse, and tap the bottom screen to click.\nWii U GamePad: You can use the touchscreen on the GamePad.\nWii Remote: You can use the Wii sensor bar to control the mouse.\nOther Controllers: Enter Mouse Mode by holding L. Use the D-pad to move the mouse, and press R to click.",
-      "added_at": "2026-09-07",
+      "added_at": "2026-10-07",
       "summary": "Play Scratch games on your Wii U!",
       "author": "NateXS and Grady Link",
-      "version": "1.1",
+      "version": "1.2",
       "license": "Lesser GPLv3",
       "icon_url": null,
       "release_url": "https://github.com/ScratchEverywhere/ScratchEverywhere",
@@ -56605,8 +56631,8 @@
           "format": "hbas",
           "filename": "ScratchWiiU.hbas",
           "url": "https://wiiu.cdn.fortheusers.org/packages/ScratchWiiU/manifest.install",
-          "size": 25234,
-          "sha256": "001ae02dff8d27e2bdcf02035cf3d79975961ed8706987a09d92a4aeb5767a83"
+          "size": 23480,
+          "sha256": "67829ea58c46e9ef4c4070ef9d4733745d2f437d792c7aabe70bda56212614e5"
         }
       ],
       "popularity": 9016,
@@ -56614,7 +56640,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/wiiu",
       "license_url": null,
-      "updated_at": "2026-09-07"
+      "updated_at": "2026-10-07"
     },
     {
       "id": "hbas-switch:ScratchEverywhere",
@@ -56626,10 +56652,10 @@
         "utilities"
       ],
       "description": "A custom Scratch runtime that allows you to run Scratch 3 projects on your Nintendo Switch! This is an official port of the original runtime for the 3DS.\n\nSee the GitHub README for more info on what features are supported.\n\nMouse\n3DS: Glide your finger/stylus on the bottom screen to move the mouse, and tap the bottom screen to click.\nWii U GamePad: You can use the touchscreen on the GamePad.\nWii Remote: You can use the Wii sensor bar to control the mouse.\nOther Controllers: Enter Mouse Mode by holding L. Use the D-pad to move the mouse, and press R to click.",
-      "added_at": "2026-09-07",
+      "added_at": "2026-10-07",
       "summary": "Play Scratch games on your Switch!",
       "author": "NateXS and Grady Link",
-      "version": "1.1",
+      "version": "1.2",
       "license": "LGPLv3",
       "icon_url": null,
       "release_url": "https://github.com/ScratchEverywhere/ScratchEverywhere",
@@ -56638,8 +56664,8 @@
           "format": "hbas",
           "filename": "ScratchEverywhere.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/ScratchEverywhere/manifest.install",
-          "size": 24599,
-          "sha256": "dbe2b4057b73e8df58ae292247e2454c82c003e217e0f97a4b1f1fcf80c7eaa4"
+          "size": 23405,
+          "sha256": "863fd01c66df1bf2d6ea588b10ef146a9e43e921b218e6c6618f00d30c668a2f"
         }
       ],
       "popularity": 4629,
@@ -56647,7 +56673,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2026-09-09"
+      "updated_at": "2026-10-07"
     },
     {
       "id": "vitadbtoo-vita:1320",
@@ -67541,7 +67567,7 @@
       "name": "TheXTech",
       "summary": "Port of Super Mario Bros X for PSVITA.",
       "author": "TheXTech Team",
-      "version": "v.1.3.7.3-1",
+      "version": "v.1.7.4",
       "title_id": "THEXTECH0",
       "description": "Port of an old VB6 engine, purely written in C++. It completely reproduces the old SMBX 1.3 engine (aside from it's Editor), includes many of its logical bugs (critical bugs that lead the game to crash or freeze got fixed).",
       "requirements": "- Game Data Files: episodes and worlds in ux0:data/TheXTech",
@@ -67557,10 +67583,10 @@
       "downloads": [
         {
           "format": "zip",
-          "filename": "thextech-vita-v1.3.7.3.zip",
-          "url": "https://github.com/TheXTech/TheXTech/releases/download/v1.3.7.3-1/thextech-vita-v1.3.7.3.zip",
-          "size": 4871436,
-          "md5": "78e3126348a2f37ee08bbf53dccba7c3"
+          "filename": "thextech-vita-v1.7.4.zip",
+          "url": "https://github.com/TheXTech/TheXTech/releases/download/v1.7.4/thextech-vita-v1.7.4.zip",
+          "size": 4772357,
+          "md5": "d0025a21c9de4f19bf3aedf4e9fb8e35"
         }
       ],
       "popularity": 12875,
@@ -75966,7 +75992,7 @@
       "name": "Void Stranger",
       "summary": "Port of Void Stranger for PSVITA.",
       "author": "WolffsRoom",
-      "version": "v.1.0",
+      "version": "v.2.0",
       "title_id": "VSTR00001",
       "description": "Port of Void Stranger for PSVITA.",
       "requirements": "- libshacccg.suprx in ur0:data\n- kubridge.skprx in ur0:tai\n- fd_fix.skprx in ur0:tai\n- Game Data Files: Steam 1.1.3, prepared with the PC patcher, in ux0:data/voidstranger",
@@ -75977,10 +76003,10 @@
       "downloads": [
         {
           "format": "vpk",
-          "filename": "VoidStranger-v1.0.vpk",
-          "url": "https://github.com/WolffsRoom/VoidStrangerVita/releases/download/v1.0/VoidStranger-v1.0.vpk",
-          "size": 1941095,
-          "md5": "0eff0d40b01cd757ea37dc9abe353150"
+          "filename": "VoidStranger-v2.0.vpk",
+          "url": "https://github.com/WolffsRoom/VoidStrangerVita/releases/download/v2.0/VoidStranger-v2.0.vpk",
+          "size": 3768510,
+          "md5": "46ee0b057c345ce3c7a2182c419d9d16"
         }
       ],
       "popularity": 0,
