@@ -50310,7 +50310,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8882,
+      "popularity": 8900,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50337,7 +50337,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2836,
+      "popularity": 2841,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50364,7 +50364,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8401,
+      "popularity": 8420,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50391,7 +50391,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5440,
+      "popularity": 5445,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50418,7 +50418,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 48033,
+      "popularity": 48106,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50445,7 +50445,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 299,
+      "popularity": 300,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50797,30 +50797,30 @@
       "updated_at": "2026-09-23 11:21:00 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5upload-6.2.1.elf",
+      "id": "ps5-payloads-atlas:ps5upload-6.2.3.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5upload",
       "summary": "Integrated PS5 file, mount, save-management, monitoring, and remote package-install payload with a companion desktop client.",
       "author": "",
-      "version": "v6.2.1",
+      "version": "v6.2.3",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/phantomptr/ps5upload",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5upload-6.2.1.elf",
-          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.2.1/ps5upload-6.2.1.elf",
-          "sha256": "eb0bf3b9f5c0004cecc5e2c43dbd3d0749fa6e032a9a4b0343c115d79fb10a96"
+          "filename": "ps5upload-6.2.3.elf",
+          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.2.3/ps5upload-6.2.3.elf",
+          "sha256": "19c0455f2e460badba95021501468dd7b06d3b8b3baa0348c7d3bc777d4c5f74"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-07 03:31:32 UTC+8"
+      "updated_at": "2026-10-07 15:30:57 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1187",
@@ -61637,10 +61637,10 @@
         "utilities"
       ],
       "description": "A homebrew menu for the switch.\n\nFeatures: \nLaunch homebrew\nFile browser\nAppstore\nCreate / installer forwarders for homebrew\nTheme browser, powered by Themezer\nAnd many more! \n A homebrew menu for the switch.",
-      "added_at": "2026-09-09",
+      "added_at": "2026-10-06",
       "summary": "A hbmenu alternative",
       "author": "iTotalJustice",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "license": "GPLv3",
       "icon_url": null,
       "release_url": "https://github.com/ITotalJustice/sphaira",
@@ -61649,8 +61649,8 @@
           "format": "hbas",
           "filename": "sphaira.hbas",
           "url": "https://switch.cdn.fortheusers.org/packages/sphaira/manifest.install",
-          "size": 4990,
-          "sha256": "bbfab63462fd0d6741e3735e76a96ccc3237c5bf1ad3d2acdfcae0c68a36728b"
+          "size": 5273,
+          "sha256": "57709d6d272352001cce331d2ea577c056ee6bf442807afb93f6a68c85a66a34"
         }
       ],
       "popularity": 53363,
@@ -61658,7 +61658,7 @@
       "source": "Homebrew App Store",
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
-      "updated_at": "2026-09-17"
+      "updated_at": "2026-10-07"
     },
     {
       "id": "vitadbtoo-vita:1238",
