@@ -50310,7 +50310,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 8966,
+      "popularity": 8978,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50337,7 +50337,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2848,
+      "popularity": 2850,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50364,7 +50364,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8467,
+      "popularity": 8483,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50391,7 +50391,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5467,
+      "popularity": 5471,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50418,7 +50418,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 48261,
+      "popularity": 48324,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50445,7 +50445,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 304,
+      "popularity": 309,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -54886,6 +54886,49 @@
       "source_url": "https://github.com/DrDecki/VitaDBtoo-db",
       "license_url": null,
       "updated_at": "2021-03-17"
+    },
+    {
+      "id": "universal-db:nohsaidnottoplay-blip/Roku-Remote-3DS",
+      "platforms": [
+        "3ds"
+      ],
+      "name": "Roku-Remote-3DS",
+      "summary": "A personal Nintendo 3DS homebrew remote for a Roku device on your home network.",
+      "author": "nohsaidnottoplay-blip",
+      "version": "Roku-Remote-3DS-v1.1.0",
+      "license": "Other",
+      "icon_url": "https://raw.githubusercontent.com/nohsaidnottoplay-blip/Roku-Remote-3DS/refs/heads/main/icon.png",
+      "release_url": "https://github.com/nohsaidnottoplay-blip/Roku-Remote-3DS/releases",
+      "downloads": [
+        {
+          "format": "zip",
+          "filename": "Roku-Remote-3DS-V1.1.0.zip",
+          "url": "https://github.com/nohsaidnottoplay-blip/Roku-Remote-3DS/releases/download/Roku-Remote-3DS-v1.1.0/Roku-Remote-3DS-V1.1.0.zip",
+          "size": 365285
+        },
+        {
+          "format": "3dsx",
+          "filename": "RokuRemote3DS.3dsx",
+          "url": "https://github.com/nohsaidnottoplay-blip/Roku-Remote-3DS/releases/download/Roku-Remote-3DS-v1.1.0/RokuRemote3DS.3dsx",
+          "size": 215328
+        },
+        {
+          "format": "cia",
+          "filename": "RokuRemote3DSv1.1.0.cia",
+          "url": "https://github.com/nohsaidnottoplay-blip/Roku-Remote-3DS/releases/download/Roku-Remote-3DS-v1.1.0/RokuRemote3DSv1.1.0.cia",
+          "size": 248256
+        },
+        {
+          "format": "zip",
+          "filename": "source-project.zip",
+          "url": "https://github.com/nohsaidnottoplay-blip/Roku-Remote-3DS/releases/download/Roku-Remote-3DS-v1.1.0/source-project.zip",
+          "size": 54696
+        }
+      ],
+      "source": "Universal-DB",
+      "source_url": "https://db.universal-team.net/",
+      "license_url": null,
+      "updated_at": "2026-10-07T23:52:01Z"
     },
     {
       "id": "vitadbtoo-vita:1312",
