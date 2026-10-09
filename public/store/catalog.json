@@ -11372,22 +11372,22 @@
       "name": "ChatNow",
       "summary": "Nintendo 3DS chatting app with Miis, images, voice and video calls.",
       "author": "jamesrhg",
-      "version": "v1.0.0",
+      "version": "v1.0.2",
       "license": null,
       "icon_url": "https://raw.githubusercontent.com/jamesrhg/chatnow/refs/heads/main/meta/icon.png",
       "release_url": "https://github.com/jamesrhg/chatnow/releases",
       "downloads": [
         {
           "format": "cia",
-          "filename": "ChatNow.cia",
-          "url": "https://github.com/jamesrhg/chatnow/releases/download/v1.0.0/ChatNow.cia",
-          "size": 2216896
+          "filename": "ChatNow-v1.0.2.cia",
+          "url": "https://github.com/jamesrhg/chatnow/releases/download/v1.0.2/ChatNow-v1.0.2.cia",
+          "size": 11776960
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-09-28T04:19:33Z"
+      "updated_at": "2026-10-09T12:46:24Z"
     },
     {
       "id": "hbas-switch:ChatNX",
@@ -25320,6 +25320,58 @@
       "updated_at": "2026-07-13"
     },
     {
+      "id": "ps5-payloads-atlas:garlic-savemgr.elf",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "Garlic SaveMgr",
+      "summary": "On-console save decrypt/encrypt daemon. Back up saves in plaintext, edit on PC, re-encrypt for the same console. No network.",
+      "author": "",
+      "version": "v1.13.1",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://git.etawen.dev/earthonion/garlic-savemgr",
+      "downloads": [
+        {
+          "format": "elf",
+          "filename": "garlic-savemgr.elf",
+          "url": "https://git.etawen.dev/earthonion/garlic-savemgr/releases/download/v1.13.1/garlic-savemgr.elf",
+          "sha256": null
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2026-09-19 10:28:52 UTC+8"
+    },
+    {
+      "id": "ps5-payloads-atlas:garlic-worker-ps5.elf",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "Garlic Worker",
+      "summary": "Background worker that drains the community save-decryption queue from garlicsaves.com. Handles both PS4 and PS5 saves natively. Opt-in: connects to garlicsaves.com.",
+      "author": "",
+      "version": "v1.1.7",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://git.etawen.dev/earthonion/garlic-worker",
+      "downloads": [
+        {
+          "format": "elf",
+          "filename": "garlic-worker-ps5.elf",
+          "url": "https://git.etawen.dev/earthonion/garlic-worker/releases/download/v1.1.7/garlic-worker-ps5.elf",
+          "sha256": null
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2026-09-04 20:49:28 UTC+8"
+    },
+    {
       "id": "vitadbtoo-vita:779",
       "platforms": [
         "psvita"
@@ -28460,30 +28512,30 @@
       "updated_at": "2026-10-02"
     },
     {
-      "id": "ps5-payloads-atlas:HearBridge-PS5-1.1.0.elf",
+      "id": "ps5-payloads-atlas:HearBridge-PS5-1.2.0.elf",
       "platforms": [
         "ps5"
       ],
       "name": "HearBridge PS5",
       "summary": "Bluetooth A2DP audio bridge for PS5 homebrew",
       "author": "",
-      "version": "v1.1.0",
+      "version": "v1.2.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/x-f1reball-x/hearbridge-ps5",
       "downloads": [
         {
           "format": "elf",
-          "filename": "HearBridge-PS5-1.1.0.elf",
-          "url": "https://github.com/X-F1REBALL-X/HearBridge-PS5/releases/download/v1.1.0/HearBridge-PS5-1.1.0.elf",
-          "sha256": "ab08b891ec8fc73306bbe4b640df7db44c9ffd3ab8988c036745d4dda70db026"
+          "filename": "HearBridge-PS5-1.2.0.elf",
+          "url": "https://github.com/X-F1REBALL-X/HearBridge-PS5/releases/download/v1.2.0/HearBridge-PS5-1.2.0.elf",
+          "sha256": "46a94292e95fd6f4e3601e5aa001c301faf9b9b2604e874a121578054766f4ab"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-09 14:03:53 UTC+8"
+      "updated_at": "2026-10-10 00:21:44 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1071",
@@ -42354,6 +42406,32 @@
       "updated_at": "2016-05-24T15:23:21Z"
     },
     {
+      "id": "ps5-payloads-atlas:np-fake-signin-ps5.elf",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "NP Fake Sign-in",
+      "summary": "Headless payload that registers PS5 user slots directly via the system registry. Offline account activation without PSN. One-shot ELF: send, runs, exits.",
+      "author": "",
+      "version": "v1.4",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://git.etawen.dev/earthonion/np-fake-signin",
+      "downloads": [
+        {
+          "format": "elf",
+          "filename": "np-fake-signin-ps5.elf",
+          "url": "https://git.etawen.dev/earthonion/np-fake-signin/releases/download/v1.4/np-fake-signin-ps5.elf",
+          "sha256": null
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2026-10-02 08:58:43 UTC+8"
+    },
+    {
       "id": "open-shop-channel-wii:nReader",
       "platforms": [
         "wii"
@@ -45682,7 +45760,7 @@
       "name": "Orbit Store",
       "summary": "A modern PS5 download manager with resumable downloads and phone controls",
       "author": "",
-      "version": "v1.0.0",
+      "version": "v1.0.5",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/saawant12/orbit-store-ps5",
@@ -45690,15 +45768,15 @@
         {
           "format": "elf",
           "filename": "orbit_store.elf",
-          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.0/orbit_store.elf",
-          "sha256": "8ac8d13e3855e29456205992cebe9fa1604dae0509a6ec20198076560f2a93a0"
+          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.5/orbit_store.elf",
+          "sha256": "7883cf64b62252594d58e5558ea29f8de7ed3ca1d9a3182c844f23513eaf7617"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-09 05:30:22 UTC+8"
+      "updated_at": "2026-10-09 23:59:12 UTC+8"
     },
     {
       "id": "universal-db:EBLeifEricson/orchestrina",
@@ -50284,7 +50362,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 9067,
+      "popularity": 9114,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50311,7 +50389,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2868,
+      "popularity": 2878,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50338,7 +50416,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8566,
+      "popularity": 8620,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50365,7 +50443,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5520,
+      "popularity": 5542,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50392,7 +50470,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 48625,
+      "popularity": 48770,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50419,7 +50497,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 320,
+      "popularity": 324,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50797,30 +50875,30 @@
       "updated_at": "2026-09-23 11:21:00 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5upload-6.5.1.elf",
+      "id": "ps5-payloads-atlas:ps5upload-6.7.0.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5upload",
       "summary": "Integrated PS5 file, mount, save-management, monitoring, and remote package-install payload with a companion desktop client.",
       "author": "",
-      "version": "v6.5.1",
+      "version": "v6.7.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/phantomptr/ps5upload",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5upload-6.5.1.elf",
-          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.5.1/ps5upload-6.5.1.elf",
-          "sha256": "c1f924b6ccddde28a132f56aab4b30628bd79cbb98be6e9566d9768fbac93c3a"
+          "filename": "ps5upload-6.7.0.elf",
+          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.7.0/ps5upload-6.7.0.elf",
+          "sha256": "37b5bd387013539c7e951edd363d9118acbeb24b0ef55137ed351422e52bb749"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-09 03:35:28 UTC+8"
+      "updated_at": "2026-10-10 01:06:29 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1187",
