@@ -5899,7 +5899,7 @@
       "name": "Balatro3DS",
       "summary": "A fanmade Balatro clone for the 3DS",
       "author": "Gazpacho",
-      "version": "v2.0.0-base",
+      "version": "v2.0.2-base",
       "license": "GNU General Public License v3.0",
       "icon_url": "https://raw.githubusercontent.com/idkhan/Balatro3DS/refs/heads/main/resources/textures/1x/icon.png",
       "release_url": "https://github.com/idkhan/Balatro3DS/releases",
@@ -5907,20 +5907,20 @@
         {
           "format": "cia",
           "filename": "Balatro.cia",
-          "url": "https://github.com/idkhan/Balatro3DS/releases/download/v2.0.0-base/Balatro.cia",
-          "size": 23593920
+          "url": "https://github.com/idkhan/Balatro3DS/releases/download/v2.0.2-base/Balatro.cia",
+          "size": 26829760
         },
         {
           "format": "3dsx",
           "filename": "Balatro3DS.3dsx",
-          "url": "https://github.com/idkhan/Balatro3DS/releases/download/v2.0.0-base/Balatro3DS.3dsx",
-          "size": 16186050
+          "url": "https://github.com/idkhan/Balatro3DS/releases/download/v2.0.2-base/Balatro3DS.3dsx",
+          "size": 16943618
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2026-10-10T05:20:52Z"
+      "updated_at": "2026-10-10T18:04:17Z"
     },
     {
       "id": "vitadbtoo-vita:573",
@@ -9149,7 +9149,7 @@
       ],
       "name": "Breakup Simulator Portable",
       "summary": "Port of Super Kawai Breakup Sim for the Nintendo 3DS",
-      "author": "Dangerbites",
+      "author": "Anteger",
       "version": "Major",
       "license": "MIT License",
       "icon_url": "https://raw.githubusercontent.com/Dangerbites/BreakupSimulator3DS/main/breakup-icon.png",
@@ -9489,6 +9489,32 @@
       "source_url": "https://hb-app.store/switch",
       "license_url": null,
       "updated_at": "2021-04-25"
+    },
+    {
+      "id": "ps5-payloads-atlas:webkit-autoloader-installer_v0.6.1.elf",
+      "platforms": [
+        "ps5"
+      ],
+      "name": "Browser payload menu (WebKit Autoloader installer)",
+      "summary": "Installs a payload menu in the PS5's own web browser, so payloads can be launched from the console without sending them from a PC every time. One-shot installer ELF: send it, it installs, it exits. Run it after your kernel exploit, like any other payload.",
+      "author": "",
+      "version": "v0.6.1",
+      "license": null,
+      "icon_url": null,
+      "release_url": "https://github.com/itsplk/ps5-webkit-autoloader",
+      "downloads": [
+        {
+          "format": "elf",
+          "filename": "webkit-autoloader-installer_v0.6.1.elf",
+          "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/download/v0.6.1/webkit-autoloader-installer_v0.6.1.elf",
+          "sha256": "f662c75a502e4f1bc41b055dcb490625f8222c499ce437dc80f439a3a279e93f"
+        }
+      ],
+      "source": "PS5 Payloads Atlas",
+      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
+      "license_url": null,
+      "popularity": null,
+      "updated_at": "2026-10-09 00:06:48 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:393",
@@ -11468,7 +11494,7 @@
       "name": "CheatRunner",
       "summary": "Loads and applies game cheats on the PS5. Send it like any other payload, then browse and toggle cheats for supported titles on the console.",
       "author": "",
-      "version": "v0.17.2",
+      "version": "v0.18",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/notmaj0r/cheatrunner",
@@ -11476,15 +11502,15 @@
         {
           "format": "elf",
           "filename": "CheatRunner.elf",
-          "url": "https://github.com/notmaj0r/CheatRunner/releases/download/v0.17.2/CheatRunner.elf",
-          "sha256": "36ad03e236e6603aaaf05d95ed3399c7b54475a9bceba085cbe02899bc88ae0f"
+          "url": "https://github.com/notmaj0r/CheatRunner/releases/download/v0.18/CheatRunner.elf",
+          "sha256": "4ae1ea4e37b2e67d5487355ddf671f166861ed6dceea348c048ad060770c0140"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-02 02:02:13 UTC+8"
+      "updated_at": "2026-10-11 02:01:49 UTC+8"
     },
     {
       "id": "universal-db:BernardoGiordano/Checkpoint",
@@ -14949,7 +14975,7 @@
       ],
       "name": "Cube Adventures",
       "summary": "A simple 2D platformer for the 3DS system.",
-      "author": "xXHighTideXx",
+      "author": "HiggyTiggy",
       "version": "0.1.0",
       "license": "Apache License 2.0",
       "icon_url": "https://avatars.githubusercontent.com/u/84487860?v=4&size=128",
@@ -25116,7 +25142,7 @@
       ],
       "name": "Game Tipper",
       "summary": "A 3DS application that will give you tips for your gaming journey on your 3DS system.",
-      "author": "xXHighTideXx",
+      "author": "HiggyTiggy",
       "version": "0.3.0",
       "license": null,
       "icon_url": "https://db.universal-team.net/assets/images/icons/game-tipper.png",
@@ -45792,7 +45818,7 @@
       "name": "Orbit Store",
       "summary": "A modern PS5 download manager with resumable downloads and phone controls",
       "author": "",
-      "version": "v1.0.5",
+      "version": "v1.1.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/saawant12/orbit-store-ps5",
@@ -45800,15 +45826,15 @@
         {
           "format": "elf",
           "filename": "orbit_store.elf",
-          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v1.0.5/orbit_store.elf",
-          "sha256": "7883cf64b62252594d58e5558ea29f8de7ed3ca1d9a3182c844f23513eaf7617"
+          "url": "https://github.com/saawant12/orbit-store-ps5/releases/download/v1.1.0/orbit_store.elf",
+          "sha256": "e7afcd24678828436efc3aa3d58bb88cd0165f7dc39e72fb1ae60cf64037b986"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-09 23:59:12 UTC+8"
+      "updated_at": "2026-10-11 05:04:16 UTC+8"
     },
     {
       "id": "universal-db:EBLeifEricson/orchestrina",
@@ -48167,30 +48193,30 @@
       "updated_at": "2026-10-03"
     },
     {
-      "id": "ps5-payloads-atlas:pkg-manager_v1.5.0.elf",
+      "id": "ps5-payloads-atlas:pkg-manager_v1.5.1.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PKG-Manager",
       "summary": "Browse and install PKGs from USB, disc, or SMB shares directly on your PS5",
       "author": "",
-      "version": "v1.5.0",
+      "version": "v1.5.1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/itsplk/ps5-pkg-manager",
       "downloads": [
         {
           "format": "elf",
-          "filename": "pkg-manager_v1.5.0.elf",
-          "url": "https://github.com/itsPLK/ps5-pkg-manager/releases/download/v1.5.0/pkg-manager_v1.5.0.elf",
-          "sha256": "fb29a0e3c058cd69e00320668db57704207b827b92b92e0cd23fb5fe7fe1429d"
+          "filename": "pkg-manager_v1.5.1.elf",
+          "url": "https://github.com/itsPLK/ps5-pkg-manager/releases/download/v1.5.1/pkg-manager_v1.5.1.elf",
+          "sha256": "82e3548edcc41419b644482cccaef65689334fc0315dc20247f48b90bf182dca"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-09 05:14:26 UTC+8"
+      "updated_at": "2026-10-10 23:38:10 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:341",
@@ -50394,7 +50420,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 9200,
+      "popularity": 9256,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50421,7 +50447,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2887,
+      "popularity": 2894,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50448,7 +50474,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8684,
+      "popularity": 8734,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50475,7 +50501,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5570,
+      "popularity": 5587,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50502,7 +50528,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 49016,
+      "popularity": 49196,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50907,30 +50933,30 @@
       "updated_at": "2026-09-23 11:21:00 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5upload-6.7.4.elf",
+      "id": "ps5-payloads-atlas:ps5upload-6.8.2.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5upload",
       "summary": "Integrated PS5 file, mount, save-management, monitoring, and remote package-install payload with a companion desktop client.",
       "author": "",
-      "version": "v6.7.4",
+      "version": "v6.8.2",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/phantomptr/ps5upload",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5upload-6.7.4.elf",
-          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.7.4/ps5upload-6.7.4.elf",
-          "sha256": "72b183a73082ff48f8a97e87c773e6c581e8ec80ba1747a338ffad67b2a2335d"
+          "filename": "ps5upload-6.8.2.elf",
+          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.8.2/ps5upload-6.8.2.elf",
+          "sha256": "e9cb922ea48f3e8007aefd2862c2d41dd522eea11a92c846b136333ab37e9e0d"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-10 13:26:41 UTC+8"
+      "updated_at": "2026-10-11 01:18:38 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1187",
@@ -57820,7 +57846,7 @@
       "name": "ShadowMount+",
       "summary": "Fully automated background 'Auto-Mounter' payload for jailbroken PS5. Watches scan folders for game folders and .ffpkg/.exfat/.ffpfs/.ffpfsc images, auto-mounts them, stages sce_sys + appmeta + trophy data, and registers them on the home screen.",
       "author": "",
-      "version": "1.7beta3",
+      "version": "1.7-beta5fix1",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/drakmor/shadowmountplus",
@@ -57828,15 +57854,15 @@
         {
           "format": "elf",
           "filename": "shadowmountplus.elf",
-          "url": "https://github.com/drakmor/ShadowMountPlus/releases/download/1.7beta3/shadowmountplus.elf",
-          "sha256": "2a7427e20ba7a70bd8cd01e47eb00ee7ca82db82dff3da7884f48f9c3fcbe95a"
+          "url": "https://github.com/drakmor/ShadowMountPlus/releases/download/1.7-beta5fix1/shadowmountplus.elf",
+          "sha256": "e85fd63b705498488f39c09c9aea6f9fa22e0df2e932865de49a8cedf25172d5"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-01 21:31:26 UTC+8"
+      "updated_at": "2026-10-11 02:36:33 UTC+8"
     },
     {
       "id": "universal-db:dnasdw/SharedFontTool",
@@ -76761,32 +76787,6 @@
       "updated_at": "2021-04-06"
     },
     {
-      "id": "ps5-payloads-atlas:webkit-autoloader-installer_v0.6.1.elf",
-      "platforms": [
-        "ps5"
-      ],
-      "name": "WebKit Autoloader (installer)",
-      "summary": "Installs an autoloader reachable from the PS5's own web browser, so payloads can be launched from the console without sending them from a PC every time. One-shot installer ELF: send it, it installs, it exits. Run it after your kernel exploit, like any other payload.",
-      "author": "",
-      "version": "v0.6.1",
-      "license": null,
-      "icon_url": null,
-      "release_url": "https://github.com/itsplk/ps5-webkit-autoloader",
-      "downloads": [
-        {
-          "format": "elf",
-          "filename": "webkit-autoloader-installer_v0.6.1.elf",
-          "url": "https://github.com/itsPLK/ps5-webkit-autoloader/releases/download/v0.6.1/webkit-autoloader-installer_v0.6.1.elf",
-          "sha256": "f662c75a502e4f1bc41b055dcb490625f8222c499ce437dc80f439a3a279e93f"
-        }
-      ],
-      "source": "PS5 Payloads Atlas",
-      "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
-      "license_url": null,
-      "popularity": null,
-      "updated_at": "2026-10-09 00:06:48 UTC+8"
-    },
-    {
       "id": "ps5-payloads-atlas:websrv-ps5.elf",
       "platforms": [
         "ps5"
@@ -79845,7 +79845,7 @@
       ],
       "name": "Wordle Terminal 3DS",
       "summary": "A bare-bones Wordle port for the 3DS.",
-      "author": "xXHighTideXx",
+      "author": "HiggyTiggy",
       "version": "1.0.0",
       "license": "Apache License 2.0",
       "icon_url": "https://avatars.githubusercontent.com/u/84487860?v=4&size=128",
