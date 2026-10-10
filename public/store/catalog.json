@@ -26746,7 +26746,7 @@
       "name": "GodMode9i",
       "summary": "GodMode9i Explorer - A full access file browser for the Nintendo DS and DSi consoles :godmode:",
       "author": "DS-Homebrew",
-      "version": "v3.9.0",
+      "version": "v3.10.0",
       "license": "GNU General Public License v3.0",
       "icon_url": "https://db.universal-team.net/assets/images/icons/godmode9i.png",
       "release_url": "https://github.com/DS-Homebrew/GodMode9i/releases",
@@ -26754,20 +26754,20 @@
         {
           "format": "cia",
           "filename": "GodMode9i.cia",
-          "url": "https://github.com/DS-Homebrew/GodMode9i/releases/download/v3.9.0/GodMode9i.cia",
-          "size": 1008896
+          "url": "https://github.com/DS-Homebrew/GodMode9i/releases/download/v3.10.0/GodMode9i.cia",
+          "size": 1058048
         },
         {
           "format": "nds",
           "filename": "GodMode9i.nds",
-          "url": "https://github.com/DS-Homebrew/GodMode9i/releases/download/v3.9.0/GodMode9i.nds",
-          "size": 994304
+          "url": "https://github.com/DS-Homebrew/GodMode9i/releases/download/v3.10.0/GodMode9i.nds",
+          "size": 1043456
         }
       ],
       "source": "Universal-DB",
       "source_url": "https://db.universal-team.net/",
       "license_url": null,
-      "updated_at": "2025-12-25T10:39:19Z"
+      "updated_at": "2026-10-10T00:36:13Z"
     },
     {
       "id": "vitadbtoo-vita:250",
@@ -47006,7 +47006,7 @@
       "name": "pegasus-dl",
       "summary": "PS5 payload that serves a local web interface for downloading and installing game or application package data.",
       "author": "",
-      "version": "v1.10.1",
+      "version": "v1.11.0",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/pegasus-ps5/pegasus-dl",
@@ -47014,15 +47014,15 @@
         {
           "format": "elf",
           "filename": "pegasus_dl.elf",
-          "url": "https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.10.1/pegasus_dl.elf",
-          "sha256": "b24fdc62fc6cad14684b214a9c5be6c1221585afbf9493e387ab90f9dee21138"
+          "url": "https://github.com/pegasus-ps5/pegasus-dl/releases/download/v1.11.0/pegasus_dl.elf",
+          "sha256": "32b69c2089bb545abfabd04d5827444698f9c4f1bc4915d72247cb781e8c23d9"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-09-30 18:06:45 UTC+8"
+      "updated_at": "2026-10-10 06:57:31 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:847",
@@ -50362,7 +50362,7 @@
           "sha256": "a8fbf87de81b3e37ab6d23e15d5190dfc54facb4b8ed5be157ed3404592b2d9d"
         }
       ],
-      "popularity": 9114,
+      "popularity": 9163,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50389,7 +50389,7 @@
           "sha256": null
         }
       ],
-      "popularity": 2878,
+      "popularity": 2883,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50416,7 +50416,7 @@
           "sha256": "7f02e3dc9fcc665727f7f835cb487c60fa83eec33eb6ffb60eab08cf025b9627"
         }
       ],
-      "popularity": 8620,
+      "popularity": 8660,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50443,7 +50443,7 @@
           "sha256": null
         }
       ],
-      "popularity": 5542,
+      "popularity": 5555,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50470,7 +50470,7 @@
           "sha256": "7eab6de7d8542e0ce9b00656b42932ae7dd3d682d0008625ebd082fc996f32bc"
         }
       ],
-      "popularity": 48770,
+      "popularity": 48930,
       "source": "PS4 Homebrew Store",
       "source_url": "https://github.com/LightningMods/PS4-Store",
       "license_url": null,
@@ -50497,7 +50497,7 @@
           "sha256": "c05f6097dbc0707e8ec2fb5443ee507da6ac6e79c6fa8e9f78544658710efeff"
         }
       ],
-      "popularity": 324,
+      "popularity": 328,
       "source": "PS4HEN",
       "source_url": "https://github.com/Scene-Collective/ps4-hen",
       "license_url": null,
@@ -50875,30 +50875,30 @@
       "updated_at": "2026-09-23 11:21:00 UTC+8"
     },
     {
-      "id": "ps5-payloads-atlas:ps5upload-6.7.0.elf",
+      "id": "ps5-payloads-atlas:ps5upload-6.7.3.elf",
       "platforms": [
         "ps5"
       ],
       "name": "PS5upload",
       "summary": "Integrated PS5 file, mount, save-management, monitoring, and remote package-install payload with a companion desktop client.",
       "author": "",
-      "version": "v6.7.0",
+      "version": "v6.7.3",
       "license": null,
       "icon_url": null,
       "release_url": "https://github.com/phantomptr/ps5upload",
       "downloads": [
         {
           "format": "elf",
-          "filename": "ps5upload-6.7.0.elf",
-          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.7.0/ps5upload-6.7.0.elf",
-          "sha256": "37b5bd387013539c7e951edd363d9118acbeb24b0ef55137ed351422e52bb749"
+          "filename": "ps5upload-6.7.3.elf",
+          "url": "https://github.com/phantomptr/ps5upload/releases/download/v6.7.3/ps5upload-6.7.3.elf",
+          "sha256": "468740692643ecef083da7d761169c09accec4f43b199a64df9c394ecd6b5df3"
         }
       ],
       "source": "PS5 Payloads Atlas",
       "source_url": "https://github.com/lucaszhongsj/ps5-payloads-atlas",
       "license_url": null,
       "popularity": null,
-      "updated_at": "2026-10-10 01:06:29 UTC+8"
+      "updated_at": "2026-10-10 04:54:45 UTC+8"
     },
     {
       "id": "vitadbtoo-vita:1187",
